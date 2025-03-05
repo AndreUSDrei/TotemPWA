@@ -1,0 +1,8 @@
+C:\Users\andre\TotemPWA\obj\Debug\net9.0\TotemPWA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\TotemPWA\obj\Debug\net9.0\TotemPWA.AssemblyInfoInputs.cache
+C:\Users\andre\TotemPWA\obj\Debug\net9.0\TotemPWA.AssemblyInfo.cs
+C:\Users\andre\TotemPWA\obj\Debug\net9.0\TotemPWA.csproj.CoreCompileInputs.cache
+C:\Users\andre\TotemPWA\obj\Debug\net9.0\TotemPWA.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\andre\TotemPWA\obj\Debug\net9.0\TotemPWA.RazorAssemblyInfo.cache
+C:\Users\andre\TotemPWA\obj\Debug\net9.0\TotemPWA.RazorAssemblyInfo.cs
+C:\Users\andre\TotemPWA\obj\Debug\net9.0\TotemPWA.sourcelink.json
