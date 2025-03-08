@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: white;
+    font-family: 'Tilt Warp', sans-serif; /* Adicione esta linha para definir a fonte padrão */
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 1080px;
+    height: 1860px;
+    background: #FCFCFC;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+.banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: black;
+    text-align: center;
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.buttons {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.button {
+    padding: 1px 3px;
+    background-color: #055fbf;
+    cursor: pointer;
+}
+
+.button img{
+    width: 60px;
+    height: 50px;
+}
+.c1 {
+    width: 100%;
+    display: flex;
+}
+
+/* Menu lateral dentro do container */
+.menu {
+    background: #FFFFFE;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+
+    width: 263px;
+    height: 1450px;
+    flex-shrink: 0;
+    box-shadow: 16px 7px 58.3px -18px rgba(159, 159, 159, 0.25);
+}
+
+.menu-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+    width: 215px;
+    height: 198px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item:hover {
+    background: #DEF05F;
+}
+div1{
+    background: #DEF05F;
+}
+.img-menu-item {
+    height: 60%;
+    width: 60%;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.menu-item div {
+    color: #3F3F3F;
+    text-align: center;
+    font-family: 'Tilt Warp', sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Área de conteúdo principal */
+.content {
+    padding: 20px;
+    flex-grow: 1; /* Garante que o conteúdo ocupe o espaço restante */
+}
+
+/* Estilos dos pedidos */
+.pedido-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-y: auto; /* Adiciona a barra de rolagem vertical quando necessário */
+    gap: 15px;
+    margin-top: 10px;
+    max-height: 1500px; /* Define um tamanho fixo para ativar a rolagem */
+    padding: 20px;
+}
+
+.pedido-item {
+    padding: 10px;
+    background: #FFFFFE;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 23px;
+    transition: background-color 0.3s;
+
+    width: 228px;
+    height: 370px;
+    flex-shrink: 0;
+    filter: drop-shadow(0px 9px 26.6px rgba(220, 220, 220, 0.25));
+}
+
+.pedido-item:hover {
+    background: #e9e9e9;
+}
+
+.pedido-imagem {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 10px;
+}
+.pedido-titulo {
+    color: black;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+.pedido-preco {
+    color: green;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+.pedido-descricao {
+    color: #6D6D6D;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: 'Tilt Warp', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 128%; /* 25.6px */
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
