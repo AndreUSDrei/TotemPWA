@@ -9,8 +9,100 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\css\\tela2.css",
+      "PackagePath": "staticwebassets\\css\\tela2.css"
+    },
+    {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\Capa.png",
+      "PackagePath": "staticwebassets\\img\\Capa.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\Logo.png",
+      "PackagePath": "staticwebassets\\img\\Logo.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\backend.jpg",
+      "PackagePath": "staticwebassets\\img\\backend.jpg"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\banner.jpg",
+      "PackagePath": "staticwebassets\\img\\banner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\batata.png",
+      "PackagePath": "staticwebassets\\img\\batata.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\bebidas.png",
+      "PackagePath": "staticwebassets\\img\\bebidas.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\byte.png",
+      "PackagePath": "staticwebassets\\img\\byte.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\combos.png",
+      "PackagePath": "staticwebassets\\img\\combos.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\cupom.png",
+      "PackagePath": "staticwebassets\\img\\cupom.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\devopsbacon.png",
+      "PackagePath": "staticwebassets\\img\\devopsbacon.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\front.png",
+      "PackagePath": "staticwebassets\\img\\front.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\full.png",
+      "PackagePath": "staticwebassets\\img\\full.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\h1.png",
+      "PackagePath": "staticwebassets\\img\\h1.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\haburguer.png",
+      "PackagePath": "staticwebassets\\img\\haburguer.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\helloword.png",
+      "PackagePath": "staticwebassets\\img\\helloword.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\loopingduplo.png",
+      "PackagePath": "staticwebassets\\img\\loopingduplo.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\menuburguerimage.png",
+      "PackagePath": "staticwebassets\\img\\menuburguerimage.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\molhos.png",
+      "PackagePath": "staticwebassets\\img\\molhos.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\simbolo.jpg",
+      "PackagePath": "staticwebassets\\img\\simbolo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\sobremesa.png",
+      "PackagePath": "staticwebassets\\img\\sobremesa.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\vegan.png",
+      "PackagePath": "staticwebassets\\img\\vegan.png"
     },
     {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\js\\site.js",
