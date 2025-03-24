@@ -35,7 +35,7 @@ Critérios de Aceitação:
 •	O sistema não implementará medidas de segurança ou políticas de privacidade para os dados dos usuários.
 
 RNF05 - Deploy Contínuo
-Como cliente
+Como administrador
 Eu quero que o sistema seja atualizado sem interrupções,
 Para que eu precise lidar com períodos longos de inatividade e interrupções durante as atualizações.
 Critérios de Aceitação:
