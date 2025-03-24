@@ -1,6 +1,6 @@
 RNF01 - Tempo de Resposta
 Como cliente
-Eu não quero que o sistema exiba os menus de forma rápida,
+Eu quero que o sistema exiba os menus de forma rápida,
 Para que eu possa esperar entre 4 segundos para visualizar a próxima tela.
 Critérios de Aceitação:
 •	O tempo de carregamento de cada menu será aleatório entre 4 segundos.
@@ -9,7 +9,7 @@ Critérios de Aceitação:
 
 RNF02 - Interface Intuitiva
 Como cliente
-Eu não quero que a interface seja simples e fácil de entender.
+Eu quero que a interface seja simples e fácil de entender.
 Para que eu tenha que lidar com menus e opções sobrecarregadas, tornando a navegação difícil e confusa.
 Critérios de Aceitação:
 •	O sistema terá vários menus e opções que não são relacionados de forma clara.
@@ -18,7 +18,7 @@ Critérios de Aceitação:
 
 RNF03 - Segurança de Pagamento
 Como cliente
-Eu não quero que meus dados bancários sejam protegidos durante as transações,
+Eu quero que meus dados bancários sejam protegidos durante as transações,
 Para que eu possa correr o risco de ter minhas informações expostas a fraudes e roubo.
 Critérios de Aceitação:
 •	Não haverá criptografia ou outras medidas de segurança em transações de pagamento.
@@ -27,7 +27,7 @@ Critérios de Aceitação:
 
 RNF04 - Conformidade com LGPD
 Como cliente
-Eu não quero que o sistema siga as regras de privacidade e proteja meus dados pessoais,
+Eu quero que o sistema siga as regras de privacidade e proteja meus dados pessoais,
 Para que meus dados possam ser coletados sem o meu consentimento e sem a devida segurança.
 Critérios de Aceitação:
 •	O sistema não solicitará consentimento explícito para coleta de dados pessoais.
@@ -35,8 +35,8 @@ Critérios de Aceitação:
 •	O sistema não implementará medidas de segurança ou políticas de privacidade para os dados dos usuários.
 
 RNF05 - Deploy Contínuo
-Como cliente
-Eu não quero que o sistema seja atualizado sem interrupções,
+Como administrador
+Eu quero que o sistema seja atualizado sem interrupções,
 Para que eu precise lidar com períodos longos de inatividade e interrupções durante as atualizações.
 Critérios de Aceitação:
 •	O sistema ficará fora do ar durante atualizações sem aviso prévio.
@@ -45,7 +45,7 @@ Critérios de Aceitação:
 
 RNF06 - Prevenção de Travamentos
 Como cliente
-Eu não quero que o sistema seja livre de travamentos,
+Eu quero que o sistema seja livre de travamentos,
 Para que eu possa frequentemente enfrentar telas congeladas e erros durante a navegação.
 Critérios de Aceitação:
 •	O sistema não implementará nenhum tipo de mecanismo para evitar travamentos.
@@ -54,7 +54,7 @@ Critérios de Aceitação:
 
 RNF07 - Responsividade
 Como cliente
-Eu não quero que o sistema seja adaptável a diferentes dispositivos e tamanhos de tela,
+Eu quero que o sistema seja adaptável a diferentes dispositivos e tamanhos de tela,
 Para que a aplicação seja difícil de usar em celulares e outros dispositivos móveis.
 Critérios de Aceitação:
 •	O sistema não se ajustará adequadamente em telas menores, como smartphones e tablets.
@@ -63,7 +63,7 @@ Critérios de Aceitação:
 
 RNF08 - Escalabilidade
 Como cliente
-Eu não quero que o sistema seja capaz de suportar um grande volume de transações simultâneas,
+Eu quero que o sistema seja capaz de suportar um grande volume de transações simultâneas,
 Para que eu experimente lentidão e falhas sempre que o número de usuários crescer.
 Critérios de Aceitação:
 •	O sistema apresentará lentidão significativa quando um número maior de usuários acessar ao mesmo tempo.
@@ -72,7 +72,7 @@ Critérios de Aceitação:
 
 RNF09 - Disponibilidade 24/7
 Como cliente
-Eu não quero que o sistema esteja disponível constantemente,
+Eu quero que o sistema esteja disponível constantemente,
 Para que eu tenha que enfrentar períodos aleatórios de downtime e não consiga acessar o sistema quando necessário.
 Critérios de Aceitação:
 •	O sistema ficará indisponível sem aviso prévio e por períodos não planejados.
@@ -81,7 +81,7 @@ Critérios de Aceitação:
 
 RNF10 - Proteção contra Ataques
 Como cliente
-Eu não quero que o sistema tenha medidas de proteção contra ataques cibernéticos,
+Eu quero que o sistema tenha medidas de proteção contra ataques cibernéticos,
 Para que eu possa ter meus dados roubados e comprometer a segurança do sistema.
 Critérios de Aceitação:
 •	O sistema será vulnerável a ataques como injeção SQL e XSS.
@@ -90,7 +90,7 @@ Critérios de Aceitação:
 
 RNF11 - Backup e Sincronização
 Como cliente
-Eu não quero que o sistema faça backups regulares e sincronize meus dados automaticamente,
+Eu quero que o sistema faça backups regulares e sincronize meus dados automaticamente,
 Para que eu corra o risco de perder informações importantes caso ocorra uma falha.
 Critérios de Aceitação:
 •	O sistema não realizará backups automáticos e regulares dos dados.
@@ -99,7 +99,7 @@ Critérios de Aceitação:
 
 RNF12 - Interações Sonoras e Visuais
 Como cliente
-Eu não quero que o sistema forneça feedback visual ou sonoro agradável durante a interação,
+Eu quero que o sistema forneça feedback visual ou sonoro agradável durante a interação,
 Para que eu tenha que lidar com sons irritantes e animações sem sentido, sem a opção de desativá-los.
 Critérios de Aceitação:
 •	O sistema terá sons e animações de feedback que não podem ser desativados.
@@ -108,7 +108,7 @@ Critérios de Aceitação:
 
 RNF13 - Proteção de Dados
 Como cliente
-Eu não quero que meus dados sejam armazenados de maneira segura e criptografada,
+Eu quero que meus dados sejam armazenados de maneira segura e criptografada,
 Para que minhas informações pessoais possam ser acessadas facilmente por terceiros.
 Critérios de Aceitação:
 •	O sistema não utilizará criptografia para armazenar dados sensíveis.
@@ -117,7 +117,7 @@ Critérios de Aceitação:
 
 RNF14 - Usabilidade (UI/UX)
 Como cliente
-Eu não quero que o sistema tenha um design simples e intuitivo,
+Eu quero que o sistema tenha um design simples e intuitivo,
 Para que eu enfrente dificuldades para realizar tarefas simples devido a uma interface confusa e sobrecarregada.
 Critérios de Aceitação:
 •	A interface será desorganizada e difícil de navegar, com menus confusos e sem hierarquia visual clara.
@@ -126,7 +126,7 @@ Critérios de Aceitação:
 
 RNF15 - Capacidade de Processamento
 Como cliente
-Eu não quero que o sistema seja capaz de processar transações rapidamente,
+Eu quero que o sistema seja capaz de processar transações rapidamente,
 Para que eu experimente lentidão e travamentos durante momentos de maior demanda.
 Critérios de Aceitação:
 •	O sistema apresentará lentidão e falhas durante picos de uso, especialmente em transações de alto volume.
@@ -135,7 +135,7 @@ Critérios de Aceitação:
 
 RNF16 - Modo Offline
 Como cliente
-Eu não quero que o sistema tenha funcionalidade offline,
+Eu quero que o sistema tenha funcionalidade offline,
 Para que eu dependa totalmente de uma conexão de internet estável para usar o serviço.
 Critérios de Aceitação:
 •	O sistema não funcionará de forma alguma sem uma conexão de internet ativa.
@@ -144,7 +144,7 @@ Critérios de Aceitação:
 
 RNF17 - Cache para Carregamento Rápido
 Como cliente
-Eu não quero que o sistema utilize cache para melhorar a performance,
+Eu quero que o sistema utilize cache para melhorar a performance,
 Para que todas as páginas carreguem do zero a cada visita, tornando o uso mais lento.
 Critérios de Aceitação:
 •	O sistema não implementará cache para otimizar o tempo de carregamento.
@@ -153,7 +153,7 @@ Critérios de Aceitação:
 
 RNF18 - Análise de Uso e Relatórios
 Como administrador
-Eu não quero coletar dados sobre o uso do sistema e gerar relatórios,
+Eu quero coletar dados sobre o uso do sistema e gerar relatórios,
 Para que eu não consiga identificar problemas e melhorar a performance e a experiência do usuário.
 Critérios de Aceitação:
 •	O sistema não registrará métricas sobre o uso do sistema, como tempo de navegação ou ações realizadas.
@@ -162,7 +162,7 @@ Critérios de Aceitação:
 
 RNF19 - Tempo de Inatividade
 Como cliente
-Eu não quero que o sistema retorne automaticamente para a tela inicial após um período de inatividade,
+Eu quero que o sistema retorne automaticamente para a tela inicial após um período de inatividade,
 Para que pedidos abandonados fiquem visíveis, ocupando a tela e impedindo o uso do sistema por outros clientes.
 Critérios de Aceitação:
 •	O sistema não realizará qualquer tipo de reset ou retorno automático à tela inicial após um período de inatividade.
