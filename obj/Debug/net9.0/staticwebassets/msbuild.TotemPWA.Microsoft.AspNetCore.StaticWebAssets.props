@@ -48,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>a35t08u0ui</Fingerprint>
-      <Integrity>Br8TejYnLNdPxMjJrXb9dGHCVnx24u2IcN8tkTKhKXk=</Integrity>
+      <Fingerprint>mynbzs1n70</Fingerprint>
+      <Integrity>8u6OG1Nx/KK1aYNZDIKu/3qAx6zM89gmy1Jr7LdN41k=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\tela2.css'))</OriginalItemSpec>

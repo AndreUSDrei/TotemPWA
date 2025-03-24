@@ -19,7 +19,6 @@ body {
     height: 100vh;
     background: #FCFCFC;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
 }
 .banner {
     position: relative;
@@ -66,6 +65,7 @@ body {
     display: flex;
     width: 100%;
     flex-grow: 1;
+    height: 65vh;
 }
 .menu {
     background: #FFFFFE;
@@ -104,7 +104,7 @@ body {
 .content {
     flex-grow: 1;
     padding: 2vh;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 .pedido-grid {
     display: grid;
@@ -112,7 +112,9 @@ body {
     gap: 1vh;
     padding: 1vh;
     overflow-y: auto;
-    max-height: 75vh;
+    max-height: calc(100vh - 35vh);
+    padding-bottom: 1vh;
+    
 }
 .pedido-item {
     padding: 0.5vh;
@@ -168,5 +170,38 @@ body {
 }
 .nav-categorias a:hover, .nav-categorias a.active {
     background-color: #A3CF3B;
+    color: white;
+}
+.barra-inferior {
+    height: 15vh; /* Garante que a barra inferior ocupe 15% da tela */
+    width: 100%;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px -4px 10px rgba(159, 159, 159, 0.2);
+    position: relative;
+}
+.total {
+    position: absolute;
+    top: 1vh;
+    right: 2vh;
+    font-size: 2.5vh;
+    color: red;
+}
+.botao-container button {
+    background-color: white;
+    color: #3F3F3F;
+    font-size: 2.5vh; /* Tamanho da fonte ajustado */
+    padding: 1.5vh 3vh; /* Ajustado para botões menores */
+    border: 2px solid #3F3F3F; /* Cor da borda */
+    border-radius: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.botao-container button:hover {
+    background-color: #3F3F3F; /* Cor ao passar o mouse */
     color: white;
 }
