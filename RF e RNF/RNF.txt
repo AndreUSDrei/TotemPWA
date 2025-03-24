@@ -1,6 +1,6 @@
 RNF01 - Tempo de Resposta
 Como cliente
-Eu não quero que o sistema exiba os menus de forma rápida,
+Eu quero que o sistema exiba os menus de forma rápida,
 Para que eu possa esperar entre 4 segundos para visualizar a próxima tela.
 Critérios de Aceitação:
 •	O tempo de carregamento de cada menu será aleatório entre 4 segundos.
