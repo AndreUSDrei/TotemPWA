@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andre\\TotemPWA\\TotemPWA.csproj": {}
+    "C:\\Users\\cauaz\\TotemPWA\\TotemPWA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andre\\TotemPWA\\TotemPWA.csproj": {
+    "C:\\Users\\cauaz\\TotemPWA\\TotemPWA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andre\\TotemPWA\\TotemPWA.csproj",
+        "projectUniqueName": "C:\\Users\\cauaz\\TotemPWA\\TotemPWA.csproj",
         "projectName": "TotemPWA",
-        "projectPath": "C:\\Users\\andre\\TotemPWA\\TotemPWA.csproj",
-        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andre\\TotemPWA\\obj\\",
+        "projectPath": "C:\\Users\\cauaz\\TotemPWA\\TotemPWA.csproj",
+        "packagesPath": "C:\\Users\\cauaz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cauaz\\TotemPWA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\cauaz\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
