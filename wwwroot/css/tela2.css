@@ -173,35 +173,51 @@ body {
     color: white;
 }
 .barra-inferior {
-    height: 15vh; /* Garante que a barra inferior ocupe 15% da tela */
+    height: 15vh;
     width: 100%;
     background: #FFFFFF;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
     box-shadow: 0px -4px 10px rgba(159, 159, 159, 0.2);
     position: relative;
+    padding: 1vh;
 }
+
 .total {
     position: absolute;
     top: 1vh;
     right: 2vh;
-    font-size: 2.5vh;
+    font-size: 2vh;
     color: red;
+    font-weight: bold;
 }
+
+.botao-container {
+    display: flex;
+    gap: 2vh;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 1vh;
+}
+
 .botao-container button {
     background-color: white;
     color: #3F3F3F;
-    font-size: 2.5vh; /* Tamanho da fonte ajustado */
-    padding: 1.5vh 3vh; /* Ajustado para botões menores */
-    border: 2px solid #3F3F3F; /* Cor da borda */
-    border-radius: 15px;
+    font-size: 2vh;
+    padding: 1vh 2vh;
+    border: 2px solid #3F3F3F;
+    border-radius: 10px;
     cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease;
+    width: 40%;
+    max-width: 15vh;
 }
+
 .botao-container button:hover {
-    background-color: #3F3F3F; /* Cor ao passar o mouse */
+    background-color: #3F3F3F;
     color: white;
 }
