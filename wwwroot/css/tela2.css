@@ -196,22 +196,22 @@ body {
 
 .botao-container {
     display: flex;
-    gap: 1.5vh;
+    gap: 1vh;
     width: 100%;
     justify-content: center;
     padding-bottom: 1vh;
 }
 
 .botao-container button {
-    font-size: 1.8vh;
-    padding: 1.2vh 2vh;
+    font-size: 1vh;
+    padding: 1vh;
     border-radius: 1.5vh;
     cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease;
     width: 30%;
-    max-width: 13vh;
+    max-width: 10vh;
 }
 
 .botao-cancelar {
