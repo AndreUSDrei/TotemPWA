@@ -196,22 +196,28 @@ body {
 
 .botao-container {
     display: flex;
-    gap: 1vh;
+    gap: 2vh;
     width: 100%;
     justify-content: center;
     padding-bottom: 1vh;
 }
 
 .botao-container button {
-    font-size: 1vh;
-    padding: 1vh;
-    border-radius: 1.5vh;
+    font-size: 1.6vh;
+    padding: 0.8vh 3vh;
+    border-radius: 1.2vh;
     cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease;
     width: 30%;
-    max-width: 10vh;
+    max-width: 15vh; 
+    height: 4vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .botao-cancelar {
@@ -236,13 +242,13 @@ body {
     color: white;
 }
 
-.botao-carrinho {
+.botao-medio {
     background-color: red;
     color: white;
     border: 2px solid red;
 }
 
-.botao-carrinho:hover {
+.botao-medio:hover {
     background-color: darkred;
     border: 2px solid darkred;
 }
