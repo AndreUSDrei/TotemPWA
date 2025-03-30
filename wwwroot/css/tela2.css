@@ -262,6 +262,6 @@ body {
     transition: all 0.3s ease;
 }
 .botao-carrinho:hover {
-    background-color: darkred;
+    background-color: darkred;  
     border: 2px solid darkred;
 }
