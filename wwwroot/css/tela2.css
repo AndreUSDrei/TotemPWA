@@ -206,6 +206,7 @@ body {
     font-size: 1.6vh;
     padding: 0.8vh 3vh;
     border-radius: 12px;
+    border-width: 2px;
     cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
@@ -245,6 +246,7 @@ body {
     background-color: red !important;
     color: white !important;
     border: 2px solid red !important;
+    border-width: 2px;
     width: 4vh !important;
     max-width: 14vh !important;
     height: 4vh !important;
