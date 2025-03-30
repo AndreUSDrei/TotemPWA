@@ -205,7 +205,7 @@ body {
 .botao-container button {
     font-size: 1.6vh;
     padding: 0.8vh 3vh;
-    border-radius: 1.2vh;
+    border-radius: 12px;
     cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
@@ -254,7 +254,7 @@ body {
     justify-content: center !important;
     white-space: nowrap !important;
     text-align: center !important;
-    border-radius: 1.2vh !important;
+    border-radius: 12px !important;
     cursor: pointer !important;
     text-transform: uppercase !important;
     font-weight: bold !important;
