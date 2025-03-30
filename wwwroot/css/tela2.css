@@ -245,20 +245,20 @@ body {
     background-color: red !important;
     color: white !important;
     border: 2px solid red !important;
-    width: 14%;
-    max-width: 14vh;
-    height: 4vh;
-    font-size: 1.6vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    text-align: center;
-    border-radius: 1.2vh;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    width: 14% !important;
+    max-width: 14vh !important;
+    height: 4vh !important;
+    font-size: 1.6vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    border-radius: 1.2vh !important;
+    cursor: pointer !important;
+    text-transform: uppercase !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
 }
 
 .botao-carrinho:hover {
