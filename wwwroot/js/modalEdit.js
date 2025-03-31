@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { nome: 'Alface', quantidade: 1 },
             { nome: 'Cebola', quantidade: 1 }
         ],
+        
     };
     window.abrirModalEditar = function(elemento) {
         const itemId = parseInt(elemento.getAttribute('data-id'));

@@ -301,5 +301,5 @@ C:\Users\cauaz\TotemPWA\obj\Debug\net9.0\compressed\pebobbe2b7-j1ybh94xjg.gz
 C:\Users\cauaz\TotemPWA\obj\Debug\net9.0\compressed\jouvgui3wh-ewa9ipwrqg.gz
 C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\compressed\jouvgui3wh-vcl9gl610p.gz
 C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\compressed\mo1ej7x5al-ql26a1ynjs.gz
-C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\compressed\pebobbe2b7-mdnlnbszke.gz
-C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\compressed\41092q2snf-nz93wrm3q7.gz
+C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\compressed\41092q2snf-e8bw4j210w.gz
+C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\compressed\pebobbe2b7-k7owawy5po.gz

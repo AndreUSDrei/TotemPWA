@@ -300,9 +300,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vh; /* Diminuído de 80vh para 50vh */
+    width: 50vh;
     max-width: 90%;
-    height: 70vh; /* Aumentado de auto para 70vh */
+    height: 70vh;
     background-color: white;
     z-index: 1000;
     border-radius: 1.5vh;
@@ -456,7 +456,7 @@ body {
     text-align: center;
 }
 
-/* Modal de Edição Ajustado */
+/* Modal de Edição Responsivo */
 .modal-editar {
     display: none;
     position: fixed;
@@ -473,9 +473,10 @@ body {
 .modal-editar-content {
     position: relative;
     background-color: white;
-    width: 50vh; /* Diminuído de 85vh para 50vh */
-    max-width: 90%;
-    height: 70vh; /* Aumentado de max-height para height fixa */
+    width: 90%;
+    max-width: 50vh;
+    height: auto;
+    max-height: 90vh;
     border-radius: 1.5vh;
     box-shadow: 0 0.4vh 2vh rgba(0, 0, 0, 0.2);
     overflow-y: auto;
@@ -501,7 +502,7 @@ body {
 
 .modal-editar-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 2vh;
     margin-top: 2vh;
 }
@@ -542,7 +543,7 @@ body {
 }
 
 .modal-editar-ingredientes {
-    max-height: 45vh;
+    max-height: 30vh;
     overflow-y: auto;
     padding-right: 1vh;
 }
@@ -583,6 +584,21 @@ body {
     font-size: 1.6vh;
 }
 
+.modal-btn-confirm {
+    width: 10vh;
+    height: 3vh;
+    border: none;
+    border-radius: 0.5vh;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6vh;
+    background-color: #a3cf3b;
+    color: #fff;
+}
+
 .botao-adicionar-editar {
     background-color: #a3cf3b;
     color: white;
@@ -615,23 +631,38 @@ body {
     background-color: #7cb342;
 }
 
-/* Responsividade */
-@media (max-aspect-ratio: 1/1) {
-    .modal {
-        width: 90vh;
-        max-width: 90%;
-    }
-    
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
     .modal-editar-content {
-        width: 90vh;
-        max-width: 90%;
+        width: 95%;
+        max-width: none;
+        height: 90vh;
     }
     
     .modal-editar-grid {
         grid-template-columns: 1fr;
     }
     
-    .modal-imagem, .modal-editar-imagem {
-        width: 8vh;
+    .modal-editar-imagem {
+        width: 15vh;
+    }
+    
+    .modal-editar-ingredientes {
+        max-height: 40vh;
+    }
+    
+    .botao-container button {
+        font-size: 1.8vh;
+        padding: 1.5vh 0;
+    }
+}
+
+@media (max-height: 600px) {
+    .modal-editar-content {
+        height: 85vh;
+    }
+    
+    .modal-editar-ingredientes {
+        max-height: 30vh;
     }
 }
