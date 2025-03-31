@@ -270,13 +270,13 @@ body {
     border: 2px solid darkred !important;
 }
 .modal {
-    display: none !important;
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20vw;
-    height: 15vh;
+    width: 25vw;
+    height: 65vh;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 1000;
     display: flex;
