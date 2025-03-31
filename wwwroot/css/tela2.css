@@ -271,43 +271,28 @@ body {
 }
 
 .modal {
-    display: none; 
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60vw; 
-    background-color: transparent !important; 
-    box-shadow: none !important;
-    border: none !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(80vh * 16 / 9);
-    max-width: 60%;
-    max-height: 80%;
+    display: none;
     position: fixed;
-    border-radius: 2vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 80vh;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    border-radius: 15px; 
+    overflow-y: auto;
 }
 
-.modal-content {
-    background-color: white;
-    padding: 2vh;
-    border-radius: 1.5vh;
-    width: 90%;
-    height: 90%;
-    text-align: center;
-    position: relative;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+.modal.active {
+    display: block;
 }
 
 .fechar-modal {
     position: absolute;
-    top: 1vh;
-    right: 1vh;
-    font-size: 2vh;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
     cursor: pointer;
-}
-
-.modal-content h2, .modal-content p {
-    font-size: 2vh;
 }
