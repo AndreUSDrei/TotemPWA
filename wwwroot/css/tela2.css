@@ -204,44 +204,39 @@ body {
 
 .botao-container button {
     font-size: 1.6vh;
-    padding: 0.8vh 3vh;
-    transform: scale(1);
-    border-radius: 12px;
-    border-width: 2px;
+    padding: 1.2vh 0;
+    border-radius: 2vh;
     cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
     transition: all 0.3s ease;
-    width: 30%;
-    max-width: 15vh; 
-    height: 4vh; 
+    width: 45%;
+    height: 6vh;
     display: flex;
     align-items: center;
     justify-content: center;
     white-space: nowrap;
     text-align: center;
 }
-
 .botao-cancelar {
-    background-color: white;
-    color: #3F3F3F;
-    border: 2px solid #3F3F3F;
+    background-color: white !important;
+    color: black !important;
+    border-top: 0.16vh solid black !important;
+    border-bottom: 0.16vh solid black !important;
+    border-left: 0.28vw solid black !important;
+    border-right: 0.28vw solid black !important;
 }
 
 .botao-cancelar:hover {
-    background-color: #3F3F3F;
-    color: white;
+    background-color: #f0f0f0 !important;
 }
 
 .botao-finalizar {
-    background-color: white;
-    color: #3F3F3F;
-    border: 2px solid #3F3F3F;
+    background-color: #92D050 !important;
+    color: white !important;
+    border: none !important;
 }
 
 .botao-finalizar:hover {
-    background-color: #3F3F3F;
-    color: white;
+    background-color: #7CB342 !important;
 }
 .botao-carrinho {
     background-color: red !important;
@@ -260,8 +255,6 @@ body {
     text-align: center !important;
     border-radius: 12px !important;
     cursor: pointer !important;
-    text-transform: uppercase !important;
-    font-weight: bold !important;
     transition: all 0.3s ease !important;
 }
 
@@ -271,7 +264,7 @@ body {
 }
 .modal {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -279,7 +272,6 @@ body {
     height: 65vh;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 1000;
-    display: flex;
     justify-content: center;
     align-items: flex-start;
 }
