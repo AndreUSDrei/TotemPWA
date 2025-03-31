@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos</title>
     <link rel="stylesheet" href="~/css/tela2.css" asp-append-version="true">
-    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true"> <!-- Caso precise -->
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -63,85 +62,144 @@
                     <div class="pedido-grid">
 
                         <!-- Item 1 -->
-                        <div class="pedido-item">
+                        <div class="pedido-item" data-id="1" data-descricao="Pão de gergelim, cebola, alface, queijo cheddar, dois hambúrgueres de costela 180g" onclick="abrirModalEditar(this)">
                             <img class="pedido-imagem" src="~/img/menuburguerimage.png" asp-append-version="true" alt="Burguer 404">
                             <h3 class="pedido-titulo">Burguer 404</h3> 
                             <h4 class="pedido-preco">R$ 24,90</h4>
-                            <p class="pedido-descricao">Pão de gergelim, cebola, alface, queijo cheddar, dois hambúrgueres de costela 180g...</p>
                         </div>
 
                         <!-- Item 2 -->
-                        <div class="pedido-item">
+                        <div class="pedido-item" data-id="2" data-descricao="Pão brioche, queijo prato, hambúrguer de costela 200g, bacon, cebola caramelizada" onclick="abrirModalEditar(this)">
                             <img class="pedido-imagem" src="~/img/full.png" asp-append-version="true" alt="Full Stack">
                             <h3 class="pedido-titulo">Full Stack</h3> 
                             <h4 class="pedido-preco">R$ 39,90</h4>
-                            <p class="pedido-descricao">Pão de gergelim, cebola, alface, tomate, dois hamburgueres de patinho 180g...</p>
                         </div>
 
                         <!-- Item 3 -->
-                        <div class="pedido-item">
+                        <div class="pedido-item" data-id="3" data-descricao="Três hambúrgueres de costela 150g, queijo cheddar, cebola crispy, molho especial" onclick="abrirModalEditar(this)">
                             <img class="pedido-imagem" src="~/img/loopingduplo.png" asp-append-version="true" alt="Looping Triplo">
                             <h3 class="pedido-titulo">Looping Triplo</h3> 
                             <h4 class="pedido-preco">R$ 32,90</h4>
-                            <p class="pedido-descricao">Pão de gergelim, cebola, alface, tomate, dois hamburgueres de patinho 180g...</p>
                         </div>
 
                         <!-- Item 4 -->
-                        <div class="pedido-item">
+                        <div class="pedido-item" data-id="4" data-descricao="Pão australiano, hambúrguer de fraldinha 180g, queijo, picles, cebola roxa" onclick="abrirModalEditar(this)">
                             <img class="pedido-imagem" src="~/img/helloword.png" asp-append-version="true" alt="Hello Word">
                             <h3 class="pedido-titulo">Hello Word</h3> 
                             <h4 class="pedido-preco">R$ 24,90</h4>
-                            <p class="pedido-descricao">Pão de gergelim, muito alface, cebola, tomate, hamburguer de costela de 180g...</p>
                         </div>
 
                         <!-- Item 5 -->
-                        <div class="pedido-item">
+                        <div class="pedido-item" data-id="5" data-descricao="Pão integral, hambúrguer de grão-de-bico, abobrinha, berinjela e molho de iogurte" onclick="abrirModalEditar(this)">
                             <img class="pedido-imagem" src="~/img/vegan.png" asp-append-version="true" alt="VS Veggie">
                             <h3 class="pedido-titulo">VS Veggie</h3> 
                             <h4 class="pedido-preco">R$ 21,90</h4>
-                            <p class="pedido-descricao">Pão de batata, cebola, alface, tomate, repolho, hamburguer de grão de bico...</p>
                         </div>
 
                         <!-- Item 6 -->
-                        <div class="pedido-item">
+                        <div class="pedido-item" data-id="6" data-descricao="Pão de hambúrguer tradicional, hambúrguer de costela 180g, queijo prato, alface, tomate" onclick="abrirModalEditar(this)">
                             <img class="pedido-imagem" src="~/img/backend.jpg" asp-append-version="true" alt="Backend">
                             <h3 class="pedido-titulo">Backend</h3> 
                             <h4 class="pedido-preco">R$ 22,90</h4>
-                            <p class="pedido-descricao">Pão de gergelim, alface, tomate, bacon, smash de hamburguer...</p>
                         </div>
 
                         <!-- Item 7 -->
-                        <div class="pedido-item">
+                        <div class="pedido-item" data-id="7" data-descricao="Pão brioche, dois hambúrgueres de costela 180g, queijo cheddar, bacon, molho barbecue" onclick="abrirModalEditar(this)">
                             <img class="pedido-imagem" src="~/img/front.png" asp-append-version="true" alt="Frontend">
                             <h3 class="pedido-titulo">Frontend</h3> 
                             <h4 class="pedido-preco">R$ 44,90</h4>
-                            <p class="pedido-descricao">Pão de brioche, piscina de queijo cheddar, bacon, hamburguer de patinho de 180g...</p>
                         </div>
 
                         <!-- Item 8 -->
-                        <div class="pedido-item">
+                        <div class="pedido-item" data-id="8" data-descricao="Pão de hambúrguer com gergelim, hambúrguer de costela 200g, queijo, bacon, cebola crispy" onclick="abrirModalEditar(this)">
                             <img class="pedido-imagem" src="~/img/devopsbacon.png" asp-append-version="true" alt="DevOps Bacon">
                             <h3 class="pedido-titulo">DevOps Bacon</h3> 
                             <h4 class="pedido-preco">R$ 34,90</h4>
-                            <p class="pedido-descricao">Pão de gergelim, cebola, alface, tomate, muito bacon, duplo hamburguer de costela 180g...</p>
                         </div>
 
                         <!-- Item 9 -->
-                        <div class="pedido-item">
+                        <div class="pedido-item" data-id="9" data-descricao="Pão de batata, hambúrguer de costela 150g, queijo coalho, molho de pimenta" onclick="abrirModalEditar(this)">
                             <img class="pedido-imagem" src="~/img/byte.png" asp-append-version="true" alt="Byte Burguer">
                             <h3 class="pedido-titulo">Byte Burguer</h3> 
                             <h4 class="pedido-preco">R$ 24,90</h4>
-                            <p class="pedido-descricao">Pão de gergelim, cebola, alface, tomate, queijo, hamburguer de patinho 180g ...</p>
                         </div>
 
                         <!-- Item 10 -->
-                        <div class="pedido-item">
+                        <div class="pedido-item" data-id="10" data-descricao="Pão de hambúrguer tradicional, hambúrguer de fraldinha 180g, queijo, alface, tomate" onclick="abrirModalEditar(this)">
                             <img class="pedido-imagem" src="~/img/haburguer.png" asp-append-version="true" alt="Index Burguer">
                             <h3 class="pedido-titulo">Index Burguer</h3> 
                             <h4 class="pedido-preco">R$ 24,90</h4>
-                            <p class="pedido-descricao">Pão de gergelim, cebola, alface, queijo cheddar, dois hambúrgueres de costela 180g...</p>
                         </div>
 
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal de Edição de Item -->
+            <div id="modalEditarItem" class="modal-editar">
+                <div class="modal-editar-content">
+                    <span class="fechar-modal-editar">&times;</span>
+                    <h2 class="modal-editar-titulo"></h2>
+                    <div class="modal-editar-grid">
+                        <div class="modal-editar-info">
+                            <img class="modal-editar-imagem" src="" alt="">
+                            <h4 class="modal-editar-preco"></h4>
+                            <p class="modal-editar-descricao"></p>
+                        </div>
+                        <div class="modal-editar-ingredientes">
+                            <!-- Ingredientes serão preenchidos via JavaScript -->
+                        </div>
+                    </div>
+                    <div class="modal-editar-botoes">
+                        <button class="modal-btn-confirm">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal do Carrinho (existente) -->
+            <div id="modalCarrinho" class="modal">
+                <div class="modal-content">
+                    <span id="fecharModal" class="fechar-modal">&times;</span>
+                    <h2>Carrinho</h2>
+                    <div class="modal-grid">
+                            <div class="modal-pedido">
+                                <img class="pedido-imagem" src="~/img/menuburguerimage.png" asp-append-version="true" alt="Burguer 404">
+                                <h3 class="pedido-titulo">Burguer 404</h3> 
+                                <h4 class="pedido-preco">R$ 24,90</h4>
+                                <p class="pedido-descricao">Pão de gergelim, cebola, alface, queijo cheddar, dois hambúrgueres de costela 180g...</p>
+                            </div>
+                            <div class="listaIngredientes">
+                                <div class="Ingrediente">
+                                    <span class="IngredienteNome">Pão</span>
+                                    <span class="IngredienteQuantidade">1x</span>
+                                    <button class="botaoAdiciona">+</button>
+                                    <button class="botaoRemove">-</button>
+                                </div>
+                                <div class="Ingrediente">
+                                    <span class="IngredienteNome">Queijo</span>
+                                    <span class="IngredienteQuantidade">1x</span>
+                                    <button class="botaoAdiciona">+</button>
+                                    <button class="botaoRemove">-</button>
+                                </div>
+                                <div class="Ingrediente">
+                                    <span class="IngredienteNome">Carne</span>
+                                    <span class="IngredienteQuantidade">1x</span>
+                                    <button class="botaoAdiciona">+</button>
+                                    <button class="botaoRemove">-</button>
+                                </div>
+                                <div class="Ingrediente">
+                                    <span class="IngredienteNome">Tomate</span>
+                                    <span class="IngredienteQuantidade">1x</span>
+                                    <button class="botaoAdiciona">+</button>
+                                    <button class="botaoRemove">-</button>
+                                </div>
+                                <div class="Ingrediente">
+                                    <span class="IngredienteNome">Alface</span>
+                                    <span class="IngredienteQuantidade">1x</span>
+                                    <button class="botaoAdiciona">+</button>
+                                    <button class="botaoRemove">-</button>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -152,20 +210,14 @@
             </div>
             <div class="botao-container">
                 <button class="botao-cancelar">Cancelar</button>
-                <button id="botaoCarrinho" class="botao-carrinho">Carrinho</button>
+                <button id="botaoCarrinho" class="botao-carrinho">C</button>
                 <button class="botao-finalizar">Finalizar</button>
             </div>
-        </div>
-    </div>
-    <div id="modalCarrinho" class="modal">
-        <div class="modal-content">
-            <span id="fecharModal" class="fechar-modal">&times;</span>
-            <h2>Seu Carrinho</h2>
-            <p>Lista de produtos no carrinho...</p>
         </div>
     </div>
 
 <script src="~/js/filtroCategorias.js" asp-append-version="true"></script>
 <script src="~/js/modal.js" asp-append-version="true"></script>
+<script src="~/js/modalEdit.js" asp-append-version="true"></script>
 </body>
 </html>
