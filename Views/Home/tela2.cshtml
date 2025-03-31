@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos</title>
     <link rel="stylesheet" href="~/css/tela2.css" asp-append-version="true">
-    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true"> <!-- Caso precise -->
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -149,7 +148,46 @@
                 <div class="modal-content">
                     <span id="fecharModal" class="fechar-modal">&times;</span>
                     <h2>Carrinho</h2>
-                    <p>Lista de produtos no carrinho...</p>
+                    <div class="modal-grid">
+                            <div class="modal-pedido">
+                                <img class="pedido-imagem" src="~/img/menuburguerimage.png" asp-append-version="true" alt="Burguer 404">
+                                <h3 class="pedido-titulo">Burguer 404</h3> 
+                                <h4 class="pedido-preco">R$ 24,90</h4>
+                                <p class="pedido-descricao">Pão de gergelim, cebola, alface, queijo cheddar, dois hambúrgueres de costela 180g...</p>
+                            </div>
+                            <div class="listaIngredientes">
+                                <div class="Ingrediente">
+                                    <span class="IngredienteNome">Pão</span>
+                                    <span class="IngredienteQuantidade">1x</span>
+                                    <button class="botaoAdiciona">+</button>
+                                    <button class="botaoRemove">-</button>
+                                </div>
+                                <div class="Ingrediente">
+                                    <span class="IngredienteNome">Queijo</span>
+                                    <span class="IngredienteQuantidade">1x</span>
+                                    <button class="botaoAdiciona">+</button>
+                                    <button class="botaoRemove">-</button>
+                                </div>
+                                <div class="Ingrediente">
+                                    <span class="IngredienteNome">Carne</span>
+                                    <span class="IngredienteQuantidade">1x</span>
+                                    <button class="botaoAdiciona">+</button>
+                                    <button class="botaoRemove">-</button>
+                                </div>
+                                <div class="Ingrediente">
+                                    <span class="IngredienteNome">Tomate</span>
+                                    <span class="IngredienteQuantidade">1x</span>
+                                    <button class="botaoAdiciona">+</button>
+                                    <button class="botaoRemove">-</button>
+                                </div>
+                                <div class="Ingrediente">
+                                    <span class="IngredienteNome">Alface</span>
+                                    <span class="IngredienteQuantidade">1x</span>
+                                    <button class="botaoAdiciona">+</button>
+                                    <button class="botaoRemove">-</button>
+                                </div>
+                            </div>
+                    </div>
                 </div>
             </div>
         </div>

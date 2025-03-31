@@ -217,8 +217,8 @@ body {
     text-align: center;
 }
 .botao-cancelar {
-    background-color: white !important;
-    color: black !important;
+    background-color: white ;
+    color: black ;
     border-top: 0.16vh solid black !important;
     border-bottom: 0.16vh solid black !important;
     border-left: 0.28vw solid black !important;
@@ -226,7 +226,8 @@ body {
 }
 
 .botao-cancelar:hover {
-    background-color: #f0f0f0 !important;
+    background-color: black !important;
+    color: #f0f0f0;
 }
 
 .botao-finalizar {
@@ -292,7 +293,7 @@ body {
     position: absolute;
     top: 1vh;
     right: 1vh;
-    font-size: 3vh;
+    font-size: 5vh;
     color: #333;
     cursor: pointer;
     z-index: 1001;
@@ -300,3 +301,96 @@ body {
 .fechar-modal:hover {
     color: red;
 }
+.modal-item {
+    padding: 0.5vh;
+    background: #FFFFFE;
+    text-align: center;
+    border-radius: 2vh;
+    transition: background-color 0.3s;
+    box-shadow: 0px 4px 10px rgba(220, 220, 220, 0.3);
+}
+.modal-item:hover {
+    background: #e9e9e9;
+}
+.modal-imagem {
+    width: 8vh;
+    height: auto;
+    margin-bottom: 1vh;
+}
+.modal-titulo {
+    font-size: 2vh;
+    margin-bottom: 0.5vh;
+}
+.modal-preco {
+    color: green;
+    font-size: 1.8vh;
+    margin-bottom: 0.5vh;
+}
+.modal-descricao {
+    font-size: 1.5vh;
+    color: #6D6D6D;
+    text-align: center;
+    line-height: 1.2;
+}
+.listaIngredientes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .Ingrediente {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+
+    gap: 8px;
+    padding: 0 10px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  .IngredienteNome {
+    font-size: 16px;
+    font-weight: bold;
+    flex-grow: 1;
+  }
+  .botaoAdiciona, .botaoRemove {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .botaoAdiciona:hover, .botaoRemove:hover {
+    background-color: #e0e0e0;
+  }
+  .botaoRemove {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+  .botaoRemove:hover {
+    background-color: #f5c6cb;
+  }
+  .botaoAdiciona {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+  .botaoAdiciona:hover {
+    background-color: #c3e6cb;
+  }
+  .modal-grid{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+.IngredienteQuantidade {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 10px;
+    width: 30px;
+    text-align: center;
+  }
