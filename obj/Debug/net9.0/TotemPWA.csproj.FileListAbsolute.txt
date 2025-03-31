@@ -298,4 +298,5 @@ C:\Users\cauaz\TotemPWA\obj\Debug\net9.0\refint\TotemPWA.dll
 C:\Users\cauaz\TotemPWA\obj\Debug\net9.0\TotemPWA.pdb
 C:\Users\cauaz\TotemPWA\obj\Debug\net9.0\TotemPWA.genruntimeconfig.cache
 C:\Users\cauaz\TotemPWA\obj\Debug\net9.0\ref\TotemPWA.dll
-C:\Users\cauaz\TotemPWA\obj\Debug\net9.0\compressed\pebobbe2b7-8zcnogrufn.gz
+C:\Users\cauaz\TotemPWA\obj\Debug\net9.0\compressed\pebobbe2b7-j1ybh94xjg.gz
+C:\Users\cauaz\TotemPWA\obj\Debug\net9.0\compressed\jouvgui3wh-ewa9ipwrqg.gz

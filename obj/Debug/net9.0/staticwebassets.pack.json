@@ -109,6 +109,10 @@
       "PackagePath": "staticwebassets\\js\\filtroCategorias.js"
     },
     {
+      "Id": "C:\\Users\\cauaz\\TotemPWA\\wwwroot\\js\\modal.js",
+      "PackagePath": "staticwebassets\\js\\modal.js"
+    },
+    {
       "Id": "C:\\Users\\cauaz\\TotemPWA\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
