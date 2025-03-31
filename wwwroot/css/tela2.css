@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     display: flex;
     justify-content: center;
@@ -12,14 +13,16 @@ body {
     font-family: 'Tilt Warp', sans-serif;
     overflow: hidden;
 }
+
 .main {
     display: flex;
     flex-direction: column;
     width: 56.25vh;
     height: 100vh;
     background: #FCFCFC;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.4vh 1vh rgba(0, 0, 0, 0.1);
 }
+
 .banner {
     position: relative;
     width: 100%;
@@ -27,11 +30,13 @@ body {
     background: black;
     text-align: center;
 }
+
 .banner img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 .buttons {
     position: absolute;
     top: 50%;
@@ -43,6 +48,7 @@ body {
     max-width: 100%;
     overflow: hidden;
 }
+
 .button {
     background-color: #055fbf;
     cursor: pointer;
@@ -56,17 +62,20 @@ body {
     max-width: 100%;
     max-height: 100%;
 }
+
 .button img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
+
 .c1 {
     display: flex;
     width: 100%;
     flex-grow: 1;
     height: 65vh;
 }
+
 .menu {
     background: #FFFFFE;
     display: flex;
@@ -74,8 +83,9 @@ body {
     padding: 1vh;
     width: 22%;
     height: auto;
-    box-shadow: 5px 0 20px rgba(159, 159, 159, 0.2);
+    box-shadow: 0.5vh 0 2vh rgba(159, 159, 159, 0.2);
 }
+
 .menu-item {
     padding: 0.5vh;
     margin-bottom: 1vh;
@@ -89,23 +99,28 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .menu-item:hover {
     background: #DEF05F;
 }
+
 .menu-item img {
     width: 50%;
     height: auto;
     margin-bottom: 0.5vh;
 }
+
 .menu-item div {
     font-size: 1.5vh;
     text-align: center;
 }
+
 .content {
     flex-grow: 1;
     padding: 2vh;
     overflow-y: hidden;
 }
+
 .pedido-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -114,39 +129,47 @@ body {
     overflow-y: auto;
     max-height: calc(100vh - 35vh);
     padding-bottom: 1vh;
-    
 }
+
 .pedido-item {
     padding: 0.5vh;
     background: #FFFFFE;
     text-align: center;
     border-radius: 2vh;
     transition: background-color 0.3s;
-    box-shadow: 0px 4px 10px rgba(220, 220, 220, 0.3);
+    box-shadow: 0 0.4vh 1vh rgba(220, 220, 220, 0.3);
+    cursor: pointer;
 }
+
 .pedido-item:hover {
     background: #e9e9e9;
+    transform: scale(1.02);
 }
+
 .pedido-imagem {
     width: 8vh;
     height: auto;
     margin-bottom: 1vh;
 }
+
 .pedido-titulo {
     font-size: 2vh;
     margin-bottom: 0.5vh;
 }
+
 .pedido-preco {
     color: green;
     font-size: 1.8vh;
     margin-bottom: 0.5vh;
 }
+
 .pedido-descricao {
     font-size: 1.5vh;
     color: #6D6D6D;
     text-align: center;
     line-height: 1.2;
 }
+
 .container-categoria {
     display: flex;
     justify-content: center;
@@ -156,10 +179,12 @@ body {
     background: #f8f8f8;
     position: relative;
 }
+
 .nav-categorias {
     display: flex;
     gap: 2vh;
 }
+
 .nav-categorias a {
     padding: 1vh 2vh;
     font-size: 2vh;
@@ -168,10 +193,12 @@ body {
     border-radius: 2vh;
     transition: 0.3s;
 }
+
 .nav-categorias a:hover, .nav-categorias a.active {
     background-color: #A3CF3B;
     color: white;
 }
+
 .barra-inferior {
     height: 15vh;
     width: 100%;
@@ -180,7 +207,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    box-shadow: 0px -4px 10px rgba(159, 159, 159, 0.2);
+    box-shadow: 0 -0.4vh 1vh rgba(159, 159, 159, 0.2);
     position: relative;
     padding: 1vh;
 }
@@ -216,13 +243,14 @@ body {
     white-space: nowrap;
     text-align: center;
 }
+
 .botao-cancelar {
-    background-color: white ;
-    color: black ;
+    background-color: white;
+    color: black;
     border-top: 0.16vh solid black !important;
     border-bottom: 0.16vh solid black !important;
-    border-left: 0.28vw solid black !important;
-    border-right: 0.28vw solid black !important;
+    border-left: 0.28vh solid black !important;
+    border-right: 0.28vh solid black !important;
 }
 
 .botao-cancelar:hover {
@@ -239,12 +267,13 @@ body {
 .botao-finalizar:hover {
     background-color: #7CB342 !important;
 }
+
 .botao-carrinho {
     background-color: red !important;
     transform: scale(1);
     color: white !important;
-    border: 2px solid red !important;
-    border-width: 2px;
+    border: 0.2vh solid red !important;
+    border-width: 0.2vh;
     width: 4vh !important;
     max-width: 14vh !important;
     height: 4vh !important;
@@ -254,136 +283,355 @@ body {
     justify-content: center !important;
     white-space: nowrap !important;
     text-align: center !important;
-    border-radius: 12px !important;
+    border-radius: 1.2vh !important;
     cursor: pointer !important;
     transition: all 0.3s ease !important;
 }
 
 .botao-carrinho:hover {
     background-color: darkred !important;
-    border: 2px solid darkred !important;
+    border: 0.2vh solid darkred !important;
 }
+
+/* Modal Principal Ajustado */
 .modal {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 25vw;
-    height: 65vh;
-    background-color: rgba(0, 0, 0, 0.3);
+    width: 50vh; /* Diminuído de 80vh para 50vh */
+    max-width: 90%;
+    height: 70vh; /* Aumentado de auto para 70vh */
+    background-color: white;
     z-index: 1000;
-    justify-content: center;
-    align-items: flex-start;
+    border-radius: 1.5vh;
+    box-shadow: 0 0.4vh 2vh rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: fadeIn 0.3s ease;
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
 .modal.active {
     display: flex;
 }
+
 .modal-content {
     position: relative;
-    background-color: white;
     width: 100%;
     height: 100%;
     padding: 2vh;
     box-sizing: border-box;
-    border-radius: 10px;
-    overflow: hidden;
+    overflow-y: auto;
 }
+
 .fechar-modal {
     position: absolute;
-    top: 1vh;
-    right: 1vh;
-    font-size: 5vh;
+    top: 1.5vh;
+    right: 1.5vh;
+    font-size: 2.4vh;
     color: #333;
     cursor: pointer;
+    background: none;
+    border: none;
     z-index: 1001;
 }
+
 .fechar-modal:hover {
     color: red;
 }
+
 .modal-item {
-    padding: 0.5vh;
+    padding: 1.2vh;
     background: #FFFFFE;
     text-align: center;
-    border-radius: 2vh;
+    border-radius: 1.2vh;
     transition: background-color 0.3s;
-    box-shadow: 0px 4px 10px rgba(220, 220, 220, 0.3);
+    box-shadow: 0 0.4vh 1vh rgba(220, 220, 220, 0.3);
+    margin-bottom: 1.5vh;
 }
+
 .modal-item:hover {
     background: #e9e9e9;
 }
+
 .modal-imagem {
-    width: 8vh;
+    width: 10vh;
     height: auto;
     margin-bottom: 1vh;
+    border-radius: 0.8vh;
 }
+
 .modal-titulo {
-    font-size: 2vh;
-    margin-bottom: 0.5vh;
+    font-size: 1.8vh;
+    margin-bottom: 0.8vh;
 }
+
 .modal-preco {
     color: green;
-    font-size: 1.8vh;
-    margin-bottom: 0.5vh;
+    font-size: 1.6vh;
+    margin-bottom: 0.8vh;
+    font-weight: bold;
 }
+
 .modal-descricao {
-    font-size: 1.5vh;
+    font-size: 1.4vh;
     color: #6D6D6D;
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.4;
+    margin-bottom: 1vh;
 }
+
 .listaIngredientes {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-    max-width: 300px;
+    gap: 1.2vh;
+    padding: 1.5vh;
+    max-width: 100%;
     margin: 0 auto;
-  }
-  .Ingrediente {
+}
+
+.Ingrediente {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 0.1vh solid #ddd;
+    gap: 1vh;
+    padding: 0.8vh 0;
+}
 
-    gap: 8px;
-    padding: 0 10px;
-    max-height: 300px;
-    overflow-y: auto;
-  }
-  .IngredienteNome {
-    font-size: 16px;
+.IngredienteNome {
+    font-size: 1.6vh;
     font-weight: bold;
     flex-grow: 1;
-  }
+}
+
 .botaoAdiciona, .botaoRemove {
     background-color: transparent;
     border: none;
     color: inherit;
-    font-size: 24px;
+    font-size: 2vh;
     cursor: pointer;
     padding: 0;
     margin: 0;
     font-weight: bold;
-}
-.botaoAdiciona {
-    color: green;
-}
-.botaoRemove {
-    color: red;
-}
-.botaoAdiciona:hover, .botaoRemove:hover {
-    opacity: 0.7;
-}
-  .modal-grid{
+    width: 3vh;
+    height: 3vh;
     display: flex;
     align-items: center;
-    gap: 20px;
-  }
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.botaoAdiciona {
+    color: green;
+    background-color: rgba(0, 128, 0, 0.1);
+}
+
+.botaoRemove {
+    color: red;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.botaoAdiciona:hover, .botaoRemove:hover {
+    opacity: 0.8;
+}
+
+.modal-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
 .IngredienteQuantidade {
-    font-size: 14px;
+    font-size: 1.6vh;
     font-weight: bold;
-    margin: 0 10px;
-    width: 30px;
+    margin: 0 1vh;
+    width: 3vh;
     text-align: center;
-  }
+}
+
+/* Modal de Edição Ajustado */
+.modal-editar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-editar-content {
+    position: relative;
+    background-color: white;
+    width: 50vh; /* Diminuído de 85vh para 50vh */
+    max-width: 90%;
+    height: 70vh; /* Aumentado de max-height para height fixa */
+    border-radius: 1.5vh;
+    box-shadow: 0 0.4vh 2vh rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    padding: 2vh;
+    animation: fadeIn 0.3s ease;
+}
+
+.fechar-modal-editar {
+    position: absolute;
+    top: 1.5vh;
+    right: 1.5vh;
+    font-size: 2.4vh;
+    color: #333;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1002;
+}
+
+.fechar-modal-editar:hover {
+    color: red;
+}
+
+.modal-editar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vh;
+    margin-top: 2vh;
+}
+
+.modal-editar-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-editar-imagem {
+    width: 12vh;
+    height: auto;
+    margin-bottom: 1.5vh;
+    border-radius: 1vh;
+}
+
+.modal-editar-titulo {
+    font-size: 1.8vh;
+    margin-bottom: 1vh;
+    color: #333;
+    font-weight: bold;
+}
+
+.modal-editar-preco {
+    color: green;
+    font-size: 1.6vh;
+    margin-bottom: 1.5vh;
+    font-weight: bold;
+}
+
+.modal-editar-descricao {
+    font-size: 1.4vh;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 1.5vh;
+}
+
+.modal-editar-ingredientes {
+    max-height: 45vh;
+    overflow-y: auto;
+    padding-right: 1vh;
+}
+
+.modal-editar-ingrediente {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2vh;
+    margin-bottom: 1vh;
+    background-color: #f8f8f8;
+    border-radius: 1vh;
+}
+
+.modal-editar-ingrediente-nome {
+    flex: 1;
+    font-size: 1.4vh;
+}
+
+.modal-editar-ingrediente-quantidade {
+    margin: 0 1.5vh;
+    font-weight: bold;
+    min-width: 3vh;
+    text-align: center;
+}
+
+.botao-adicionar-editar,
+.botao-remover-editar {
+    width: 3vh;
+    height: 3vh;
+    border: none;
+    border-radius: 0.5vh;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6vh;
+}
+
+.botao-adicionar-editar {
+    background-color: #a3cf3b;
+    color: white;
+}
+
+.botao-remover-editar {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.modal-editar-botoes {
+    text-align: center;
+    margin-top: 2vh;
+    padding-top: 2vh;
+    border-top: 0.1vh solid #eee;
+}
+
+.botao-confirmar-edicao {
+    padding: 1.2vh 3vh;
+    background-color: #92d050;
+    color: white;
+    border: none;
+    border-radius: 2vh;
+    font-size: 1.6vh;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botao-confirmar-edicao:hover {
+    background-color: #7cb342;
+}
+
+/* Responsividade */
+@media (max-aspect-ratio: 1/1) {
+    .modal {
+        width: 90vh;
+        max-width: 90%;
+    }
+    
+    .modal-editar-content {
+        width: 90vh;
+        max-width: 90%;
+    }
+    
+    .modal-editar-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-imagem, .modal-editar-imagem {
+        width: 8vh;
+    }
+}

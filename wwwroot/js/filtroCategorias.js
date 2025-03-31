@@ -11,7 +11,7 @@ function inicializarFiltroCategorias() {
         'Backend': 'frango',
         'Frontend': 'carne',
         'DevOps Bacon': 'carne',
-        'Byte Burguer': 'frango',
+        'Byte Burguer': 'carne',
         'Index Burguer': 'carne'
     };
 
