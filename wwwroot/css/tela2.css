@@ -269,33 +269,33 @@ body {
     background-color: darkred !important;
     border: 2px solid darkred !important;
 }
-
+/* Modal oculto inicialmente */
 .modal {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 60vh;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 1000;
-    align-items: center;
+    display: flex;
     justify-content: center;
+    align-items: flex-start;
 }
-
 .modal.active {
     display: flex;
 }
 .modal-content {
+    position: relative;
     background-color: white;
-    width: 60%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     padding: 2vh;
     box-sizing: border-box;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    overflow: hidden;
 }
 .fechar-modal {
     position: absolute;
@@ -304,6 +304,7 @@ body {
     font-size: 3vh;
     color: #333;
     cursor: pointer;
+    z-index: 1001;
 }
 .fechar-modal:hover {
     color: red;
