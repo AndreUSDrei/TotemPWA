@@ -269,15 +269,14 @@ body {
     background-color: darkred !important;
     border: 2px solid darkred !important;
 }
-/* Modal oculto inicialmente */
 .modal {
-    display: none;
-    position: fixed;
+    display: none !important;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80vw;
-    height: 60vh;
+    width: 20vw;
+    height: 15vh;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 1000;
     display: flex;
