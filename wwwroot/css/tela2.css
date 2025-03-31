@@ -272,16 +272,21 @@ body {
 
 .modal {
     display: none; 
-    position: absolute; 
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80vw; 
-    height: 60vh;
-    background-color: rgba(0, 0, 0, 0.5); 
+    width: 60vw; 
+    background-color: transparent !important; 
+    box-shadow: none !important;
+    border: none !important;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: calc(80vh * 16 / 9);
+    max-width: 60%;
+    max-height: 80%;
+    position: fixed;
+    border-radius: 2vh;
 }
 
 .modal-content {
