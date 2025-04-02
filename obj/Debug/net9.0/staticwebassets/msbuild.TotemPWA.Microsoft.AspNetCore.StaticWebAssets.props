@@ -498,8 +498,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>e8bw4j210w</Fingerprint>
-      <Integrity>Iu8barUPLL3ZLWsBiLzLRZtWsR/CIAuGt0pRuxILmvg=</Integrity>
+      <Fingerprint>pup0bax8bh</Fingerprint>
+      <Integrity>4eUWhGIu8MM4R3Hyh5eROK15VfGCZQnLg+m1hn8dbBk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modalEdit.js'))</OriginalItemSpec>
