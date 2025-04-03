@@ -20,7 +20,7 @@ body {
     width: 56.25vh;
     height: 100vh;
     background: #FCFCFC;
-    box-shadow: 0 0.4vh 1vh rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(119, 119, 119, 0.1);
 }
 
 .banner {
@@ -77,68 +77,109 @@ body {
 }
 
 .menu {
-    background: #FFFFFE;
     display: flex;
     flex-direction: column;
+    width: 14.5vh;
+    height: 100%;
+    box-shadow: rgba(159, 159, 159, 0.2) 5px 0px 20px;
+    background: rgb(255, 255, 254);
     padding: 1vh;
-    width: 22%;
-    height: auto;
-    box-shadow: 0.5vh 0 2vh rgba(159, 159, 159, 0.2);
+    transition:  0.3s;
+    
+    & .menu-item {
+        height: 11vh;
+        padding: 0.5vh;
+        margin-bottom: 1vh;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 2vh;
+        transition: background-color 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+    }
+
+    & .menu-item:hover {
+        background: #DEF05F;
+        transition:  0.3s;
+    }
+
+    & .menu-item img {
+        width: 73%;
+        height: auto;
+        margin-bottom: 0.5vh;
+    }
+
+    & .menu-item div {
+        font-size: 1.5vh;
+        text-align: center;
+        color: rgb(63, 63, 63);
+        transition: 3s;
+    }
 }
 
-.menu-item {
-    padding: 0.5vh;
-    margin-bottom: 1vh;
-    text-align: center;
-    color: black;
-    cursor: pointer;
-    border-radius: 2vh;
-    transition: background-color 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu-item:hover {
-    background: #DEF05F;
-}
-
-.menu-item img {
-    width: 50%;
-    height: auto;
-    margin-bottom: 0.5vh;
-}
-
-.menu-item div {
-    font-size: 1.5vh;
-    text-align: center;
-}
 
 .content {
     flex-grow: 1;
-    padding: 2vh;
+    overflow-x: auto;
     overflow-y: hidden;
+    padding: 0vh 0vh 0px 1.5vh;
 }
 
 .pedido-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1vh;
-    padding: 1vh;
     overflow-y: auto;
     max-height: calc(100vh - 35vh);
     padding-bottom: 1vh;
 }
 
 .pedido-item {
-    padding: 0.5vh;
-    background: #FFFFFE;
-    text-align: center;
+    height: 26vh;
+    filter: drop-shadow(rgba(220, 220, 220, 0.25) 0px 9px 26.6px);
+    overflow-wrap: break-word;
+    hyphens: auto;
+    padding: 1.3vh;
+    background: rgb(255, 255, 254);
     border-radius: 2vh;
     transition: background-color 0.3s;
-    box-shadow: 0 0.4vh 1vh rgba(220, 220, 220, 0.3);
-    cursor: pointer;
+    white-space: normal;
+
+    & .pedido-imagem {
+        width: 8vh;
+        height: auto;
+        margin-bottom: 1vh;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    & .pedido-titulo {
+        color: rgb(63, 63, 63);
+        font-weight: 400;
+        line-height: 130%;
+        font-size: 1.7vh;
+    }
+
+
+
+    & .pedido-descricao {
+        font-size: 1.5vh;
+        color: #6D6D6D;
+        text-align: center;
+        line-height: 1.2;
+    }
+    & .pedido-preco{
+        color: rgb(94, 138, 56);
+        font-feature-settings: "liga" 0, "clig" 0;
+        font-family: "Tilt Warp";
+        font-size: 2vh;
+        font-style: normal;
+        font-weight: 100;
+    }
 }
 
 .pedido-item:hover {
@@ -146,29 +187,6 @@ body {
     transform: scale(1.02);
 }
 
-.pedido-imagem {
-    width: 8vh;
-    height: auto;
-    margin-bottom: 1vh;
-}
-
-.pedido-titulo {
-    font-size: 2vh;
-    margin-bottom: 0.5vh;
-}
-
-.pedido-preco {
-    color: green;
-    font-size: 1.8vh;
-    margin-bottom: 0.5vh;
-}
-
-.pedido-descricao {
-    font-size: 1.5vh;
-    color: #6D6D6D;
-    text-align: center;
-    line-height: 1.2;
-}
 
 .container-categoria {
     display: flex;
@@ -182,7 +200,7 @@ body {
 
 .nav-categorias {
     display: flex;
-    gap: 2vh;
+    gap: 1vh;
 }
 
 .nav-categorias a {
@@ -190,8 +208,13 @@ body {
     font-size: 2vh;
     text-decoration: none;
     color: #3F3F3F;
-    border-radius: 2vh;
+    border-radius: 1.5vh;
     transition: 0.3s;
+    width: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .nav-categorias a:hover, .nav-categorias a.active {
@@ -200,26 +223,37 @@ body {
 }
 
 .barra-inferior {
-    height: 15vh;
+    border-radius: 2vh 2vh 0px 0px;
+    height: 13vh;
     width: 100%;
-    background: #FFFFFF;
+    background: #FFFFFE;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    box-shadow: 0 -0.4vh 1vh rgba(159, 159, 159, 0.2);
+    box-shadow: 0vh -2vh 5vh -1vh rgba(202, 202, 202, 0.25);
     position: relative;
     padding: 1vh;
+
+    & .preco {
+        position: absolute;
+        top: 1vh;
+        right: 6vh;
+        font-size: 2.2vh;
+        color: #FB4343;
+        font-weight: 400;
+    }
+    & .total{
+        position: absolute;
+        top: 1vh;
+        left: 5vh;
+        font-size: 2.2vh;
+        color: #4F4F4F;
+        font-weight: 400;
+    }
 }
 
-.total {
-    position: absolute;
-    top: 1vh;
-    right: 2vh;
-    font-size: 2vh;
-    color: red;
-    font-weight: bold;
-}
+
 
 .botao-container {
     display: flex;
@@ -244,54 +278,125 @@ body {
     text-align: center;
 }
 
-.botao-cancelar {
-    background-color: white;
-    color: black;
-    border-top: 0.16vh solid black !important;
-    border-bottom: 0.16vh solid black !important;
-    border-left: 0.28vh solid black !important;
-    border-right: 0.28vh solid black !important;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ConteinerBtn {
+    padding: 0vh;
+    height: auto;
+    display: flex;
+    gap: 2vh;
+    width: 100%;
+    justify-content: center;
+    margin: 1vh 0vh 2vh 0vh;
+
+& .NavBtn {
+    width: 100%;
+    height: 2.5vh;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo dentro de cada botão */
+    align-items: center;
+
+    & #cancelar{
+        width: 20vh;
+        height: 4.4vh;
+        margin: 0 auto;
+        color: #414141;
+        text-align: center;
+        font-size: 2vh;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+        border-radius: 1.5vh;
+
+        border: 0.5vh solid #414141;
+    }
+
+    & #botaoCarrinho{
+        background-color: red !important;
+        transform: scale(1);
+        color: white !important;
+        border: 0.2vh solid red !important;
+        border-width: 0.2vh;
+        width: 4vh !important;
+        max-width: 14vh !important;
+        height: 4vh !important;
+        font-size: 1.6vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        white-space: nowrap !important;
+        text-align: center !important;
+        border-radius: 1.2vh !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+    }
+
+    & #prosseguir{
+
+        width: 20vh;
+        height: 4.4vh;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 2vh;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+        border-radius: 1.5vh;
+        background-color: #9FD942;
+        color: #ffffff ;
+
+        border: 0.5vh solid #9FD942;
+    }
+    & a {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+    }
+
+    }
+
+ 
 }
 
-.botao-cancelar:hover {
-    background-color: black !important;
-    color: #f0f0f0;
-}
 
-.botao-finalizar {
-    background-color: #92D050 !important;
-    color: white !important;
-    border: none !important;
-}
 
-.botao-finalizar:hover {
-    background-color: #7CB342 !important;
-}
 
-.botao-carrinho {
-    background-color: red !important;
-    transform: scale(1);
-    color: white !important;
-    border: 0.2vh solid red !important;
-    border-width: 0.2vh;
-    width: 4vh !important;
-    max-width: 14vh !important;
-    height: 4vh !important;
-    font-size: 1.6vh !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    white-space: nowrap !important;
-    text-align: center !important;
-    border-radius: 1.2vh !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-}
 
-.botao-carrinho:hover {
-    background-color: darkred !important;
-    border: 0.2vh solid darkred !important;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Modal Principal Ajustado */
 .modal {
