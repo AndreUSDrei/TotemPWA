@@ -7,6 +7,7 @@
     <title>Pedidos</title>
     <link rel="stylesheet" href="~/css/tela2.css" asp-append-version="true">
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <script src="~/js/modal.js"></script>
 </head>
 <body>
 
@@ -214,7 +215,7 @@
             <div class="ConteinerBtn">
                 <div class="NavBtn">
                     <a id="cancelar" href="tela2.html">Cancelar</a>
-                    <a id="botaoCarrinho" href="tela2.html">C</a>
+                    <a id="botaoCarrinho" href="#" onclick="abrirModalCarrinho(); return false;">C</a>
                     <a id="prosseguir" href="TelaPagamento">Finalizar</a>
                 </div>
             </div>
