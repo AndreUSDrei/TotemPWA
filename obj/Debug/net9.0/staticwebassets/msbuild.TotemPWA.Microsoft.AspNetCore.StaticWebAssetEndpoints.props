@@ -312,17 +312,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ql26a1ynjs"},{"Name":"integrity","Value":"sha256-Ut\u002BVSkUdNg/YB3\u002BBMAqBeVvKJHBr7O4rQAy7VZYUp4o="},{"Name":"label","Value":"_content/TotemPWA/js/filtroCategorias.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2673"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Ut\u002BVSkUdNg/YB3\u002BBMAqBeVvKJHBr7O4rQAy7VZYUp4o=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 16:46:16 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TotemPWA/js/modal.dxalfybn97.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modal.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"dxalfybn97"},{"Name":"integrity","Value":"sha256-kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o\u002Bw="},{"Name":"label","Value":"_content/TotemPWA/js/modal.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6590"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o\u002Bw=\u0022"},{"Name":"Last-Modified","Value":"Mon, 07 Apr 2025 17:27:12 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TotemPWA/js/modal.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modal.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-oQfTCPOMcf/464WYWBlzz7EXMHT9LC\u002BkmofRp9PM0Kw="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1722"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022oQfTCPOMcf/464WYWBlzz7EXMHT9LC\u002BkmofRp9PM0Kw=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 16:31:43 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/TotemPWA/js/modal.vcl9gl610p.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modal.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"vcl9gl610p"},{"Name":"integrity","Value":"sha256-oQfTCPOMcf/464WYWBlzz7EXMHT9LC\u002BkmofRp9PM0Kw="},{"Name":"label","Value":"_content/TotemPWA/js/modal.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1722"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022oQfTCPOMcf/464WYWBlzz7EXMHT9LC\u002BkmofRp9PM0Kw=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 16:31:43 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o\u002Bw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6590"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o\u002Bw=\u0022"},{"Name":"Last-Modified","Value":"Mon, 07 Apr 2025 17:27:12 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TotemPWA/js/modalEdit.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modalEdit.js'))</AssetFile>

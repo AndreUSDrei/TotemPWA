@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cP2q5m5obstmtpKXbIT2os8BTFYRsu3dVwpGuv8D6Hw=",
+  "Hash": "AwJP3Aw1gZMJINGHM9MClCvbqu+9udxrecNKY7VJkQA=",
   "Source": "TotemPWA",
   "BasePath": "_content/TotemPWA",
   "Mode": "Default",
@@ -752,12 +752,12 @@
       "OriginalItemSpec": "C:\\Users\\0031432512007\\TotemPWA\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-vcl9gl610p.gz",
+      "Identity": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-dxalfybn97.gz",
       "SourceId": "TotemPWA",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/TotemPWA",
-      "RelativePath": "js/modal#[.{fingerprint=vcl9gl610p}]?.js.gz",
+      "RelativePath": "js/modal#[.{fingerprint=dxalfybn97}]?.js.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -766,8 +766,8 @@
       "RelatedAsset": "C:\\Users\\0031432512007\\TotemPWA\\wwwroot\\js\\modal.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "zzdyp25lgd",
-      "Integrity": "XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4=",
+      "Fingerprint": "d1p9xbsuht",
+      "Integrity": "AfRfjS+1nGtAXIgeQqKHvXdTye3YlypXXKn83JZOUa8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\0031432512007\\TotemPWA\\wwwroot\\js\\modal.js"
@@ -2068,8 +2068,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "vcl9gl610p",
-      "Integrity": "oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw=",
+      "Fingerprint": "dxalfybn97",
+      "Integrity": "kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o+w=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\modal.js"
@@ -6591,13 +6591,13 @@
       ]
     },
     {
-      "Route": "js/modal.js",
-      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-vcl9gl610p.gz",
+      "Route": "js/modal.dxalfybn97.js",
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-dxalfybn97.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001976284585"
+          "Quality": "0.000550055006"
         }
       ],
       "ResponseHeaders": [
@@ -6607,19 +6607,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "505"
+          "Value": "1817"
         },
         {
           "Name": "ETag",
-          "Value": "\"XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4=\""
+          "Value": "\"AfRfjS+1nGtAXIgeQqKHvXdTye3YlypXXKn83JZOUa8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -6635,18 +6635,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw=\""
+          "Value": "W/\"kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o+w=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "dxalfybn97"
+        },
+        {
+          "Name": "label",
+          "Value": "js/modal.js"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw="
+          "Value": "sha256-kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o+w="
         }
       ]
     },
     {
-      "Route": "js/modal.js",
+      "Route": "js/modal.dxalfybn97.js",
       "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\wwwroot\\js\\modal.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -6656,7 +6664,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1722"
+          "Value": "6590"
         },
         {
           "Name": "Content-Type",
@@ -6664,121 +6672,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw=\""
+          "Value": "\"kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o+w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw="
-        }
-      ]
-    },
-    {
-      "Route": "js/modal.js.gz",
-      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-vcl9gl610p.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "505"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4="
-        }
-      ]
-    },
-    {
-      "Route": "js/modal.vcl9gl610p.js",
-      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-vcl9gl610p.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001976284585"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "505"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "vcl9gl610p"
+          "Value": "dxalfybn97"
         },
         {
           "Name": "label",
@@ -6786,13 +6694,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw="
+          "Value": "sha256-kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o+w="
         }
       ]
     },
     {
-      "Route": "js/modal.vcl9gl610p.js",
-      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\wwwroot\\js\\modal.js",
+      "Route": "js/modal.dxalfybn97.js.gz",
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-dxalfybn97.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6801,7 +6709,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1722"
+          "Value": "1817"
         },
         {
           "Name": "Content-Type",
@@ -6809,56 +6717,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw=\""
+          "Value": "\"AfRfjS+1nGtAXIgeQqKHvXdTye3YlypXXKn83JZOUa8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "vcl9gl610p"
-        },
-        {
-          "Name": "label",
-          "Value": "js/modal.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw="
-        }
-      ]
-    },
-    {
-      "Route": "js/modal.vcl9gl610p.js.gz",
-      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-vcl9gl610p.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "505"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6876,7 +6739,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "vcl9gl610p"
+          "Value": "dxalfybn97"
         },
         {
           "Name": "label",
@@ -6884,7 +6747,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4="
+          "Value": "sha256-AfRfjS+1nGtAXIgeQqKHvXdTye3YlypXXKn83JZOUa8="
+        }
+      ]
+    },
+    {
+      "Route": "js/modal.js",
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-dxalfybn97.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000550055006"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1817"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AfRfjS+1nGtAXIgeQqKHvXdTye3YlypXXKn83JZOUa8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o+w=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o+w="
+        }
+      ]
+    },
+    {
+      "Route": "js/modal.js",
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\wwwroot\\js\\modal.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6590"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o+w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o+w="
+        }
+      ]
+    },
+    {
+      "Route": "js/modal.js.gz",
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-dxalfybn97.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1817"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AfRfjS+1nGtAXIgeQqKHvXdTye3YlypXXKn83JZOUa8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AfRfjS+1nGtAXIgeQqKHvXdTye3YlypXXKn83JZOUa8="
         }
       ]
     },
