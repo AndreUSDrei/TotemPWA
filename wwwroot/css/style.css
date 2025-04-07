@@ -1,3 +1,6 @@
+/* Importação da fonte */
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +14,8 @@ html, body {
     justify-content: center;
     align-items: center;
     background-color: #f4f4f4;
+
+    font-family: 'Tilt Warp', sans-serif;
 }
 .container {
     width: 100vw;
@@ -22,11 +27,11 @@ html, body {
 .tela {
     width: 56.25vh;
     height: 100vh;
-    background: linear-gradient(45deg, #800020 50%, #8e0225 50%);
+    background: linear-gradient(45deg, #870303 50%, #9b0202 50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0vh 0vh 10vh rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
 }
@@ -42,7 +47,7 @@ html, body {
     font-family: 'Impact', sans-serif;
     font-size: 6vh;
     font-weight: bold;
-    color: #f4f4f4;
+    color: #F7F7CF;
     letter-spacing: 1vh;
     line-height: 1.1;
     text-align: center;
@@ -60,11 +65,11 @@ html, body {
     margin-bottom: 2vh;
 }
 .imagem img {
-    width: 85%;
+    width: 90%;
     height: auto;
     object-fit: contain;
     object-position: center;
-    max-height: 100%;
+    max-height: 120%;
 }
 .segundaimagem {
     position: absolute;
@@ -84,18 +89,25 @@ html, body {
     align-items: center;
 }
 .botao-container button {
-    background-color: white;
-    color: #800020;
+    background-color: #F7F7CF;
+    width: 80vh;
+    color: #b7002e;
     font-size: 3vh;
-    padding: 2vh 4vh;
-    border: 2px solid #800020;
-    border-radius: 15px;
+    font-family: 'Tilt Warp', sans-serif; /* Aplicação da fonte ao botão */
+    padding: 2vh 3vh;
+    border: none;
+    border-radius: 2.5vh;
     cursor: pointer;
-    text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease;
 }
 .botao-container button:hover {
-    background-color: #800020;
-    color: white;
+    background-color: #870303;
+    color: #F7F7CF;
+}
+
+a{
+    font-family: 'Tilt Warp', sans-serif;
+    font-weight: 400;
+
 }

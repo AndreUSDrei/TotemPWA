@@ -425,7 +425,6 @@ C:\Users\0031432512025\desktop\TotemPWA\obj\Debug\net9.0\scopedcss\bundle\TotemP
 C:\Users\0031432512025\desktop\TotemPWA\obj\Debug\net9.0\scopedcss\projectbundle\TotemPWA.bundle.scp.css
 C:\Users\0031432512025\desktop\TotemPWA\obj\Debug\net9.0\compressed\5x7mdqe4nv-3y8m7uxm6z.gz
 C:\Users\0031432512025\desktop\TotemPWA\obj\Debug\net9.0\compressed\8voel94ewa-c2rra9o2t0.gz
-C:\Users\0031432512025\desktop\TotemPWA\obj\Debug\net9.0\compressed\pebobbe2b7-k7owawy5po.gz
 C:\Users\0031432512025\desktop\TotemPWA\obj\Debug\net9.0\compressed\ade2i2q1em-61n19gt1b8.gz
 C:\Users\0031432512025\desktop\TotemPWA\obj\Debug\net9.0\compressed\mo1ej7x5al-ql26a1ynjs.gz
 C:\Users\0031432512025\desktop\TotemPWA\obj\Debug\net9.0\compressed\jouvgui3wh-vcl9gl610p.gz
@@ -609,6 +608,13 @@ C:\Users\kauac\OneDrive\Área de Trabalho\Thomas\TotemPWA\obj\Debug\net9.0\refin
 C:\Users\kauac\OneDrive\Área de Trabalho\Thomas\TotemPWA\obj\Debug\net9.0\TotemPWA.pdb
 C:\Users\kauac\OneDrive\Área de Trabalho\Thomas\TotemPWA\obj\Debug\net9.0\TotemPWA.genruntimeconfig.cache
 C:\Users\kauac\OneDrive\Área de Trabalho\Thomas\TotemPWA\obj\Debug\net9.0\ref\TotemPWA.dll
+<<<<<<< HEAD
+C:\Users\0031432512025\Desktop\TotemPWA\obj\Debug\net9.0\compressed\pebobbe2b7-8hcanor9q7.gz
+=======
 C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\compressed\pebobbe2b7-8hcanor9q7.gz
 C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\compressed\41092q2snf-pup0bax8bh.gz
+<<<<<<< HEAD
 C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\compressed\jouvgui3wh-dxalfybn97.gz
+=======
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+>>>>>>> fbf9c7c2b2f1bda6a614f791c8912506d2cc2da5

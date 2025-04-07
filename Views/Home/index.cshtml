@@ -1,13 +1,11 @@
-@{
-    Layout = null; // Remove o layout padrão se não quiser usar o _Layout.cshtml
-}
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Totem iFood</title>
+    <title>Totem</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/style.css"> <!-- Ajuste correto para CSS -->
 </head>
 <body>
@@ -23,7 +21,9 @@
                 <img src="~/img/Capa.png" class="segundaimagem" alt="Imagem de capa"> <!-- Caminho corrigido -->
             </div>
             <div class="botao-container">
-                <button onclick="window.location.href='@Url.Action("Tela2", "Home")'">Toque para iniciar</button> <!-- Link para a tela2 -->
+                <button onclick="window.location.href='@Url.Action("Tela2", "Home")'"> 
+                  <a>Toque para iniciar</a>
+                </button> <!-- Link para a tela2 -->
             </div>
         </div>
     </div>
