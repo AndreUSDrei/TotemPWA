@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "Euufc9T/a5A=",
   "success": true,
   "projectFilePath": "C:\\Users\\0031432512007\\TotemPWA\\TotemPWA.csproj",
-=======
-  "dgSpecHash": "DCZSFdrHWaQ=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\TotemPWA.csproj",
->>>>>>> 455feb533eb02273ef4a35b6b8882010b9d868d9
   "expectedPackageFiles": [],
   "logs": []
 }
