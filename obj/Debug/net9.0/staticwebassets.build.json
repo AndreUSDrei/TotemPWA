@@ -1,6 +1,18 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "44OQ+rIRtPo0wWW4kSNbOcW+B3RblJd13v4+kNh+xSo=",
+=======
+<<<<<<< HEAD
+  "Hash": "AwJP3Aw1gZMJINGHM9MClCvbqu+9udxrecNKY7VJkQA=",
+=======
+<<<<<<< HEAD
+  "Hash": "aXojbY5aQSmYLwXiggGvzX8OycBNxJgvLjREDXsx1Zo=",
+=======
+  "Hash": "cP2q5m5obstmtpKXbIT2os8BTFYRsu3dVwpGuv8D6Hw=",
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+>>>>>>> fbf9c7c2b2f1bda6a614f791c8912506d2cc2da5
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
   "Source": "TotemPWA",
   "BasePath": "_content/TotemPWA",
   "Mode": "Default",
@@ -756,6 +768,18 @@
       "SourceId": "TotemPWA",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\",
+<<<<<<< HEAD
+=======
+=======
+      "OriginalItemSpec": "C:\\Users\\0031432512007\\TotemPWA\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Identity": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-dxalfybn97.gz",
+      "SourceId": "TotemPWA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\",
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
       "BasePath": "_content/TotemPWA",
       "RelativePath": "js/modal#[.{fingerprint=dxalfybn97}]?.js.gz",
       "AssetKind": "All",
@@ -6591,8 +6615,22 @@
       ]
     },
     {
+<<<<<<< HEAD
       "Route": "js/modal.dxalfybn97.js",
       "AssetFile": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-dxalfybn97.gz",
+=======
+<<<<<<< HEAD
+      "Route": "js/modal.dxalfybn97.js",
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-dxalfybn97.gz",
+=======
+      "Route": "js/modal.js",
+<<<<<<< HEAD
+      "AssetFile": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-vcl9gl610p.gz",
+=======
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-vcl9gl610p.gz",
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+>>>>>>> fbf9c7c2b2f1bda6a614f791c8912506d2cc2da5
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -6615,7 +6653,18 @@
         },
         {
           "Name": "Last-Modified",
+<<<<<<< HEAD
           "Value": "Mon, 07 Apr 2025 18:45:15 GMT"
+=======
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+=======
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 16:25:11 GMT"
+=======
+          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+>>>>>>> fbf9c7c2b2f1bda6a614f791c8912506d2cc2da5
         },
         {
           "Name": "Cache-Control",
@@ -6654,8 +6703,16 @@
       ]
     },
     {
+<<<<<<< HEAD
       "Route": "js/modal.dxalfybn97.js",
+=======
+      "Route": "js/modal.js",
+<<<<<<< HEAD
       "AssetFile": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\wwwroot\\js\\modal.js",
+=======
+>>>>>>> fbf9c7c2b2f1bda6a614f791c8912506d2cc2da5
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\wwwroot\\js\\modal.js",
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6676,7 +6733,213 @@
         },
         {
           "Name": "Last-Modified",
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+=======
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 16:25:11 GMT"
+=======
+          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw="
+        }
+      ]
+    },
+    {
+      "Route": "js/modal.js.gz",
+<<<<<<< HEAD
+      "AssetFile": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-vcl9gl610p.gz",
+=======
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-vcl9gl610p.gz",
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "505"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4=\""
+        },
+        {
+          "Name": "Last-Modified",
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 16:25:11 GMT"
+=======
+          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4="
+        }
+      ]
+    },
+    {
+      "Route": "js/modal.vcl9gl610p.js",
+<<<<<<< HEAD
+      "AssetFile": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-vcl9gl610p.gz",
+=======
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-vcl9gl610p.gz",
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001976284585"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "505"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4=\""
+        },
+        {
+          "Name": "Last-Modified",
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 16:25:11 GMT"
+=======
+          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+>>>>>>> fbf9c7c2b2f1bda6a614f791c8912506d2cc2da5
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+<<<<<<< HEAD
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o+w=\""
+=======
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dxalfybn97"
+        },
+        {
+          "Name": "label",
+          "Value": "js/modal.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o+w="
+        }
+      ]
+    },
+    {
+<<<<<<< HEAD
+      "Route": "js/modal.dxalfybn97.js",
+      "AssetFile": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\wwwroot\\js\\modal.js",
+=======
+<<<<<<< HEAD
+      "Route": "js/modal.dxalfybn97.js.gz",
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-dxalfybn97.gz",
+=======
+      "Route": "js/modal.vcl9gl610p.js",
+<<<<<<< HEAD
+      "AssetFile": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\wwwroot\\js\\modal.js",
+=======
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\wwwroot\\js\\modal.js",
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+>>>>>>> fbf9c7c2b2f1bda6a614f791c8912506d2cc2da5
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+<<<<<<< HEAD
+          "Value": "6590"
+=======
+          "Value": "1817"
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+<<<<<<< HEAD
+          "Value": "\"kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o+w=\""
+        },
+        {
+          "Name": "Last-Modified",
           "Value": "Mon, 07 Apr 2025 18:45:15 GMT"
+=======
+          "Value": "\"AfRfjS+1nGtAXIgeQqKHvXdTye3YlypXXKn83JZOUa8=\""
+        },
+        {
+          "Name": "Last-Modified",
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+=======
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 16:25:11 GMT"
+=======
+          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
         },
         {
           "Name": "Cache-Control",
@@ -6721,7 +6984,16 @@
         },
         {
           "Name": "Last-Modified",
+<<<<<<< HEAD
           "Value": "Mon, 07 Apr 2025 18:45:15 GMT"
+=======
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 16:25:11 GMT"
+=======
+          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+>>>>>>> fbf9c7c2b2f1bda6a614f791c8912506d2cc2da5
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
         },
         {
           "Name": "Cache-Control",
@@ -6753,7 +7025,11 @@
     },
     {
       "Route": "js/modal.js",
+<<<<<<< HEAD
       "AssetFile": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-dxalfybn97.gz",
+=======
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-dxalfybn97.gz",
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -6776,7 +7052,11 @@
         },
         {
           "Name": "Last-Modified",
+<<<<<<< HEAD
           "Value": "Mon, 07 Apr 2025 18:45:15 GMT"
+=======
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
         },
         {
           "Name": "Cache-Control",
@@ -6808,7 +7088,11 @@
     },
     {
       "Route": "js/modal.js",
+<<<<<<< HEAD
       "AssetFile": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\wwwroot\\js\\modal.js",
+=======
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\wwwroot\\js\\modal.js",
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6829,7 +7113,11 @@
         },
         {
           "Name": "Last-Modified",
+<<<<<<< HEAD
           "Value": "Mon, 07 Apr 2025 18:45:15 GMT"
+=======
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
         },
         {
           "Name": "Cache-Control",
@@ -6845,7 +7133,11 @@
     },
     {
       "Route": "js/modal.js.gz",
+<<<<<<< HEAD
       "AssetFile": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-dxalfybn97.gz",
+=======
+      "AssetFile": "C:\\Users\\0031432512007\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\jouvgui3wh-dxalfybn97.gz",
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6866,7 +7158,11 @@
         },
         {
           "Name": "Last-Modified",
+<<<<<<< HEAD
           "Value": "Mon, 07 Apr 2025 18:45:15 GMT"
+=======
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
         },
         {
           "Name": "Cache-Control",

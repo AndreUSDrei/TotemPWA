@@ -3553,7 +3553,11 @@
         },
         {
           "Name": "Last-Modified",
+<<<<<<< HEAD
           "Value": "Mon, 07 Apr 2025 18:45:15 GMT"
+=======
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
         },
         {
           "Name": "Vary",
@@ -3602,7 +3606,11 @@
         },
         {
           "Name": "Last-Modified",
+<<<<<<< HEAD
           "Value": "Mon, 07 Apr 2025 18:45:15 GMT"
+=======
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
         }
       ],
       "EndpointProperties": [
@@ -3651,7 +3659,11 @@
         },
         {
           "Name": "Last-Modified",
+<<<<<<< HEAD
           "Value": "Mon, 07 Apr 2025 18:45:15 GMT"
+=======
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
         },
         {
           "Name": "Vary",
@@ -3714,7 +3726,19 @@
         },
         {
           "Name": "Last-Modified",
+<<<<<<< HEAD
           "Value": "Mon, 07 Apr 2025 18:45:15 GMT"
+=======
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+=======
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 16:25:11 GMT"
+=======
+          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+>>>>>>> fbf9c7c2b2f1bda6a614f791c8912506d2cc2da5
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
         },
         {
           "Name": "Vary",
@@ -3755,7 +3779,19 @@
         },
         {
           "Name": "Last-Modified",
+<<<<<<< HEAD
           "Value": "Mon, 07 Apr 2025 18:45:15 GMT"
+=======
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+=======
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 16:25:11 GMT"
+=======
+          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+>>>>>>> fbf9c7c2b2f1bda6a614f791c8912506d2cc2da5
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
         }
       ],
       "EndpointProperties": [
@@ -3796,7 +3832,19 @@
         },
         {
           "Name": "Last-Modified",
+<<<<<<< HEAD
           "Value": "Mon, 07 Apr 2025 18:45:15 GMT"
+=======
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 17:27:12 GMT"
+=======
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 16:25:11 GMT"
+=======
+          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+>>>>>>> fbf9c7c2b2f1bda6a614f791c8912506d2cc2da5
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
         },
         {
           "Name": "Vary",
@@ -3806,7 +3854,188 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
+<<<<<<< HEAD
           "Value": "sha256-AfRfjS+1nGtAXIgeQqKHvXdTye3YlypXXKn83JZOUa8="
+=======
+<<<<<<< HEAD
+          "Value": "sha256-AfRfjS+1nGtAXIgeQqKHvXdTye3YlypXXKn83JZOUa8="
+=======
+          "Value": "sha256-XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4="
+        }
+      ]
+    },
+    {
+      "Route": "js/modal.vcl9gl610p.js",
+      "AssetFile": "js/modal.js.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001976284585"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "505"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw=\""
+        },
+        {
+          "Name": "Last-Modified",
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 16:25:11 GMT"
+=======
+          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vcl9gl610p"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw="
+        },
+        {
+          "Name": "label",
+          "Value": "js/modal.js"
+        }
+      ]
+    },
+    {
+      "Route": "js/modal.vcl9gl610p.js",
+      "AssetFile": "js/modal.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1722"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw=\""
+        },
+        {
+          "Name": "Last-Modified",
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 16:25:11 GMT"
+=======
+          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vcl9gl610p"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw="
+        },
+        {
+          "Name": "label",
+          "Value": "js/modal.js"
+        }
+      ]
+    },
+    {
+      "Route": "js/modal.vcl9gl610p.js.gz",
+      "AssetFile": "js/modal.js.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "505"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4=\""
+        },
+        {
+          "Name": "Last-Modified",
+<<<<<<< HEAD
+          "Value": "Mon, 07 Apr 2025 16:25:11 GMT"
+=======
+          "Value": "Mon, 31 Mar 2025 16:31:43 GMT"
+>>>>>>> 6c84e6d932007bd794a0405886cfee3c0c6b0f27
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vcl9gl610p"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XwxpJfCpbFR/rx5pe/FjlbG6ijQKw+UT9vQB7mptvz4="
+        },
+        {
+          "Name": "label",
+          "Value": "js/modal.js.gz"
+>>>>>>> fbf9c7c2b2f1bda6a614f791c8912506d2cc2da5
+>>>>>>> 5fdca02075d9dc37734d04050f1aee28269a5623
         }
       ]
     },
