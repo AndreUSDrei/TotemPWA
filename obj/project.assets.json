@@ -8,23 +8,39 @@
     "net9.0": []
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\0031432512007\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\0031432512025\\.nuget\\packages\\": {},
+>>>>>>> 455feb533eb02273ef4a35b6b8882010b9d868d9
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\0031432512007\\TotemPWA\\TotemPWA.csproj",
       "projectName": "TotemPWA",
       "projectPath": "C:\\Users\\0031432512007\\TotemPWA\\TotemPWA.csproj",
       "packagesPath": "C:\\Users\\0031432512007\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\0031432512007\\TotemPWA\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\TotemPWA.csproj",
+      "projectName": "TotemPWA",
+      "projectPath": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\TotemPWA.csproj",
+      "packagesPath": "C:\\Users\\0031432512025\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\0031432512025\\Desktop\\TotemPWA\\obj\\",
+>>>>>>> 455feb533eb02273ef4a35b6b8882010b9d868d9
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\0031432512007\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\0031432512025\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 455feb533eb02273ef4a35b6b8882010b9d868d9
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
