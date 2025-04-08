@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos</title>
     <link rel="stylesheet" href="~/css/tela2.css" asp-append-version="true">
+
+
+   <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <script src="~/js/modal.js"></script>
 </head>
 <body>
 
@@ -206,12 +211,17 @@
         </div>
         <div class="barra-inferior">
             <div class="total">
-                <span>Total: R$0,00</span>
+                <span>Total:</span>
             </div>
-            <div class="botao-container">
-                <button class="botao-cancelar">Cancelar</button>
-                <button id="botaoCarrinho" class="botao-carrinho">C</button>
-                <button class="botao-finalizar">Finalizar</button>
+            <div class="preco">
+                <span>R$ 0,00</span>
+            </div>
+            <div class="ConteinerBtn">
+                <div class="NavBtn">
+                    <a id="cancelar" href="tela2.html">Cancelar</a>
+                    <a id="botaoCarrinho" href="#" onclick="abrirModalCarrinho(); return false;">C</a>
+                    <a id="prosseguir" href="TelaPagamento">Finalizar</a>
+                </div>
             </div>
         </div>
     </div>

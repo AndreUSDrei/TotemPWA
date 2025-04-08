@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>c2rra9o2t0</Fingerprint>
-      <Integrity>PDAJ6tvHn3uTTcGkr08VAYXsxSAEeLbYAp5ejJtdx8w=</Integrity>
+      <Fingerprint>wwpyqbq7y5</Fingerprint>
+      <Integrity>UIJ2fvou68nigZGEZJAeJ8kTk2zuoy09IOyo7++IKp8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\style.css'))</OriginalItemSpec>
@@ -48,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>k7owawy5po</Fingerprint>
-      <Integrity>cJOzzJGpWsrseDL5mXHY9o+MoO7wDoQXnemK/M13EFc=</Integrity>
+      <Fingerprint>8hcanor9q7</Fingerprint>
+      <Integrity>VNuedE2ECs26vhXxvGAg2rLxtdWYAibhQegyR9OOvpI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\tela2.css'))</OriginalItemSpec>
@@ -480,8 +480,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>vcl9gl610p</Fingerprint>
-      <Integrity>oQfTCPOMcf/464WYWBlzz7EXMHT9LC+kmofRp9PM0Kw=</Integrity>
+      <Fingerprint>dxalfybn97</Fingerprint>
+      <Integrity>kdFbRLF0eN0GuYLoEbr2OSwFSwyqvqgSRvM/5oZ6o+w=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modal.js'))</OriginalItemSpec>
@@ -498,8 +498,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>e8bw4j210w</Fingerprint>
-      <Integrity>Iu8barUPLL3ZLWsBiLzLRZtWsR/CIAuGt0pRuxILmvg=</Integrity>
+      <Fingerprint>pup0bax8bh</Fingerprint>
+      <Integrity>4eUWhGIu8MM4R3Hyh5eROK15VfGCZQnLg+m1hn8dbBk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modalEdit.js'))</OriginalItemSpec>
