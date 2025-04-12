@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andre\\TotemPWA\\TotemPWA.csproj": {}
+    "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\TotemPWA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andre\\TotemPWA\\TotemPWA.csproj": {
+    "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\TotemPWA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andre\\TotemPWA\\TotemPWA.csproj",
+        "projectUniqueName": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\TotemPWA.csproj",
         "projectName": "TotemPWA",
-        "projectPath": "C:\\Users\\andre\\TotemPWA\\TotemPWA.csproj",
-        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andre\\TotemPWA\\obj\\",
+        "projectPath": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\TotemPWA.csproj",
+        "packagesPath": "C:\\Users\\kauac\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kauac\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -62,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

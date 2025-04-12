@@ -432,23 +432,56 @@ body {
     padding: 2vh;
     box-sizing: border-box;
     overflow-y: auto;
-}
+    overflow-x: hidden;
 
-.fechar-modal {
+
+
+& .fechar-modal {
     position: absolute;
-    top: 1.5vh;
+    top: 0vh;
     right: 1.5vh;
-    font-size: 2.4vh;
-    color: #333;
+    font-size: 4vh;
+    color: #3a3a3a;
     cursor: pointer;
     background: none;
     border: none;
+    margin: 0vh 0vh 0vh 0vh;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vh;
     z-index: 1001;
 }
 
 .fechar-modal:hover {
-    color: red;
+    color: rgb(255, 56, 56);
 }
+
+& .modal-pedido-imagem{
+    width: 15vh;
+}
+& .modal-pedido{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 2vh;
+    padding: 2vh 2vh 1vh 2vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
 
 .modal-item {
     padding: 1.2vh;
@@ -576,29 +609,57 @@ body {
 }
 
 .modal-editar-content {
-    position: relative;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centralize horizontalmente */
     background-color: white;
-    width: 90%;
-    max-width: 50vh;
+    width: 50vh;
+    max-width: 70vh;
     height: auto;
     max-height: 90vh;
-    border-radius: 1.5vh;
-    box-shadow: 0 0.4vh 2vh rgba(0, 0, 0, 0.2);
+    border-radius: 1.5vh 1.5vh 0 0; /* Bordas arredondadas apenas no topo */
+    box-shadow: 0 -0.4vh 2vh rgba(0, 0, 0, 0.2);
     overflow-y: auto;
     padding: 2vh;
-    animation: fadeIn 0.3s ease;
+    animation: slideUp 0.3s ease;
+    font-size: 2vh;
+    font-weight: 400;
+    margin: 0; /* Remove margens extras */
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateX(-50%) translateY(100%); /* Centralize horizontalmente e inicie fora da tela */
+    }
+    to {
+        transform: translateX(-50%) translateY(0); /* Centralize horizontalmente e posicione na parte inferior */
+    }
 }
 
 .fechar-modal-editar {
     position: absolute;
     top: 1.5vh;
     right: 1.5vh;
-    font-size: 2.4vh;
-    color: #333;
+    font-size: 4vh;
+    color: #3a3a3a;
     cursor: pointer;
     background: none;
     border: none;
     z-index: 1002;
+    font-weight: 400;
+    margin: 0vh 1.5vh 0vh 0vh;
+
+
+
+    border: none;
+
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vh;
 }
 
 .fechar-modal-editar:hover {
@@ -627,30 +688,35 @@ body {
 }
 
 .modal-editar-titulo {
-    font-size: 1.8vh;
-    margin-bottom: 1vh;
-    color: #333;
-    font-weight: bold;
+    color: rgb(56, 56, 56);
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 3vh;
+    margin: 1vh 0vh 0vh 2vh;
 }
 
 .modal-editar-preco {
-    color: green;
-    font-size: 1.6vh;
-    margin-bottom: 1.5vh;
-    font-weight: bold;
+    color: rgb(13, 145, 24);
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 3vh;
+    margin: 1vh 0vh 0vh 0vh;
 }
 
 .modal-editar-descricao {
-    font-size: 1.4vh;
-    color: #555;
-    line-height: 1.4;
-    margin-bottom: 1.5vh;
+    color: rgb(97, 97, 97);
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 2vh;
+    margin: 1vh 0vh 0vh 0vh;
 }
-
+/*--------------------------------------------------------------------------*/
 .modal-editar-ingredientes {
-    max-height: 30vh;
-    overflow-y: auto;
-    padding-right: 1vh;
+    color: rgb(63, 63, 63);
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 2vh;
+    margin: 0vh 2vh 0vh 2vh;
 }
 
 .modal-editar-ingrediente {
@@ -659,59 +725,90 @@ body {
     justify-content: space-between;
     padding: 1.2vh;
     margin-bottom: 1vh;
-    background-color: #f8f8f8;
+ 
     border-radius: 1vh;
 }
 
 .modal-editar-ingrediente-nome {
     flex: 1;
-    font-size: 1.4vh;
+    color: rgb(97, 97, 97);
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 2vh;
 }
 
 .modal-editar-ingrediente-quantidade {
     margin: 0 1.5vh;
-    font-weight: bold;
+
     min-width: 3vh;
     text-align: center;
+
+
+    color: rgb(97, 97, 97);
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 2vh;
 }
 
-.botao-adicionar-editar,
+.botao-adicionar-editar {
+    width: 3vh;
+    height: 3vh;
+    border: none;
+    border-radius: 0.5vh;
+    font-weight:400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vh;
+    color: rgb(35, 146, 1);
+}
 .botao-remover-editar {
     width: 3vh;
     height: 3vh;
     border: none;
     border-radius: 0.5vh;
-    font-weight: bold;
+    font-weight:400;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6vh;
+    font-size: 5vh;
+    color: rgb(255, 79, 79);
 }
 
 .modal-btn-confirm {
-    width: 10vh;
-    height: 3vh;
-    border: none;
-    border-radius: 0.5vh;
-    font-weight: bold;
+    width: 20vh;
+    height: 4.4vh;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2vh;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    border-radius: 1.5vh;
+    background-color: #9FD942;
+    color: #ffffff;
+    border: 0.5vh solid #9FD942;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6vh;
-    background-color: #a3cf3b;
-    color: #fff;
+    font-family: 'Tilt Warp', sans-serif;
+
+    & a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .botao-adicionar-editar {
-    background-color: #a3cf3b;
-    color: white;
+    background-color: #ffffff;
+ 
 }
 
 .botao-remover-editar {
-    background-color: #ff6b6b;
-    color: white;
+ background-color: #ffffff;
+
 }
 
 .modal-editar-botoes {
@@ -741,7 +838,7 @@ body {
     .modal-editar-content {
         width: 95%;
         max-width: none;
-        height: 90vh;
+
     }
     
     .modal-editar-grid {
