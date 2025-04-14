@@ -156,20 +156,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Evento para os itens do menu (exemplo)
+    // Remover qualquer lógica que adicione itens ao carrinho ao clicar nos itens do menu
     document.querySelectorAll('.pedido-item').forEach(item => {
         item.addEventListener('click', function() {
             const id = parseInt(this.getAttribute('data-id'));
-            const nome = this.querySelector('.pedido-titulo').textContent;
-            const precoText = this.querySelector('.pedido-preco').textContent;
-            const preco = parseFloat(precoText.replace('R$', '').replace(',', '.').trim());
-            const imagem = this.querySelector('.pedido-imagem').getAttribute('src');
-            
-            adicionarAoCarrinho(id, nome, preco, imagem);
+            abrirModalEditar(this); // Apenas abrir o modal de edição
         });
     });
 
     // Atualiza o carrinho ao carregar a página
+    atualizarCarrinho();
+});
+
+// Listener para atualizar o carrinho quando um item for editado
+window.addEventListener('atualizarCarrinho', function() {
+    carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens')) || [];
     atualizarCarrinho();
 });
 
