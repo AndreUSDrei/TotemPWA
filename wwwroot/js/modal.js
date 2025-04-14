@@ -85,8 +85,9 @@ function atualizarCarrinho() {
 
 // Função para adicionar item ao carrinho
 function adicionarAoCarrinho(id, nome, preco, imagem) {
+    carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens')) || []; // Sincronizar estado com localStorage
     const itemExistente = carrinhoItens.find(item => item.id === id);
-    
+
     if (itemExistente) {
         itemExistente.quantidade += 1;
     } else {
@@ -98,36 +99,43 @@ function adicionarAoCarrinho(id, nome, preco, imagem) {
             quantidade: 1
         });
     }
-    
+
+    salvarCarrinho(); // Salvar o estado atualizado no localStorage
     atualizarCarrinho();
 }
 
 // Função para adicionar quantidade de um item
 function adicionarItemCarrinho(id) {
+    carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens')) || []; // Sincronizar estado com localStorage
     const item = carrinhoItens.find(item => item.id === id);
     if (item) {
         item.quantidade += 1;
+        salvarCarrinho(); // Salvar o estado atualizado no localStorage
         atualizarCarrinho();
     }
 }
 
 // Função para remover quantidade de um item
 function removerItemCarrinho(id) {
+    carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens')) || []; // Sincronizar estado com localStorage
     const itemIndex = carrinhoItens.findIndex(item => item.id === id);
-    
+
     if (itemIndex !== -1) {
         if (carrinhoItens[itemIndex].quantidade > 1) {
             carrinhoItens[itemIndex].quantidade -= 1;
         } else {
-            carrinhoItens.splice(itemIndex, 1);
+            carrinhoItens.splice(itemIndex, 1); // Remover o item completamente se a quantidade for 0
         }
+        salvarCarrinho(); // Salvar o estado atualizado no localStorage
         atualizarCarrinho();
     }
 }
 
 // Função para remover completamente um item
 function removerTodoItem(id) {
+    carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens')) || []; // Sincronizar estado com localStorage
     carrinhoItens = carrinhoItens.filter(item => item.id !== id);
+    salvarCarrinho(); // Salvar o estado atualizado no localStorage
     atualizarCarrinho();
 }
 
