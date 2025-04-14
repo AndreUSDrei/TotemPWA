@@ -891,8 +891,8 @@ body {
     margin: 0vh 0vh 0vh 2vh;
 }
 
-.img-carrinho{
-    width: 10vh;
+#botaoCarrinho img{
+    width: 3vh;
     height: auto;
     border-radius: 1vh;
 }
