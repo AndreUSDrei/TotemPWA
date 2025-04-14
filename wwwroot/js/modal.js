@@ -38,7 +38,6 @@ function atualizarCarrinho() {
         if (carrinhoContainer) {
             carrinhoContainer.innerHTML = `
                 <div class="carrinho-vazio">
-                    <img src="~/img/carrinho-vazio.png" alt="Carrinho vazio" class="carrinho-vazio-imagem">
                     <p class="carrinho-vazio-texto">Seu carrinho está vazio</p>
                 </div>
             `;
