@@ -534,8 +534,13 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
+<<<<<<< HEAD
       <Fingerprint>2y23yqbnq6</Fingerprint>
       <Integrity>qqsNrKM2nuIzhF5fFfGi3ei/F6et/2xcL2wLxrSTrhE=</Integrity>
+=======
+      <Fingerprint>2qbts7367t</Fingerprint>
+      <Integrity>Zlf1UCCCLOuarVecdUurmZa7QZnwPBLyeChOjmWe60M=</Integrity>
+>>>>>>> 9af38e6c231ea3b8ac92cd913cc4007c43b6a4ae
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modal.js'))</OriginalItemSpec>

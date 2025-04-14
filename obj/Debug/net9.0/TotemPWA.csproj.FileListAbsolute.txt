@@ -100,6 +100,7 @@ C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\refint\TotemPWA.dll
 C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\TotemPWA.pdb
 C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\TotemPWA.genruntimeconfig.cache
 C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\ref\TotemPWA.dll
+<<<<<<< HEAD
 C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\compressed\jouvgui3wh-dszo7wn1sf.gz
 C:\Users\0031432512006\TotemPWA\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\0031432512006\TotemPWA\bin\Debug\net9.0\appsettings.json
@@ -204,3 +205,6 @@ C:\Users\0031432512006\TotemPWA\obj\Debug\net9.0\refint\TotemPWA.dll
 C:\Users\0031432512006\TotemPWA\obj\Debug\net9.0\TotemPWA.pdb
 C:\Users\0031432512006\TotemPWA\obj\Debug\net9.0\TotemPWA.genruntimeconfig.cache
 C:\Users\0031432512006\TotemPWA\obj\Debug\net9.0\ref\TotemPWA.dll
+=======
+C:\Users\0031432512007\TotemPWA\obj\Debug\net9.0\compressed\jouvgui3wh-2qbts7367t.gz
+>>>>>>> 9af38e6c231ea3b8ac92cd913cc4007c43b6a4ae
