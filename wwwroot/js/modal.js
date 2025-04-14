@@ -148,6 +148,10 @@ function limparCarrinho() {
 
 // Configuração dos eventos quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', function() {
+    // Limpar o carrinho ao iniciar o sistema
+    localStorage.removeItem('carrinhoItens');
+    carrinhoItens = []; // Garantir que a variável global também esteja vazia
+
     // Fechar modal quando clicar no X
     const fecharBtn = document.querySelector('.fechar-modal');
     if (fecharBtn) {
