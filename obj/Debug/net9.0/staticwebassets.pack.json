@@ -49,6 +49,14 @@
       "PackagePath": "staticwebassets\\img\\byte.png"
     },
     {
+      "Id": "C:\\Users\\0031432512006\\TotemPWA\\wwwroot\\img\\carrinho-vazio.png",
+      "PackagePath": "staticwebassets\\img\\carrinho-vazio.png"
+    },
+    {
+      "Id": "C:\\Users\\0031432512006\\TotemPWA\\wwwroot\\img\\carrinhocom.png",
+      "PackagePath": "staticwebassets\\img\\carrinhocom.png"
+    },
+    {
       "Id": "C:\\Users\\0031432512006\\TotemPWA\\wwwroot\\img\\combos.png",
       "PackagePath": "staticwebassets\\img\\combos.png"
     },
