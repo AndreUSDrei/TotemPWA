@@ -305,5 +305,5 @@ C:\Users\kauac\OneDrive\Área de Trabalho\Thomas\TotemPWA\obj\Debug\net9.0\refin
 C:\Users\kauac\OneDrive\Área de Trabalho\Thomas\TotemPWA\obj\Debug\net9.0\TotemPWA.pdb
 C:\Users\kauac\OneDrive\Área de Trabalho\Thomas\TotemPWA\obj\Debug\net9.0\TotemPWA.genruntimeconfig.cache
 C:\Users\kauac\OneDrive\Área de Trabalho\Thomas\TotemPWA\obj\Debug\net9.0\ref\TotemPWA.dll
-C:\Users\kauac\OneDrive\Área de Trabalho\Thomas\TotemPWA\obj\Debug\net9.0\compressed\pebobbe2b7-4amej440eb.gz
 C:\Users\kauac\OneDrive\Área de Trabalho\Thomas\TotemPWA\obj\Debug\net9.0\compressed\jouvgui3wh-zbqzrra1hy.gz
+C:\Users\kauac\OneDrive\Área de Trabalho\Thomas\TotemPWA\obj\Debug\net9.0\compressed\pebobbe2b7-qt64qtv8qu.gz

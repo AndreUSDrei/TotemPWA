@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sPPHa5nK0m4BuVKtAUzmmx48dapV9N27pRSlhKlpxw4=",
+  "Hash": "9cUe34JUJIha2vZoNy+bkWL+Oal1b3GLqm8G+IVYzHY=",
   "Source": "TotemPWA",
   "BasePath": "_content/TotemPWA",
   "Mode": "Default",
@@ -983,12 +983,12 @@
       "OriginalItemSpec": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\pebobbe2b7-4amej440eb.gz",
+      "Identity": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\pebobbe2b7-qt64qtv8qu.gz",
       "SourceId": "TotemPWA",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/TotemPWA",
-      "RelativePath": "css/tela2#[.{fingerprint=4amej440eb}]?.css.gz",
+      "RelativePath": "css/tela2#[.{fingerprint=qt64qtv8qu}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -997,8 +997,8 @@
       "RelatedAsset": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\wwwroot\\css\\tela2.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "s11gejftqk",
-      "Integrity": "sGya/QudYtf34blCInWF7iqgzU0IgSOXmdL18rl1tgQ=",
+      "Fingerprint": "vgd2fsru9c",
+      "Integrity": "rz93NGzoxAUjXoC4sf2gFxN892qcV+eRubHFB6bGYHk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\wwwroot\\css\\tela2.css"
@@ -1564,8 +1564,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "4amej440eb",
-      "Integrity": "tNR9tQiGd7frscrPbAl6rXEzRIsc+DxOw1V27zvgCyM=",
+      "Fingerprint": "qt64qtv8qu",
+      "Integrity": "ciaXDTRcIiaO0M9Lr4yCgA/Re+9rgcvF9RKoDr0SLmQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\tela2.css"
@@ -3975,13 +3975,13 @@
       ]
     },
     {
-      "Route": "css/tela2.4amej440eb.css",
-      "AssetFile": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\pebobbe2b7-4amej440eb.gz",
+      "Route": "css/tela2.css",
+      "AssetFile": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\pebobbe2b7-qt64qtv8qu.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000308356460"
+          "Quality": "0.000308166410"
         }
       ],
       "ResponseHeaders": [
@@ -3991,19 +3991,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3242"
+          "Value": "3244"
         },
         {
           "Name": "ETag",
-          "Value": "\"sGya/QudYtf34blCInWF7iqgzU0IgSOXmdL18rl1tgQ=\""
+          "Value": "\"rz93NGzoxAUjXoC4sf2gFxN892qcV+eRubHFB6bGYHk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 23:17:55 GMT"
+          "Value": "Mon, 14 Apr 2025 01:46:48 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -4019,26 +4019,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"tNR9tQiGd7frscrPbAl6rXEzRIsc+DxOw1V27zvgCyM=\""
+          "Value": "W/\"ciaXDTRcIiaO0M9Lr4yCgA/Re+9rgcvF9RKoDr0SLmQ=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "4amej440eb"
-        },
-        {
-          "Name": "label",
-          "Value": "css/tela2.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-tNR9tQiGd7frscrPbAl6rXEzRIsc+DxOw1V27zvgCyM="
+          "Value": "sha256-ciaXDTRcIiaO0M9Lr4yCgA/Re+9rgcvF9RKoDr0SLmQ="
         }
       ]
     },
     {
-      "Route": "css/tela2.4amej440eb.css",
+      "Route": "css/tela2.css",
       "AssetFile": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\wwwroot\\css\\tela2.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -4048,7 +4040,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "16946"
+          "Value": "16976"
         },
         {
           "Name": "Content-Type",
@@ -4056,11 +4048,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tNR9tQiGd7frscrPbAl6rXEzRIsc+DxOw1V27zvgCyM=\""
+          "Value": "\"ciaXDTRcIiaO0M9Lr4yCgA/Re+9rgcvF9RKoDr0SLmQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 23:17:55 GMT"
+          "Value": "Mon, 14 Apr 2025 01:46:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ciaXDTRcIiaO0M9Lr4yCgA/Re+9rgcvF9RKoDr0SLmQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/tela2.css.gz",
+      "AssetFile": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\pebobbe2b7-qt64qtv8qu.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3244"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rz93NGzoxAUjXoC4sf2gFxN892qcV+eRubHFB6bGYHk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Apr 2025 01:46:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rz93NGzoxAUjXoC4sf2gFxN892qcV+eRubHFB6bGYHk="
+        }
+      ]
+    },
+    {
+      "Route": "css/tela2.qt64qtv8qu.css",
+      "AssetFile": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\pebobbe2b7-qt64qtv8qu.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000308166410"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3244"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rz93NGzoxAUjXoC4sf2gFxN892qcV+eRubHFB6bGYHk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Apr 2025 01:46:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ciaXDTRcIiaO0M9Lr4yCgA/Re+9rgcvF9RKoDr0SLmQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qt64qtv8qu"
+        },
+        {
+          "Name": "label",
+          "Value": "css/tela2.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ciaXDTRcIiaO0M9Lr4yCgA/Re+9rgcvF9RKoDr0SLmQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/tela2.qt64qtv8qu.css",
+      "AssetFile": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\wwwroot\\css\\tela2.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16976"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ciaXDTRcIiaO0M9Lr4yCgA/Re+9rgcvF9RKoDr0SLmQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Apr 2025 01:46:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4070,7 +4207,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "4amej440eb"
+          "Value": "qt64qtv8qu"
         },
         {
           "Name": "label",
@@ -4078,13 +4215,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-tNR9tQiGd7frscrPbAl6rXEzRIsc+DxOw1V27zvgCyM="
+          "Value": "sha256-ciaXDTRcIiaO0M9Lr4yCgA/Re+9rgcvF9RKoDr0SLmQ="
         }
       ]
     },
     {
-      "Route": "css/tela2.4amej440eb.css.gz",
-      "AssetFile": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\pebobbe2b7-4amej440eb.gz",
+      "Route": "css/tela2.qt64qtv8qu.css.gz",
+      "AssetFile": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\pebobbe2b7-qt64qtv8qu.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4093,7 +4230,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3242"
+          "Value": "3244"
         },
         {
           "Name": "Content-Type",
@@ -4101,11 +4238,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"sGya/QudYtf34blCInWF7iqgzU0IgSOXmdL18rl1tgQ=\""
+          "Value": "\"rz93NGzoxAUjXoC4sf2gFxN892qcV+eRubHFB6bGYHk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 23:17:55 GMT"
+          "Value": "Mon, 14 Apr 2025 01:46:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4123,7 +4260,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "4amej440eb"
+          "Value": "qt64qtv8qu"
         },
         {
           "Name": "label",
@@ -4131,144 +4268,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-sGya/QudYtf34blCInWF7iqgzU0IgSOXmdL18rl1tgQ="
-        }
-      ]
-    },
-    {
-      "Route": "css/tela2.css",
-      "AssetFile": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\pebobbe2b7-4amej440eb.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000308356460"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3242"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"sGya/QudYtf34blCInWF7iqgzU0IgSOXmdL18rl1tgQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 23:17:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"tNR9tQiGd7frscrPbAl6rXEzRIsc+DxOw1V27zvgCyM=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-tNR9tQiGd7frscrPbAl6rXEzRIsc+DxOw1V27zvgCyM="
-        }
-      ]
-    },
-    {
-      "Route": "css/tela2.css",
-      "AssetFile": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\wwwroot\\css\\tela2.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16946"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"tNR9tQiGd7frscrPbAl6rXEzRIsc+DxOw1V27zvgCyM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 23:17:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-tNR9tQiGd7frscrPbAl6rXEzRIsc+DxOw1V27zvgCyM="
-        }
-      ]
-    },
-    {
-      "Route": "css/tela2.css.gz",
-      "AssetFile": "C:\\Users\\kauac\\OneDrive\\Área de Trabalho\\Thomas\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\pebobbe2b7-4amej440eb.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3242"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"sGya/QudYtf34blCInWF7iqgzU0IgSOXmdL18rl1tgQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 23:17:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-sGya/QudYtf34blCInWF7iqgzU0IgSOXmdL18rl1tgQ="
+          "Value": "sha256-rz93NGzoxAUjXoC4sf2gFxN892qcV+eRubHFB6bGYHk="
         }
       ]
     },
@@ -6615,7 +6615,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 23:17:51 GMT"
+          "Value": "Mon, 14 Apr 2025 01:41:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6668,7 +6668,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 23:17:51 GMT"
+          "Value": "Mon, 14 Apr 2025 01:41:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6705,7 +6705,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 23:17:51 GMT"
+          "Value": "Mon, 14 Apr 2025 01:41:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6752,7 +6752,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 23:17:51 GMT"
+          "Value": "Mon, 14 Apr 2025 01:41:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6813,7 +6813,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 23:17:51 GMT"
+          "Value": "Mon, 14 Apr 2025 01:41:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6858,7 +6858,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 23:17:51 GMT"
+          "Value": "Mon, 14 Apr 2025 01:41:00 GMT"
         },
         {
           "Name": "Cache-Control",

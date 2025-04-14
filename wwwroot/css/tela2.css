@@ -423,6 +423,7 @@ body {
 
 .modal.active {
     display: flex;
+    flex-direction: column;
 }
 
 .modal-content {
@@ -432,166 +433,172 @@ body {
     padding: 2vh;
     box-sizing: border-box;
     overflow-y: auto;
-    overflow-x: hidden;
+}
 
-
-
-& .fechar-modal {
+.fechar-modal {
     position: absolute;
-    top: 0vh;
+    top: 1.5vh;
     right: 1.5vh;
     font-size: 4vh;
     color: #3a3a3a;
     cursor: pointer;
     background: none;
     border: none;
-    margin: 0vh 0vh 0vh 0vh;
     font-weight: 400;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5vh;
-    z-index: 1001;
 }
 
 .fechar-modal:hover {
     color: rgb(255, 56, 56);
 }
 
-& .modal-pedido-imagem{
-    width: 15vh;
-}
-& .modal-pedido{
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 2vh;
-    padding: 2vh 2vh 1vh 2vh;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-.modal-item {
-    padding: 1.2vh;
-    background: #FFFFFE;
+.carrinho-vazio {
     text-align: center;
-    border-radius: 1.2vh;
-    transition: background-color 0.3s;
-    box-shadow: 0 0.4vh 1vh rgba(220, 220, 220, 0.3);
-    margin-bottom: 1.5vh;
+    margin-top: 10vh;
 }
 
-.modal-item:hover {
-    background: #e9e9e9;
+.carrinho-vazio img {
+    width: 20vh;
+    height: auto;
+    margin-bottom: 2vh;
 }
 
-.modal-imagem {
+.carrinho-texto {
+    font-size: 2vh;
+    color: #e41c1c;
+    font-weight: 400;
+}
+
+.img-carrinho {
     width: 10vh;
     height: auto;
-    margin-bottom: 1vh;
-    border-radius: 0.8vh;
+    border-radius: 1vh;
 }
 
-.modal-titulo {
-    font-size: 1.8vh;
-    margin-bottom: 0.8vh;
+.carrinho-titulo-lache {
+    font-size: 2.5vh;
+    color: #3a3a3a;
+    font-weight: 500;
+    margin: 0.5vh 0;
 }
 
-.modal-preco {
-    color: green;
-    font-size: 1.6vh;
-    margin-bottom: 0.8vh;
-    font-weight: bold;
-}
-
-.modal-descricao {
-    font-size: 1.4vh;
-    color: #6D6D6D;
+/* Estilo para o carrinho vazio */
+.carrinho-vazio {
     text-align: center;
-    line-height: 1.4;
-    margin-bottom: 1vh;
+    margin-top: 10vh;
+    color: #555;
 }
 
-.listaIngredientes {
+.carrinho-vazio-imagem {
+    width: 15vh;
+    height: auto;
+    margin-bottom: 2vh;
+}
+
+.carrinho-vazio-texto {
+    font-size: 2vh;
+    font-weight: 500;
+    color: #888;
+}
+
+/* Estilo para os itens do carrinho */
+.item-carrinho {
     display: flex;
-    flex-direction: column;
-    gap: 1.2vh;
+    justify-content: space-between;
+    align-items: center;
     padding: 1.5vh;
-    max-width: 100%;
-    margin: 0 auto;
+    margin-bottom: 1vh;
+    background-color: #f9f9f9;
+    border-radius: 1vh;
+    box-shadow: 0 0.2vh 0.5vh rgba(0, 0, 0, 0.1);
 }
 
-.Ingrediente {
+.img-carrinho {
+    width: 8vh;
+    height: auto;
+    border-radius: 0.5vh;
+}
+
+.detalhes-item-carrinho {
+    flex-grow: 1;
+    margin-left: 1vh;
+}
+
+.carrinho-titulo-lanche {
+    font-size: 2vh;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5vh;
+}
+
+.preco-item {
+    font-size: 1.8vh;
+    color: #4CAF50;
+    font-weight: 500;
+}
+
+.controles-item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 0.1vh solid #ddd;
     gap: 1vh;
-    padding: 0.8vh 0;
 }
 
-.IngredienteNome {
-    font-size: 1.6vh;
-    font-weight: bold;
-    flex-grow: 1;
-}
-
-.botaoAdiciona, .botaoRemove {
-    background-color: transparent;
-    border: none;
-    color: inherit;
-    font-size: 2vh;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-    font-weight: bold;
+.botao-remove, .botao-adiciona {
     width: 3vh;
     height: 3vh;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    font-size: 2vh;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    transition: background-color 0.3s;
 }
 
-.botaoAdiciona {
-    color: green;
-    background-color: rgba(0, 128, 0, 0.1);
+.botao-remove:hover, .botao-adiciona:hover {
+    background-color: #ddd;
 }
 
-.botaoRemove {
-    color: red;
-    background-color: rgba(255, 0, 0, 0.1);
+.icone-lixeira {
+    width: 2.5vh;
+    height: auto;
+    cursor: pointer;
+    transition: opacity 0.3s;
 }
 
-.botaoAdiciona:hover, .botaoRemove:hover {
-    opacity: 0.8;
+.icone-lixeira:hover {
+    opacity: 0.7;
 }
 
-.modal-grid {
+/* Estilo para o botão de remover do carrinho */
+.btn-remover-carrinho {
+    background-color: #c00000;
+    width: 6vh;
+    height: 6vh;
+    border: none;
+    border-radius: 1.5vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 2vh;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.IngredienteQuantidade {
-    font-size: 1.6vh;
-    font-weight: bold;
-    margin: 0 1vh;
-    width: 3vh;
-    text-align: center;
+.btn-remover-carrinho img {
+    width: 2vh;
+    height: auto;
+}
+
+.btn-remover-carrinho:hover {
+    background-color: #e63939;
+    transform: scale(1.1);
+}
+
+.btn-remover-carrinho:active {
+    transform: scale(0.95);
 }
 
 /* Modal de Edição Responsivo */
@@ -886,6 +893,8 @@ body {
 
 .img-carrinho{
     width: 10vh;
+    height: auto;
+    border-radius: 1vh;
 }
 
 

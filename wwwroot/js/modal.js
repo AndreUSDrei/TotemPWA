@@ -12,7 +12,7 @@ function salvarCarrinho() {
 function abrirModalCarrinho() {
     const modal = document.getElementById('modalCarrinho');
     if (modal) {
-        modal.style.display = 'block';
+        modal.classList.add('active'); // Adiciona a classe 'active' para exibir o modal
         atualizarCarrinho();
         document.body.style.overflow = 'hidden'; // Impede scroll da página
     }
@@ -22,15 +22,14 @@ function abrirModalCarrinho() {
 function fecharModalCarrinho() {
     const modal = document.getElementById('modalCarrinho');
     if (modal) {
-        modal.style.display = 'none';
+        modal.classList.remove('active'); // Remove a classe 'active' para ocultar o modal
         document.body.style.overflow = 'auto'; // Restaura scroll da página
     }
 }
 
-// Função para atualizar a exibição do carrinho (CORRIGIDA)
+// Função para atualizar a exibição do carrinho (estilizada)
 function atualizarCarrinho() {
-    const carrinhoContainer = document.querySelector('.modal-pedido');
-    const listaItens = document.querySelector('.listaIngredientes');
+    const carrinhoContainer = document.querySelector('.modal-content .modal-grid');
     const totalElement = document.querySelector('.barra-inferior .preco span');
     const carrinhoVazio = document.querySelector('.carrinho-vazio');
 
@@ -39,12 +38,11 @@ function atualizarCarrinho() {
         if (carrinhoContainer) {
             carrinhoContainer.innerHTML = `
                 <div class="carrinho-vazio">
-                    <img src="~/img/carrinho-vazio.png" alt="Carrinho vazio">
-                    <p class="class="carrinho-titulo-lache"">Seu carrinho está vazio</p>
+                    <img src="~/img/carrinho-vazio.png" alt="Carrinho vazio" class="carrinho-vazio-imagem">
+                    <p class="carrinho-vazio-texto">Seu carrinho está vazio</p>
                 </div>
             `;
         }
-        if (listaItens) listaItens.innerHTML = '';
         if (totalElement) totalElement.textContent = 'R$ 0,00';
         return;
     }
@@ -60,16 +58,16 @@ function atualizarCarrinho() {
                 <div class="info-item">
                     <img class="img-carrinho" src="${item.imagem}" alt="${item.nome}">
                     <div class="detalhes-item-carrinho">
-                        <h3 class="carrinho-titulo-lache">${item.nome}</h3>
+                        <h3 class="carrinho-titulo-lanche">${item.nome}</h3>
                         <p class="preco-item">R$ ${item.preco.toFixed(2)}</p>
                     </div>
                 </div>
                 <div class="controles-item">
-                    <button class="botaoRemove" onclick="removerItemCarrinho(${item.id})">-</button>
+                    <button class="botao-remove" onclick="removerItemCarrinho(${item.id})">-</button>
                     <span class="quantidade-item">${item.quantidade}x</span>
-                    <button class="botaoAdiciona" onclick="adicionarItemCarrinho(${item.id})">+</button>
+                    <button class="botao-adiciona" onclick="adicionarItemCarrinho(${item.id})">+</button>
                     <button class="btn-remover-carrinho" onclick="removerTodoItem(${item.id})">
-                        <img src="~/img/lixeira.png" alt="Remover">
+                        <img src="~/img/lixeira.png" alt="Remover" class="icone-lixeira">
                     </button>
                 </div>
             </div>
@@ -77,7 +75,7 @@ function atualizarCarrinho() {
     });
     
     // Atualiza a interface
-    if (listaItens) listaItens.innerHTML = htmlItens;
+    if (carrinhoContainer) carrinhoContainer.innerHTML = htmlItens;
     if (totalElement) totalElement.textContent = `R$ ${total.toFixed(2)}`;
     if (carrinhoVazio) carrinhoVazio.style.display = 'none';
 
