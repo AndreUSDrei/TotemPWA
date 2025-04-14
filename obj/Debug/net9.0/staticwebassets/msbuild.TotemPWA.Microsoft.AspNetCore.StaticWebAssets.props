@@ -48,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>qt64qtv8qu</Fingerprint>
-      <Integrity>ciaXDTRcIiaO0M9Lr4yCgA/Re+9rgcvF9RKoDr0SLmQ=</Integrity>
+      <Fingerprint>5ah9ssxnm7</Fingerprint>
+      <Integrity>Q+RWCREDOtC4Yu2gSPVcQb65bl0zxadus1zhKR/+Scw=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\tela2.css'))</OriginalItemSpec>
@@ -324,6 +324,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\helloword.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\lixeira.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>TotemPWA</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/TotemPWA</BasePath>
+      <RelativePath>img/lixeira.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6qhcgc2fxx</Fingerprint>
+      <Integrity>Qnukaex4OwvRyCJns+myI05JKIx6N2idRh7VXIFU7Aw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\lixeira.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\Logo.png'))">
       <SourceType>Package</SourceType>
       <SourceId>TotemPWA</SourceId>
@@ -480,8 +498,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>zbqzrra1hy</Fingerprint>
-      <Integrity>8WiVoPgMWjm6TZIJPvF1HErIjSSuPNHrwV+PU5O/AYc=</Integrity>
+      <Fingerprint>y28y1m0o6g</Fingerprint>
+      <Integrity>lumX47fDUxqE91dkv1YOATODRUsGOuTrije8t/z5Rws=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modal.js'))</OriginalItemSpec>
@@ -498,8 +516,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>pup0bax8bh</Fingerprint>
-      <Integrity>4eUWhGIu8MM4R3Hyh5eROK15VfGCZQnLg+m1hn8dbBk=</Integrity>
+      <Fingerprint>uciq7dl6x6</Fingerprint>
+      <Integrity>bmobq1fkF41JNL4sIwA800iVNc1vfrB9XhPXrvIJMXA=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\modalEdit.js'))</OriginalItemSpec>
