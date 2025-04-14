@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentItemId = null;
     let currentItemBasePrice = 0;
+    let editedItem = null; // Variável para armazenar o item editado temporariamente
 
     window.abrirModalEditar = function(elemento) {
         currentItemId = parseInt(elemento.getAttribute('data-id'));
@@ -85,6 +86,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const precoText = elemento.querySelector('.pedido-preco').textContent;
         currentItemBasePrice = parseFloat(precoText.replace('R$', '').replace(',', '.').trim());
         const descricao = elemento.getAttribute('data-descricao');
+
+        editedItem = {
+            id: currentItemId,
+            nome: titulo,
+            preco: currentItemBasePrice,
+            imagem: imagem,
+            quantidade: 1,
+            ingredientes: JSON.parse(JSON.stringify(ingredientesPorItem[currentItemId])) // Clonar ingredientes
+        };
 
         document.querySelector('.modal-editar-titulo').textContent = titulo;
         document.querySelector('.modal-editar-imagem').src = imagem;
@@ -114,11 +124,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fecharModalEditar.addEventListener('click', function() {
         modalEditar.style.display = 'none';
+        editedItem = null; // Descartar alterações se o modal for fechado
     });
 
     window.addEventListener('click', function(event) {
         if (event.target === modalEditar) {
             modalEditar.style.display = 'none';
+            editedItem = null; // Descartar alterações se o modal for fechado
         }
     });
 
@@ -130,24 +142,44 @@ document.addEventListener('DOMContentLoaded', function() {
         const quantidadeSpan = ingredienteDiv.querySelector('.modal-editar-ingrediente-quantidade');
         const nomeIngrediente = ingredienteDiv.querySelector('.modal-editar-ingrediente-nome').textContent;
         let quantidade = parseInt(quantidadeSpan.textContent);
-        const ingrediente = ingredientesPorItem[currentItemId].find(ing => ing.nome === nomeIngrediente);
+        const ingrediente = editedItem.ingredientes.find(ing => ing.nome === nomeIngrediente);
 
         if (target.classList.contains('botao-adicionar-editar')) {
             quantidade++;
             currentItemBasePrice += ingrediente.preco;
+            ingrediente.quantidade++;
         } else if (target.classList.contains('botao-remover-editar')) {
             if (quantidade > 0) {
                 quantidade--;
                 currentItemBasePrice -= ingrediente.preco;
+                ingrediente.quantidade--;
             }
         }
 
         quantidadeSpan.textContent = `${quantidade}x`;
         document.querySelector('.modal-editar-preco').textContent = `R$ ${currentItemBasePrice.toFixed(2)}`;
+        editedItem.preco = currentItemBasePrice;
     });
 
     botaoAdicionarEditar.addEventListener('click', function() {
-        alert('Item adicionado ao carrinho com os ingredientes personalizados!');
+        if (editedItem) {
+            const carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens')) || [];
+            const existingItem = carrinhoItens.find(item => item.id === editedItem.id);
+            if (existingItem) {
+                existingItem.preco = editedItem.preco;
+                existingItem.ingredientes = editedItem.ingredientes;
+            } else {
+                carrinhoItens.push(editedItem);
+            }
+            localStorage.setItem('carrinhoItens', JSON.stringify(carrinhoItens)); // Salvar no localStorage
+
+            // Disparar evento para atualizar o carrinho
+            const event = new CustomEvent('atualizarCarrinho');
+            window.dispatchEvent(event);
+
+            alert('Item adicionado ao carrinho com os ingredientes personalizados!');
+        }
         modalEditar.style.display = 'none';
+        editedItem = null; // Limpar o item editado após confirmação
     });
 });
