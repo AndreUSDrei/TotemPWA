@@ -67,7 +67,7 @@ function atualizarCarrinho() {
                     <span class="quantidade-item">${item.quantidade}x</span>
                     <button class="botao-adiciona" onclick="adicionarItemCarrinho(${item.id})">+</button>
                     <button class="btn-remover-carrinho" onclick="removerTodoItem(${item.id})">
-                        <img src="~/img/lixeira.png" alt="Remover" class="icone-lixeira">
+                        <img src="~/img/" alt="Remover" class="icone-lixeira">
                     </button>
                 </div>
             </div>
