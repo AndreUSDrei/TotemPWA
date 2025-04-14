@@ -868,3 +868,25 @@ body {
         max-height: 30vh;
     }
 }
+/*--------------------------------------------------------modal carrinho*/
+
+.carrinho-texto{
+    font-size: 2vh;
+    color: #e41c1c;
+    font-weight: 400;
+    margin: 1vh 0vh 0vh 0vh;
+}
+.carrinho-titulo-lache{
+    color: rgb(56, 56, 56);
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 3vh;
+    margin: 0vh 0vh 0vh 2vh;
+}
+
+.img-carrinho{
+    width: 10vh;
+}
+
+
+

@@ -40,7 +40,7 @@ function atualizarCarrinho() {
             carrinhoContainer.innerHTML = `
                 <div class="carrinho-vazio">
                     <img src="~/img/carrinho-vazio.png" alt="Carrinho vazio">
-                    <p>Seu carrinho está vazio</p>
+                    <p class="class="carrinho-titulo-lache"">Seu carrinho está vazio</p>
                 </div>
             `;
         }
@@ -58,9 +58,9 @@ function atualizarCarrinho() {
         htmlItens += `
             <div class="item-carrinho" data-id="${item.id}">
                 <div class="info-item">
-                    <img src="${item.imagem}" alt="${item.nome}">
-                    <div class="detalhes-item">
-                        <h3>${item.nome}</h3>
+                    <img class="img-carrinho" src="${item.imagem}" alt="${item.nome}">
+                    <div class="detalhes-item-carrinho">
+                        <h3 class="carrinho-titulo-lache">${item.nome}</h3>
                         <p class="preco-item">R$ ${item.preco.toFixed(2)}</p>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ function atualizarCarrinho() {
                     <button class="botaoRemove" onclick="removerItemCarrinho(${item.id})">-</button>
                     <span class="quantidade-item">${item.quantidade}x</span>
                     <button class="botaoAdiciona" onclick="adicionarItemCarrinho(${item.id})">+</button>
-                    <button class="botaoRemover" onclick="removerTodoItem(${item.id})">
+                    <button class="btn-remover-carrinho" onclick="removerTodoItem(${item.id})">
                         <img src="~/img/lixeira.png" alt="Remover">
                     </button>
                 </div>
