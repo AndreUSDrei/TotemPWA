@@ -4,31 +4,59 @@
     <div class="nav-categorias">
         <a href="#" class="active" data-categoria="todos">Todos</a>
         <a href="#" data-categoria="batatas">Batatas</a>
-        <a href="#" data-categoria="onion">Onion Rings</a>
         <a href="#" data-categoria="nuggets">Nuggets</a>
     </div>
 </div>
 <div class="pedido">
     <div class="pedido-grid">
-        <div class="pedido-item" data-id="1" data-categoria="batatas" data-descricao="Batata frita crocante" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/batata.png" asp-append-version="true" alt="Batata">
+        <div class="pedido-item" data-id="300" data-categoria="batatas" data-descricao="Batata frita crocante" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/batata.png" asp-append-version="true" alt="Batata Frita">
             <h3 class="pedido-titulo">Batata Frita</h3> 
             <h4 class="pedido-preco">R$ 12,90</h4>
         </div>
-        <div class="pedido-item" data-id="2" data-categoria="batatas" data-descricao="Batata frita com cheddar e bacon" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/batatacheese.png" asp-append-version="true" alt="Batata Cheese">
-            <h3 class="pedido-titulo">Batata Cheese</h3> 
+        <div class="pedido-item" data-id="301" data-categoria="batatas" data-descricao="Batata frita com cheddar" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/batatacheddar.png" asp-append-version="true" alt="Batata com Cheddar">
+            <h3 class="pedido-titulo">Batata com Cheddar</h3> 
             <h4 class="pedido-preco">R$ 18,90</h4>
         </div>
-        <div class="pedido-item" data-id="3" data-categoria="onion" data-descricao="Anéis de cebola crocantes" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/onion.png" asp-append-version="true" alt="Onion Rings">
-            <h3 class="pedido-titulo">Onion Rings</h3> 
+        <div class="pedido-item" data-id="302" data-categoria="batatas" data-descricao="Batata frita com cheddar e bacon" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/batatacheddarcombacon.png" asp-append-version="true" alt="Batata com Cheddar e Bacon">
+            <h3 class="pedido-titulo">Batata com Cheddar e Bacon</h3> 
+            <h4 class="pedido-preco">R$ 22,90</h4>
+        </div>
+        <div class="pedido-item" data-id="303" data-categoria="batatas" data-descricao="Batata rústica assada" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/batatarustica.png" asp-append-version="true" alt="Batata Rústica">
+            <h3 class="pedido-titulo">Batata Rústica</h3> 
             <h4 class="pedido-preco">R$ 15,90</h4>
         </div>
-        <div class="pedido-item" data-id="4" data-categoria="nuggets" data-descricao="Nuggets de frango crocantes" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/nuggets.png" asp-append-version="true" alt="Nuggets">
-            <h3 class="pedido-titulo">Nuggets</h3> 
-            <h4 class="pedido-preco">R$ 16,90</h4>
+        <div class="pedido-item" data-id="304" data-categoria="batatas" data-descricao="Batata chips crocante" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/batatachips.png" asp-append-version="true" alt="Batata Chips">
+            <h3 class="pedido-titulo">Batata Chips</h3> 
+            <h4 class="pedido-preco">R$ 8,90</h4>
+        </div>
+        <div class="pedido-item" data-id="305" data-categoria="batatas" data-descricao="Chips de batata doce" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/chipsdebatatadoce.png" asp-append-version="true" alt="Chips de Batata Doce">
+            <h3 class="pedido-titulo">Chips de Batata Doce</h3> 
+            <h4 class="pedido-preco">R$ 9,90</h4>
+        </div>
+        <div class="pedido-item" data-id="306" data-categoria="nuggets" data-descricao="5 unidades de nuggets de frango" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/nuggets5.png" asp-append-version="true" alt="Nuggets 5un">
+            <h3 class="pedido-titulo">Nuggets 5un</h3> 
+            <h4 class="pedido-preco">R$ 12,90</h4>
+        </div>
+        <div class="pedido-item" data-id="307" data-categoria="nuggets" data-descricao="10 unidades de nuggets de frango" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/nuggets.png" asp-append-version="true" alt="Nuggets 10un">
+            <h3 class="pedido-titulo">Nuggets 10un</h3> 
+            <h4 class="pedido-preco">R$ 19,90</h4>
+        </div>
+        <div class="pedido-item" data-id="308" data-categoria="nuggets" data-descricao="20 unidades de nuggets de frango" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/nuggets8.png" asp-append-version="true" alt="Nuggets 20un">
+            <h3 class="pedido-titulo">Nuggets 20un</h3> 
+            <h4 class="pedido-preco">R$ 34,90</h4>
         </div>
     </div>
 </div>
+
+<script src="~/js/modal.js" asp-append-version="true"></script>
+<script src="~/js/modalEdit.js" asp-append-version="true"></script>
+<script src="~/js/filtroCategorias.js" asp-append-version="true"></script>

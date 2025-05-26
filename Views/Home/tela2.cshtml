@@ -92,6 +92,16 @@
             </div>
         </div>
 
+        <!-- Banner para Extras -->
+        <div class="banner" id="banner-extras" style="display: none;">
+            <img src="~/img/telainicialextras.png" asp-append-version="true" alt="Banner Extras">
+            <div class="buttons">
+                <button class="button">
+                    <img class="img-menu-item" src="~/img/simbolo.jpg" asp-append-version="true" alt="Símbolo">
+                </button>
+            </div>
+        </div>
+
         <div class="c1">
             <div class="menu">
                 <div class="menu-item active" onclick="alternarConteudo('lanches')">
@@ -118,7 +128,7 @@
                     <img class="img-menu-item" src="~/img/bebidas.png" asp-append-version="true" alt="Bebidas">
                     <div>Bebidas</div>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" onclick="alternarConteudo('extras')">
                     <img class="img-menu-item" src="~/img/batata.png" asp-append-version="true" alt="Extras">
                     <div>Extras</div>
                 </div>
@@ -334,11 +344,13 @@ function alternarConteudo(tipo) {
     document.getElementById('conteudo-molhos').style.display = 'none';
     document.getElementById('conteudo-ofertas').style.display = 'none';
     document.getElementById('conteudo-bebidas').style.display = 'none';
+    document.getElementById('conteudo-extras').style.display = 'none';
     document.getElementById('banner-lanches').style.display = 'none';
     document.getElementById('banner-sobremesas').style.display = 'none';
     document.getElementById('banner-molhos').style.display = 'none';
     document.getElementById('banner-ofertas').style.display = 'none';
     document.getElementById('banner-bebidas').style.display = 'none';
+    document.getElementById('banner-extras').style.display = 'none';
     
     // Remove a classe active de todos os itens do menu
     document.querySelectorAll('.menu-item').forEach(item => {

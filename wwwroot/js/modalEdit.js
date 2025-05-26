@@ -4,6 +4,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const fecharModalEditar = document.querySelector('.fechar-modal-editar');
     const botaoAdicionarEditar = document.querySelector('.modal-btn-confirm');
     const ingredientesPorItem = {
+        // Extras (IDs 300-303)
+        300: [ // Batata Frita
+            { nome: 'Batata Frita', quantidade: 1, preco: 12.90 },
+            { nome: 'Sal', quantidade: 1, preco: 0 },
+            { nome: 'Ketchup', quantidade: 1, preco: 0 }
+        ],
+        301: [ // Batata Cheese
+            { nome: 'Batata Frita', quantidade: 1, preco: 12.90 },
+            { nome: 'Queijo Cheddar', quantidade: 1, preco: 3.00 },
+            { nome: 'Bacon', quantidade: 1, preco: 3.00 },
+            { nome: 'Sal', quantidade: 1, preco: 0 }
+        ],
+        302: [ // Onion Rings
+            { nome: 'Anéis de Cebola', quantidade: 1, preco: 15.90 },
+            { nome: 'Molho de Queijos', quantidade: 1, preco: 0 },
+            { nome: 'Ketchup', quantidade: 1, preco: 0 }
+        ],
+        303: [ // Nuggets
+            { nome: 'Nuggets de Frango', quantidade: 1, preco: 16.90 },
+            { nome: 'Molho de Queijos', quantidade: 1, preco: 0 },
+            { nome: 'Ketchup', quantidade: 1, preco: 0 }
+        ],
         // Sobremesas
         1: [ { nome: 'Calda de Chocolate', quantidade: 0, preco: 2.00 }, { nome: 'Granulado', quantidade: 0, preco: 1.00 }, { nome: 'Chantilly', quantidade: 0, preco: 1.50 } ],
         2: [ { nome: 'Calda de Caramelo', quantidade: 0, preco: 2.00 }, { nome: 'Cookies extras', quantidade: 0, preco: 2.00 }, { nome: 'Chantilly', quantidade: 0, preco: 1.50 } ],
