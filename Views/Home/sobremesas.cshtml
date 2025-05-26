@@ -1,0 +1,53 @@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobremesas</title>
+    <link rel="stylesheet" href="~/css/sobremesas.css" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="c1">
+            <div class="content">
+                <div class="pedido">
+                    <div class="pedido-grid">
+                        <!-- Item 1 -->
+                        <div class="pedido-item" data-id="1" data-descricao="Sorvete de creme com calda de chocolate e chantilly" onclick="abrirModalEditar(this)">
+                            <img class="pedido-imagem" src="~/img/sorvete.png" asp-append-version="true" alt="Sorvete">
+                            <h3 class="pedido-titulo">Sorvete</h3> 
+                            <h4 class="pedido-preco">R$ 12,90</h4>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="pedido-item" data-id="2" data-descricao="Milk shake de chocolate com chantilly e calda" onclick="abrirModalEditar(this)">
+                            <img class="pedido-imagem" src="~/img/milkshake.png" asp-append-version="true" alt="Milk Shake">
+                            <h3 class="pedido-titulo">Milk Shake</h3> 
+                            <h4 class="pedido-preco">R$ 15,90</h4>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="pedido-item" data-id="3" data-descricao="Brownie com sorvete e calda de chocolate" onclick="abrirModalEditar(this)">
+                            <img class="pedido-imagem" src="~/img/brownie.png" asp-append-version="true" alt="Brownie">
+                            <h3 class="pedido-titulo">Brownie</h3> 
+                            <h4 class="pedido-preco">R$ 18,90</h4>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="pedido-item" data-id="4" data-descricao="Torta de chocolate com morangos" onclick="abrirModalEditar(this)">
+                            <img class="pedido-imagem" src="~/img/torta.png" asp-append-version="true" alt="Torta">
+                            <h3 class="pedido-titulo">Torta</h3> 
+                            <h4 class="pedido-preco">R$ 16,90</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/modal.js" asp-append-version="true"></script>
+    <script src="~/js/modalEdit.js" asp-append-version="true"></script>
+</body>
+</html> 

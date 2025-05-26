@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: white;
+    font-family: 'Tilt Warp', sans-serif;
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 56.25vh;
+    height: 100vh;
+    background: #FCFCFC;
+    box-shadow: 0 4px 10px rgba(119, 119, 119, 0.1);
+}
+
+.c1 {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    height: 65vh;
+}
+
+.content {
+    flex-grow: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0vh 0vh 0px 1.5vh;
+}
+
+.pedido-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vh;
+    overflow-y: auto;
+    max-height: calc(100vh - 35vh);
+    padding-bottom: 1vh;
+}
+
+.pedido-item {
+    height: 26vh;
+    filter: drop-shadow(rgba(220, 220, 220, 0.25) 0px 9px 26.6px);
+    overflow-wrap: break-word;
+    hyphens: auto;
+    padding: 1.3vh;
+    background: rgb(255, 255, 254);
+    border-radius: 2vh;
+    transition: background-color 0.3s;
+    white-space: normal;
+}
+
+.pedido-item:hover {
+    background: #e9e9e9;
+    transform: scale(1.02);
+}
+
+.pedido-imagem {
+    width: 8vh;
+    height: auto;
+    margin-bottom: 1vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pedido-titulo {
+    color: rgb(63, 63, 63);
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 1.7vh;
+}
+
+.pedido-preco {
+    color: rgb(94, 138, 56);
+    font-feature-settings: "liga" 0, "clig" 0;
+    font-family: "Tilt Warp";
+    font-size: 2vh;
+    font-style: normal;
+    font-weight: 100;
+} 

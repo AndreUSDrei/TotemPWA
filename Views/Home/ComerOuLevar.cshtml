@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comer ou levar</title>
-    <link rel="stylesheet" href="./ComerOuLevar.css">
+    <link rel="stylesheet" href="~/css/ComerOuLevar.css">
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,16 +14,14 @@
                 <div class="conteiner">
                     <a class="title">Comer aqui ou levar?</a>
                     <div class="opcao-grid">
-                
-                            <div class="comer-aqui">
-                                <img class="opcao-imagem" src="img/menuburguerimage.png">
-                                <h3 class="opcao-titulo">Comer aqui</h3> 
-                            </div>
-                   
-                            <div class="levar">
-                                <img class="opcao-imagem" src="img/menuburguerimage.png">
-                                <h3 class="opcao-titulo">Levar</h3> 
-                            </div>
+                        <div class="comer-aqui" onclick="window.location.href='@Url.Action("Tela2", "Home")'">
+                            <img class="opcao-imagem" src="~/img/menuburguerimage.png">
+                            <h3 class="opcao-titulo">Comer aqui</h3> 
+                        </div>
+                        <div class="levar" onclick="window.location.href='@Url.Action("Tela2", "Home")'">
+                            <img class="opcao-imagem" src="~/img/menuburguerimage.png">
+                            <h3 class="opcao-titulo">Levar</h3> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,8 +29,8 @@
 
         <div class="ConteinerBtn">
             <div class="NavBtn">
-                <a id="cancelar" href="tela2.html">Cancelar</a>
-                <a id="prosseguir" href="TelaPagamento">Prosseguir</a>
+                <a id="cancelar" href="@Url.Action("Index", "Home")">Cancelar</a>
+                <a id="prosseguir" href="@Url.Action("Tela2", "Home")">Prosseguir</a>
             </div>
         </div>
     </div>

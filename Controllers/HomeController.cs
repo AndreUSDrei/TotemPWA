@@ -18,7 +18,17 @@ public class HomeController : Controller
         return View();
     }
 
-     public IActionResult Tela2()
+    public IActionResult ComerOuLevar()
+    {
+        return View();
+    }
+
+    public IActionResult Tela2()
+    {
+        return View();
+    }
+
+    public IActionResult Sobremesas()
     {
         return View();
     }

@@ -12,11 +12,38 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
     <script src="~/js/modal.js"></script>
+    <style>
+        .menu {
+            height: calc(100vh - 200px); /* Adjust based on your banner and bottom bar height */
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #888 #f1f1f1;
+        }
+
+        .menu::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .menu::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .menu::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .menu::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
 </head>
 <body>
 
     <div class="main">
-        <div class="banner">
+        <!-- Banner para Lanches -->
+        <div class="banner" id="banner-lanches">
             <img src="~/img/banner.jpg" asp-append-version="true" alt="Banner">
             <div class="buttons">
                 <button class="button">
@@ -24,9 +51,50 @@
                 </button>
             </div>
         </div>
+
+        <!-- Banner para Sobremesas -->
+        <div class="banner" id="banner-sobremesas" style="display: none;">
+            <img src="~/img/banner-sobremesas.jpg" asp-append-version="true" alt="Banner Sobremesas">
+            <div class="buttons">
+                <button class="button">
+                    <img class="img-menu-item" src="~/img/simbolo.jpg" asp-append-version="true" alt="Símbolo">
+                </button>
+            </div>
+        </div>
+
+        <!-- Banner para Molhos -->
+        <div class="banner" id="banner-molhos" style="display: none;">
+            <img src="~/img/telainicialmolhos.png" asp-append-version="true" alt="Banner Molhos">
+            <div class="buttons">
+                <button class="button">
+                    <img class="img-menu-item" src="~/img/simbolo.jpg" asp-append-version="true" alt="Símbolo">
+                </button>
+            </div>
+        </div>
+
+        <!-- Banner para Ofertas -->
+        <div class="banner" id="banner-ofertas" style="display: none;">
+            <img src="~/img/telainicialpromoção.jpeg" asp-append-version="true" alt="Banner Ofertas">
+            <div class="buttons">
+                <button class="button">
+                    <img class="img-menu-item" src="~/img/simbolo.jpg" asp-append-version="true" alt="Símbolo">
+                </button>
+            </div>
+        </div>
+
+        <!-- Banner para Bebidas -->
+        <div class="banner" id="banner-bebidas" style="display: none;">
+            <img src="~/img/telainicialbebidas.jpg" asp-append-version="true" alt="Banner Bebidas">
+            <div class="buttons">
+                <button class="button">
+                    <img class="img-menu-item" src="~/img/simbolo.jpg" asp-append-version="true" alt="Símbolo">
+                </button>
+            </div>
+        </div>
+
         <div class="c1">
             <div class="menu">
-                <div class="menu-item">
+                <div class="menu-item active" onclick="alternarConteudo('lanches')">
                     <img class="img-menu-item" src="~/img/menuburguerimage.png" asp-append-version="true" alt="Lanches">
                     <div>Lanches</div>
                 </div>
@@ -34,11 +102,19 @@
                     <img class="img-menu-item" src="~/img/combos.png" asp-append-version="true" alt="Combos">
                     <div>Combos</div>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" onclick="alternarConteudo('sobremesas')">
                     <img class="img-menu-item" src="~/img/sobremesa.png" asp-append-version="true" alt="Sobremesas">
                     <div>Sobremesas</div>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" onclick="alternarConteudo('molhos')">
+                    <img class="img-menu-item" src="~/img/molhos.png" asp-append-version="true" alt="Molhos">
+                    <div>Molhos</div>
+                </div>
+                <div class="menu-item" onclick="alternarConteudo('ofertas')">
+                    <img class="img-menu-item" src="~/img/cupom.png" asp-append-version="true" alt="Promoções">
+                    <div>Promoções</div>
+                </div>
+                <div class="menu-item" onclick="alternarConteudo('bebidas')">
                     <img class="img-menu-item" src="~/img/bebidas.png" asp-append-version="true" alt="Bebidas">
                     <div>Bebidas</div>
                 </div>
@@ -46,97 +122,309 @@
                     <img class="img-menu-item" src="~/img/batata.png" asp-append-version="true" alt="Extras">
                     <div>Extras</div>
                 </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/molhos.png" asp-append-version="true" alt="Molhos">
-                    <div>Molhos</div>
-                </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/cupom.png" asp-append-version="true" alt="Promoções">
-                    <div>Promoções</div>
-                </div>
             </div>
             <div class="content">
-                <div class="container-categoria">
-                    <div class="nav-categorias">
-                        <a href="#">Vegano</a>
-                        <a href="#">Carne</a>
-                        <a href="#">Frango</a>
+                <!-- Conteúdo de Lanches -->
+                <div id="conteudo-lanches">
+                    <div class="container-categoria">
+                        <div class="nav-categorias">
+                            <a href="#" class="active" data-categoria="todos">Todos</a>
+                            <a href="#" data-categoria="vegano">Vegano</a>
+                            <a href="#" data-categoria="carne">Carne</a>
+                            <a href="#" data-categoria="frango">Frango</a>
+                        </div>
+                    </div>
+                    <div class="pedido">
+                        <div class="pedido-grid">
+                            <!-- Item 1 -->
+                            <div class="pedido-item" data-id="1" data-categoria="carne" data-descricao="Pão de gergelim, cebola, alface, queijo cheddar, dois hambúrgueres de costela 180g" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/menuburguerimage.png" asp-append-version="true" alt="Burguer 404">
+                                <h3 class="pedido-titulo">Burguer 404</h3> 
+                                <h4 class="pedido-preco">R$ 24,90</h4>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="pedido-item" data-id="2" data-categoria="carne" data-descricao="Pão brioche, queijo prato, hambúrguer de costela 200g, bacon, cebola caramelizada" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/full.png" asp-append-version="true" alt="Full Stack">
+                                <h3 class="pedido-titulo">Full Stack</h3> 
+                                <h4 class="pedido-preco">R$ 39,90</h4>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="pedido-item" data-id="3" data-categoria="carne" data-descricao="Três hambúrgueres de costela 150g, queijo cheddar, cebola crispy, molho especial" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/loopingduplo.png" asp-append-version="true" alt="Looping Triplo">
+                                <h3 class="pedido-titulo">Looping Triplo</h3> 
+                                <h4 class="pedido-preco">R$ 32,90</h4>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="pedido-item" data-id="4" data-categoria="carne" data-descricao="Pão australiano, hambúrguer de fraldinha 180g, queijo, picles, cebola roxa" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/helloword.png" asp-append-version="true" alt="Hello Word">
+                                <h3 class="pedido-titulo">Hello Word</h3> 
+                                <h4 class="pedido-preco">R$ 24,90</h4>
+                            </div>
+
+                            <!-- Item 5 -->
+                            <div class="pedido-item" data-id="5" data-categoria="vegano" data-descricao="Pão integral, hambúrguer de grão-de-bico, abobrinha, berinjela e molho de iogurte" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/vegan.png" asp-append-version="true" alt="VS Veggie">
+                                <h3 class="pedido-titulo">VS Veggie</h3> 
+                                <h4 class="pedido-preco">R$ 21,90</h4>
+                            </div>
+
+                            <!-- Item 6 -->
+                            <div class="pedido-item" data-id="6" data-categoria="carne" data-descricao="Pão de hambúrguer tradicional, hambúrguer de costela 180g, queijo prato, alface, tomate" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/backend.jpg" asp-append-version="true" alt="Backend">
+                                <h3 class="pedido-titulo">Backend</h3> 
+                                <h4 class="pedido-preco">R$ 22,90</h4>
+                            </div>
+
+                            <!-- Item 7 -->
+                            <div class="pedido-item" data-id="7" data-categoria="carne" data-descricao="Pão brioche, dois hambúrgueres de costela 180g, queijo cheddar, bacon, molho barbecue" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/front.png" asp-append-version="true" alt="Frontend">
+                                <h3 class="pedido-titulo">Frontend</h3> 
+                                <h4 class="pedido-preco">R$ 44,90</h4>
+                            </div>
+
+                            <!-- Item 8 -->
+                            <div class="pedido-item" data-id="8" data-categoria="carne" data-descricao="Pão de hambúrguer com gergelim, hambúrguer de costela 200g, queijo, bacon, cebola crispy" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/devopsbacon.png" asp-append-version="true" alt="DevOps Bacon">
+                                <h3 class="pedido-titulo">DevOps Bacon</h3> 
+                                <h4 class="pedido-preco">R$ 34,90</h4>
+                            </div>
+
+                            <!-- Item 9 -->
+                            <div class="pedido-item" data-id="9" data-categoria="carne" data-descricao="Pão de batata, hambúrguer de costela 150g, queijo coalho, molho de pimenta" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/byte.png" asp-append-version="true" alt="Byte Burguer">
+                                <h3 class="pedido-titulo">Byte Burguer</h3> 
+                                <h4 class="pedido-preco">R$ 24,90</h4>
+                            </div>
+
+                            <!-- Item 10 -->
+                            <div class="pedido-item" data-id="10" data-categoria="carne" data-descricao="Pão de hambúrguer tradicional, hambúrguer de fraldinha 180g, queijo, alface, tomate" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/haburguer.png" asp-append-version="true" alt="Index Burguer">
+                                <h3 class="pedido-titulo">Index Burguer</h3> 
+                                <h4 class="pedido-preco">R$ 25,90</h4>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                <div class="pedido">
-                    <div class="pedido-grid">
 
-                        
-                        <!-- Item 1 -->
-                        <div class="pedido-item" data-id="1" data-descricao="Pão de gergelim, cebola, alface, queijo cheddar, dois hambúrgueres de costela 180g" onclick="abrirModalEditar(this)">
-                            <img class="pedido-imagem" src="~/img/menuburguerimage.png" asp-append-version="true" alt="Burguer 404">
-                            <h3 class="pedido-titulo">Burguer 404</h3> 
-                            <h4 class="pedido-preco">R$ 24,90</h4>
+                <!-- Conteúdo de Sobremesas -->
+                <div id="conteudo-sobremesas" style="display: none;">
+                    <div class="container-categoria">
+                        <div class="nav-categorias">
+                            <a href="#" class="active" data-categoria="todos">Todos</a>
+                            <a href="#" data-categoria="sorvetes">Sorvetes</a>
+                            <a href="#" data-categoria="milkshakes">Milk Shakes</a>
+                            <a href="#" data-categoria="doces">Doces</a>
                         </div>
+                    </div>
+                    <div class="pedido">
+                        <div class="pedido-grid">
+                            <!-- Item 1 -->
+                            <div class="pedido-item" data-id="1" data-categoria="sorvetes" data-descricao="Sorvete de creme com calda de chocolate e chantilly" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/sorvetechocolate.png" asp-append-version="true" alt="Sorvete">
+                                <h3 class="pedido-titulo">Sorvete</h3> 
+                                <h4 class="pedido-preco">R$ 12,90</h4>
+                            </div>
 
-                        <!-- Item 2 -->
-                        <div class="pedido-item" data-id="2" data-descricao="Pão brioche, queijo prato, hambúrguer de costela 200g, bacon, cebola caramelizada" onclick="abrirModalEditar(this)">
-                            <img class="pedido-imagem" src="~/img/full.png" asp-append-version="true" alt="Full Stack">
-                            <h3 class="pedido-titulo">Full Stack</h3> 
-                            <h4 class="pedido-preco">R$ 39,90</h4>
+                            <!-- Item 2 -->
+                            <div class="pedido-item" data-id="2" data-categoria="milkshakes" data-descricao="Milk shake de chocolate com chantilly e calda" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/milkbaunilha.png" asp-append-version="true" alt="Milk Shake">
+                                <h3 class="pedido-titulo">Milk Shake</h3> 
+                                <h4 class="pedido-preco">R$ 15,90</h4>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="pedido-item" data-id="3" data-categoria="doces" data-descricao="Brownie com sorvete e calda de chocolate" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/petit.png" asp-append-version="true" alt="Brownie">
+                                <h3 class="pedido-titulo">Brownie</h3> 
+                                <h4 class="pedido-preco">R$ 18,90</h4>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="pedido-item" data-id="4" data-categoria="doces" data-descricao="Torta de chocolate com morangos" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/waffle.png" asp-append-version="true" alt="Torta">
+                                <h3 class="pedido-titulo">Torta</h3> 
+                                <h4 class="pedido-preco">R$ 16,90</h4>
+                            </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Item 3 -->
-                        <div class="pedido-item" data-id="3" data-descricao="Três hambúrgueres de costela 150g, queijo cheddar, cebola crispy, molho especial" onclick="abrirModalEditar(this)">
-                            <img class="pedido-imagem" src="~/img/loopingduplo.png" asp-append-version="true" alt="Looping Triplo">
-                            <h3 class="pedido-titulo">Looping Triplo</h3> 
-                            <h4 class="pedido-preco">R$ 32,90</h4>
+                <!-- Conteúdo de Molhos -->
+                <div id="conteudo-molhos" style="display: none;">
+                    <div class="container-categoria">
+                        <div class="nav-categorias">
+                            <a href="#" class="active" data-categoria="todos">Todos</a>
+                            <a href="#" data-categoria="tradicionais">Tradicionais</a>
+                            <a href="#" data-categoria="especiais">Especiais</a>
+                            <a href="#" data-categoria="picantes">Picantes</a>
                         </div>
-
-                        <!-- Item 4 -->
-                        <div class="pedido-item" data-id="4" data-descricao="Pão australiano, hambúrguer de fraldinha 180g, queijo, picles, cebola roxa" onclick="abrirModalEditar(this)">
-                            <img class="pedido-imagem" src="~/img/helloword.png" asp-append-version="true" alt="Hello Word">
-                            <h3 class="pedido-titulo">Hello Word</h3> 
-                            <h4 class="pedido-preco">R$ 24,90</h4>
+                    </div>
+                    <div class="pedido">
+                        <div class="pedido-grid">
+                            <div class="pedido-item" data-id="1" data-categoria="tradicionais" data-descricao="Molho de ketchup tradicional" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/molhodeketchup.png" asp-append-version="true" alt="Ketchup">
+                                <h3 class="pedido-titulo">Molho de Ketchup</h3> 
+                                <h4 class="pedido-preco">R$ 4,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="2" data-categoria="picantes" data-descricao="Molho de pimenta picante" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/molhodepimenta.png" asp-append-version="true" alt="Pimenta">
+                                <h3 class="pedido-titulo">Molho de Pimenta</h3> 
+                                <h4 class="pedido-preco">R$ 5,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="3" data-categoria="tradicionais" data-descricao="Molho barbecue defumado" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/molhodebarbecue.png" asp-append-version="true" alt="Barbecue">
+                                <h3 class="pedido-titulo">Molho de Barbecue</h3> 
+                                <h4 class="pedido-preco">R$ 4,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="4" data-categoria="especiais" data-descricao="Molho cremoso de queijos" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/molhodequeijos.png" asp-append-version="true" alt="Queijos">
+                                <h3 class="pedido-titulo">Molho de Queijos</h3> 
+                                <h4 class="pedido-preco">R$ 5,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="5" data-categoria="tradicionais" data-descricao="Maionese especial" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/maionese.png" asp-append-version="true" alt="Maionese">
+                                <h3 class="pedido-titulo">Molho de Maionese</h3> 
+                                <h4 class="pedido-preco">R$ 4,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="6" data-categoria="tradicionais" data-descricao="Molho verde com ervas" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/molhoverdedacsa.png" asp-append-version="true" alt="Verde">
+                                <h3 class="pedido-titulo">Molho Verde</h3> 
+                                <h4 class="pedido-preco">R$ 4,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="7" data-categoria="tradicionais" data-descricao="Molho rose com tomate" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/molhorose.png" asp-append-version="true" alt="Rose">
+                                <h3 class="pedido-titulo">Molho Rose</h3> 
+                                <h4 class="pedido-preco">R$ 7,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="8" data-categoria="especiais" data-descricao="Molho de mostarda especial" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/molhodequeijos.png" asp-append-version="true" alt="Mostarda">
+                                <h3 class="pedido-titulo">Molho de Mostarda</h3> 
+                                <h4 class="pedido-preco">R$ 8,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="9" data-categoria="tradicionais" data-descricao="Molho especial da casa" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/molhoultrasecretodacasa.png" asp-append-version="true" alt="Secreto">
+                                <h3 class="pedido-titulo">Molho Secreto do Chef</h3> 
+                                <h4 class="pedido-preco">R$ 10,90</h4>
+                            </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Item 5 -->
-                        <div class="pedido-item" data-id="5" data-descricao="Pão integral, hambúrguer de grão-de-bico, abobrinha, berinjela e molho de iogurte" onclick="abrirModalEditar(this)">
-                            <img class="pedido-imagem" src="~/img/vegan.png" asp-append-version="true" alt="VS Veggie">
-                            <h3 class="pedido-titulo">VS Veggie</h3> 
-                            <h4 class="pedido-preco">R$ 21,90</h4>
+                <!-- Conteúdo de Ofertas -->
+                <div id="conteudo-ofertas" style="display: none;">
+                    <div class="container-categoria">
+                        <div class="nav-categorias">
+                            <a href="#" class="active" data-categoria="todos">Todos</a>
+                            <a href="#" data-categoria="lanches">Lanches</a>
+                            <a href="#" data-categoria="bebidas">Bebidas</a>
+                            <a href="#" data-categoria="sobremesas">Sobremesas</a>
+                            <a href="#" data-categoria="combos">Combos</a>
                         </div>
-
-                        <!-- Item 6 -->
-                        <div class="pedido-item" data-id="6" data-descricao="Pão de hambúrguer tradicional, hambúrguer de costela 180g, queijo prato, alface, tomate" onclick="abrirModalEditar(this)">
-                            <img class="pedido-imagem" src="~/img/backend.jpg" asp-append-version="true" alt="Backend">
-                            <h3 class="pedido-titulo">Backend</h3> 
-                            <h4 class="pedido-preco">R$ 22,90</h4>
+                    </div>
+                    <div class="pedido">
+                        <div class="pedido-grid">
+                            <div class="pedido-item" data-id="1" data-categoria="lanches" data-descricao="Byte Burguer com desconto" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/byte.png" asp-append-version="true" alt="byte">
+                                <h3 class="pedido-titulo">Byte Burguer</h3> 
+                                <h3 class="pedido-preco">R$ 25,90</h3>
+                                <h4 class="pedido-preco">Por: 18,99</h4>
+                            </div>
+                            <div class="pedido-item" data-id="2" data-categoria="lanches" data-descricao="Index Burguer com desconto" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/haburguer.png" asp-append-version="true" alt="index">
+                                <h3 class="pedido-titulo">Index Burguer</h3> 
+                                <h3 class="pedido-preco">R$ 24,90</h3>
+                                <h4 class="pedido-preco">Por: 15,99</h4>
+                            </div>
+                            <div class="pedido-item" data-id="3" data-categoria="sobremesas" data-descricao="Waffle com desconto" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/waffle.png" asp-append-version="true" alt="waffle">
+                                <h3 class="pedido-titulo">Waffle</h3> 
+                                <h3 class="pedido-preco">R$ 28,90</h3>
+                                <h4 class="pedido-preco">Por: 15,99</h4>
+                            </div>
+                            <div class="pedido-item" data-id="4" data-categoria="bebidas" data-descricao="Sprite com desconto" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/sprite.png" asp-append-version="true" alt="sprite">
+                                <h3 class="pedido-titulo">Sprite</h3> 
+                                <h3 class="pedido-preco">R$ 8,90</h3>
+                                <h4 class="pedido-preco">Por: 5,99</h4>
+                            </div>
+                            <div class="pedido-item" data-id="5" data-categoria="bebidas" data-descricao="Suco de Pêssego com desconto" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/sucopessego.png" asp-append-version="true" alt="Pessego">
+                                <h3 class="pedido-titulo">Suco de Pessego</h3> 
+                                <h3 class="pedido-preco">R$ 9,90</h3>
+                                <h4 class="pedido-preco">Por: 6,99</h4>
+                            </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Item 7 -->
-                        <div class="pedido-item" data-id="7" data-descricao="Pão brioche, dois hambúrgueres de costela 180g, queijo cheddar, bacon, molho barbecue" onclick="abrirModalEditar(this)">
-                            <img class="pedido-imagem" src="~/img/front.png" asp-append-version="true" alt="Frontend">
-                            <h3 class="pedido-titulo">Frontend</h3> 
-                            <h4 class="pedido-preco">R$ 44,90</h4>
+                <!-- Conteúdo de Bebidas -->
+                <div id="conteudo-bebidas" style="display: none;">
+                    <div class="container-categoria">
+                        <div class="nav-categorias">
+                            <a href="#" class="active" data-categoria="todos">Todos</a>
+                            <a href="#" data-categoria="refrigerantes">Refrigerantes</a>
+                            <a href="#" data-categoria="sucos">Sucos</a>
+                            <a href="#" data-categoria="aguas">Águas</a>
+                            <a href="#" data-categoria="zero">Zero Açúcar</a>
                         </div>
-
-                        <!-- Item 8 -->
-                        <div class="pedido-item" data-id="8" data-descricao="Pão de hambúrguer com gergelim, hambúrguer de costela 200g, queijo, bacon, cebola crispy" onclick="abrirModalEditar(this)">
-                            <img class="pedido-imagem" src="~/img/devopsbacon.png" asp-append-version="true" alt="DevOps Bacon">
-                            <h3 class="pedido-titulo">DevOps Bacon</h3> 
-                            <h4 class="pedido-preco">R$ 34,90</h4>
+                    </div>
+                    <div class="pedido">
+                        <div class="pedido-grid">
+                            <div class="pedido-item" data-id="1" data-categoria="refrigerantes" data-descricao="Refrigerante Coca-Cola" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/coca.png" asp-append-version="true" alt="Coca Cola">
+                                <h3 class="pedido-titulo">Coca Cola</h3> 
+                                <h4 class="pedido-preco">R$ 8,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="2" data-categoria="refrigerantes" data-descricao="Refrigerante Coca-Cola Zero" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/cocazero.png" asp-append-version="true" alt="Coca Zero">
+                                <h3 class="pedido-titulo">Coca Zero</h3> 
+                                <h4 class="pedido-preco">R$ 8,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="3" data-categoria="refrigerantes" data-descricao="Refrigerante Sprite Zero" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/spritezero.png" asp-append-version="true" alt="Sprite">
+                                <h3 class="pedido-titulo">Sprite Zero</h3> 
+                                <h4 class="pedido-preco">R$ 8,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="4" data-categoria="refrigerantes" data-descricao="Refrigerante Fanta Laranja" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/fantalaranja.png" asp-append-version="true" alt="Fanta Laranja">
+                                <h3 class="pedido-titulo">Fanta Laranja</h3> 
+                                <h4 class="pedido-preco">R$ 8,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="5" data-categoria="refrigerantes" data-descricao="Refrigerante Fanta Uva" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/fantauva.png" asp-append-version="true" alt="Fanta Uva">
+                                <h3 class="pedido-titulo">Fanta Uva</h3> 
+                                <h4 class="pedido-preco">R$ 8,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="6" data-categoria="sucos" data-descricao="Refrigerante Sprite" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/sprite.png" asp-append-version="true" alt="Sprite">
+                                <h3 class="pedido-titulo">Sprite</h3> 
+                                <h4 class="pedido-preco">R$ 8,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="7" data-categoria="sucos" data-descricao="Suco de Pêssego" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/sucopessego.png" asp-append-version="true" alt="Suco Pessego">
+                                <h3 class="pedido-titulo">Suco de Pessego</h3> 
+                                <h4 class="pedido-preco">R$ 9,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="8" data-categoria="sucos" data-descricao="Suco de Uva" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/sucouva.png" asp-append-version="true" alt="Suco Uva">
+                                <h3 class="pedido-titulo">Suco de Uva</h3> 
+                                <h4 class="pedido-preco">R$ 9,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="9" data-categoria="aguas" data-descricao="Água mineral" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/agua.png" asp-append-version="true" alt="Agua">
+                                <h3 class="pedido-titulo">Água</h3> 
+                                <h4 class="pedido-preco">R$ 7,90</h4>
+                            </div>
+                            <div class="pedido-item" data-id="10" data-categoria="aguas" data-descricao="Água mineral com gás" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="~/img/aguacomgas.png" asp-append-version="true" alt="Agua c/ gás">
+                                <h3 class="pedido-titulo">Água com Gás</h3> 
+                                <h4 class="pedido-preco">R$ 7,90</h4>
+                            </div>
                         </div>
-
-                        <!-- Item 9 -->
-                        <div class="pedido-item" data-id="9" data-descricao="Pão de batata, hambúrguer de costela 150g, queijo coalho, molho de pimenta" onclick="abrirModalEditar(this)">
-                            <img class="pedido-imagem" src="~/img/byte.png" asp-append-version="true" alt="Byte Burguer">
-                            <h3 class="pedido-titulo">Byte Burguer</h3> 
-                            <h4 class="pedido-preco">R$ 24,90</h4>
-                        </div>
-
-                        <!-- Item 10 -->
-                        <div class="pedido-item" data-id="10" data-descricao="Pão de hambúrguer tradicional, hambúrguer de fraldinha 180g, queijo, alface, tomate" onclick="abrirModalEditar(this)">
-                            <img class="pedido-imagem" src="~/img/haburguer.png" asp-append-version="true" alt="Index Burguer">
-                            <h3 class="pedido-titulo">Index Burguer</h3> 
-                            <h4 class="pedido-preco">R$ 25,90</h4>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -231,5 +519,38 @@
 <script src="~/js/filtroCategorias.js" asp-append-version="true"></script>
 <script src="~/js/modal.js" asp-append-version="true"></script>
 <script src="~/js/modalEdit.js" asp-append-version="true"></script>
+<script>
+function alternarConteudo(tipo) {
+    // Esconde todos os conteúdos
+    document.getElementById('conteudo-lanches').style.display = 'none';
+    document.getElementById('conteudo-sobremesas').style.display = 'none';
+    document.getElementById('conteudo-molhos').style.display = 'none';
+    document.getElementById('conteudo-ofertas').style.display = 'none';
+    document.getElementById('conteudo-bebidas').style.display = 'none';
+    document.getElementById('banner-lanches').style.display = 'none';
+    document.getElementById('banner-sobremesas').style.display = 'none';
+    document.getElementById('banner-molhos').style.display = 'none';
+    document.getElementById('banner-ofertas').style.display = 'none';
+    document.getElementById('banner-bebidas').style.display = 'none';
+    
+    // Remove a classe active de todos os itens do menu
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Mostra o conteúdo selecionado
+    document.getElementById('conteudo-' + tipo).style.display = 'block';
+    document.getElementById('banner-' + tipo).style.display = 'block';
+    
+    // Adiciona a classe active ao item do menu clicado
+    event.currentTarget.classList.add('active');
+
+    // Atualiza os filtros ativos
+    document.querySelectorAll('.nav-categorias a').forEach(link => {
+        link.classList.remove('active');
+    });
+    document.querySelector(`#conteudo-${tipo} .nav-categorias a:first-child`).classList.add('active');
+}
+</script>
 </body>
 </html>

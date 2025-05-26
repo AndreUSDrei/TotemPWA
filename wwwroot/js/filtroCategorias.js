@@ -1,68 +1,67 @@
 // wwwroot/js/filtroCategorias.js
 
-function inicializarFiltroCategorias() {
-    // Mapeamento dos itens para suas categorias
-    const itensCategorias = {
-        'Burguer 404': 'carne',
-        'Full Stack': 'carne',
-        'Looping Triplo': 'carne',
-        'Hello Word': 'carne',
-        'VS Veggie': 'vegano',
-        'Backend': 'frango',
-        'Frontend': 'carne',
-        'DevOps Bacon': 'carne',
-        'Byte Burguer': 'carne',
-        'Index Burguer': 'carne'
-    };
-
-    // Seleciona todos os links de categoria
-    const linksCategorias = document.querySelectorAll('.nav-categorias a');
+// Função para filtrar itens por categoria
+function filtrarPorCategoria(categoria, tipo) {
+    const conteudo = document.getElementById(`conteudo-${tipo}`);
+    const itens = conteudo.querySelectorAll('.pedido-item');
     
-    // Seleciona todos os itens do cardápio
-    const itensCardapio = document.querySelectorAll('.pedido-item');
+    // Remove a classe active de todos os links de categoria
+    conteudo.querySelectorAll('.nav-categorias a').forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    // Adiciona a classe active ao link clicado
+    event.currentTarget.classList.add('active');
 
-    // Adiciona evento de clique para cada link de categoria
-    linksCategorias.forEach(link => {
+    // Filtra os itens baseado na categoria
+    itens.forEach(item => {
+        const itemCategoria = item.getAttribute('data-categoria');
+        if (categoria === 'todos' || itemCategoria === categoria) {
+            item.style.display = 'flex';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// Função para inicializar os filtros de uma seção
+function inicializarFiltros(secao) {
+    const conteudo = document.getElementById(`conteudo-${secao}`);
+    if (!conteudo) return;
+
+    const links = conteudo.querySelectorAll('.nav-categorias a');
+    links.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Verifica se o botão clicado já está ativo
-            const jaAtivo = this.classList.contains('active');
-            
-            // Remove a classe 'active' de todos os links
-            linksCategorias.forEach(l => l.classList.remove('active'));
-            
-            // Se o botão já estava ativo, mostra todos os itens
-            if (jaAtivo) {
-                itensCardapio.forEach(item => {
-                    item.style.display = 'block';
-                });
-                return; // Sai da função sem adicionar a classe active
-            }
-            
-            // Adiciona a classe 'active' apenas no link clicado
-            this.classList.add('active');
-            
-            // Obtém a categoria selecionada (vegano, carne ou frango)
-            const categoriaSelecionada = this.textContent.trim().toLowerCase();
-            
-            // Filtra os itens do cardápio
-            itensCardapio.forEach(item => {
-                const nomeItem = item.querySelector('.pedido-titulo').textContent;
-                const categoriaItem = itensCategorias[nomeItem];
-                
-                // Mostra ou esconde o item baseado na categoria selecionada
-                if (categoriaSelecionada === 'todos' || categoriaItem === categoriaSelecionada) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+            const categoria = this.getAttribute('data-categoria');
+            filtrarPorCategoria(categoria, secao);
         });
     });
 
-    // Opcional: Ativa a categoria "Todos" por padrão
-    // document.querySelector('.nav-categorias a:first-child').click();
+    // Ativa o filtro "Todos" por padrão
+    const filtroTodos = conteudo.querySelector('.nav-categorias a[data-categoria="todos"]');
+    if (filtroTodos) {
+        filtroTodos.click();
+    }
 }
 
-document.addEventListener('DOMContentLoaded', inicializarFiltroCategorias);
+// Adiciona os event listeners para os links de categoria
+document.addEventListener('DOMContentLoaded', function() {
+    // Configura os filtros para cada seção
+    const secoes = ['lanches', 'sobremesas', 'molhos', 'ofertas', 'bebidas'];
+    
+    // Inicializa os filtros para cada seção
+    secoes.forEach(secao => {
+        inicializarFiltros(secao);
+    });
+
+    // Atualiza a função alternarConteudo para reinicializar os filtros
+    const alternarConteudoOriginal = window.alternarConteudo;
+    window.alternarConteudo = function(tipo) {
+        // Chama a função original
+        alternarConteudoOriginal(tipo);
+        
+        // Reinicializa os filtros para a seção atual
+        inicializarFiltros(tipo);
+    };
+});

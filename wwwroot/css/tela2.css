@@ -21,6 +21,7 @@ body {
     height: 100vh;
     background: #FCFCFC;
     box-shadow: 0 4px 10px rgba(119, 119, 119, 0.1);
+    position: relative;
 }
 
 .banner {
@@ -29,6 +30,7 @@ body {
     height: 20vh;
     background: black;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .banner img {
@@ -72,8 +74,8 @@ body {
 .c1 {
     display: flex;
     width: 100%;
-    flex-grow: 1;
-    height: 65vh;
+    height: calc(100vh - 33vh); /* 20vh banner + 13vh bottom bar */
+    position: relative;
 }
 
 .menu {
@@ -84,56 +86,78 @@ body {
     box-shadow: rgba(159, 159, 159, 0.2) 5px 0px 20px;
     background: rgb(255, 255, 254);
     padding: 1vh;
-    transition:  0.3s;
-    
-    & .menu-item {
-        height: 11vh;
-        padding: 0.5vh;
-        margin-bottom: 1vh;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 2vh;
-        transition: background-color 0.3s;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: background-color 0.3s;
-    }
-
-    & .menu-item:hover {
-        background: #DEF05F;
-        transition:  0.3s;
-    }
-
-    & .menu-item img {
-        width: 73%;
-        height: auto;
-        margin-bottom: 0.5vh;
-    }
-
-    & .menu-item div {
-        font-size: 1.5vh;
-        text-align: center;
-        color: rgb(63, 63, 63);
-        transition: 3s;
-    }
+    transition: 0.3s;
+    overflow-y: auto;
+    flex-shrink: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
 }
 
+.menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.menu::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.menu::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.menu .menu-item {
+    height: 11vh;
+    min-height: 11vh;
+    padding: 0.5vh;
+    margin-bottom: 1vh;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2vh;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.menu .menu-item:hover,
+.menu .menu-item.active {
+    background: #DEF05F;
+    transition: 0.3s;
+}
+
+.menu .menu-item img {
+    width: 73%;
+    height: auto;
+    margin-bottom: 0.5vh;
+    object-fit: contain;
+}
+
+.menu .menu-item div {
+    font-size: 1.5vh;
+    text-align: center;
+    color: rgb(63, 63, 63);
+    transition: 3s;
+}
 
 .content {
     flex-grow: 1;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: auto;
     padding: 0vh 0vh 0px 1.5vh;
+    height: 100%;
 }
 
 .pedido-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1vh;
-    overflow-y: auto;
-    max-height: calc(100vh - 35vh);
     padding-bottom: 1vh;
 }
 
@@ -147,39 +171,41 @@ body {
     border-radius: 2vh;
     transition: background-color 0.3s;
     white-space: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    & .pedido-imagem {
-        width: 8vh;
-        height: auto;
-        margin-bottom: 1vh;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+.pedido-item .pedido-imagem {
+    width: 8vh;
+    height: 8vh;
+    margin-bottom: 1vh;
+    object-fit: contain;
+}
 
-    & .pedido-titulo {
-        color: rgb(63, 63, 63);
-        font-weight: 400;
-        line-height: 130%;
-        font-size: 1.7vh;
-    }
+.pedido-item .pedido-titulo {
+    color: rgb(63, 63, 63);
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 1.7vh;
+    text-align: center;
+}
 
+.pedido-item .pedido-descricao {
+    font-size: 1.5vh;
+    color: #6D6D6D;
+    text-align: center;
+    line-height: 1.2;
+}
 
-
-    & .pedido-descricao {
-        font-size: 1.5vh;
-        color: #6D6D6D;
-        text-align: center;
-        line-height: 1.2;
-    }
-    & .pedido-preco{
-        color: rgb(94, 138, 56);
-        font-feature-settings: "liga" 0, "clig" 0;
-        font-family: "Tilt Warp";
-        font-size: 2vh;
-        font-style: normal;
-        font-weight: 100;
-    }
+.pedido-item .pedido-preco {
+    color: rgb(94, 138, 56);
+    font-feature-settings: "liga" 0, "clig" 0;
+    font-family: "Tilt Warp";
+    font-size: 2vh;
+    font-style: normal;
+    font-weight: 100;
+    margin-top: auto;
 }
 
 .pedido-item:hover {
@@ -187,37 +213,53 @@ body {
     transform: scale(1.02);
 }
 
-
 .container-categoria {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 1vh 0;
+    padding: 0.5vh 0;
     background: #f8f8f8;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .nav-categorias {
     display: flex;
-    gap: 1vh;
+    gap: 0.5vh;
+    overflow-x: auto;
+    padding: 0 0.5vh;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-categorias::-webkit-scrollbar {
+    display: none;
 }
 
 .nav-categorias a {
-    padding: 1vh 2vh;
-    font-size: 2vh;
+    padding: 0.5vh 1vh;
+    font-size: 1.5vh;
     text-decoration: none;
     color: #3F3F3F;
-    border-radius: 1.5vh;
+    border-radius: 1vh;
     transition: 0.3s;
-    width: 12vh;
+    min-width: 8vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin: 0.2vh;
 }
 
-.nav-categorias a:hover, .nav-categorias a.active {
+.nav-categorias a:hover,
+.nav-categorias a.active {
     background-color: #A3CF3B;
     color: white;
 }
@@ -234,6 +276,7 @@ body {
     box-shadow: 0vh -2vh 5vh -1vh rgba(202, 202, 202, 0.25);
     position: relative;
     padding: 1vh;
+    flex-shrink: 0;
 
     & .preco {
         position: absolute;
@@ -252,8 +295,6 @@ body {
         font-weight: 400;
     }
 }
-
-
 
 .botao-container {
     display: flex;
@@ -277,27 +318,6 @@ body {
     white-space: nowrap;
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .ConteinerBtn {
     padding: 0vh;
@@ -378,25 +398,6 @@ body {
 
  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Modal Principal Ajustado */
 .modal {
