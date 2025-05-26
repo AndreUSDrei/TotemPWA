@@ -1,114 +1,59 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Molhos</title>
-    <link rel="stylesheet" href="~/css/molhos.css" asp-append-version="true">
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
-</head>
-<body>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-    <div class="main">
-        <div class="banner">
-            <img src="~/img/telainicialmolhos.png">
-            <div class="buttons">
-                <button class="button"><img class="img-menu-item" src="img/simbolo.jpg"></button>
-            </div>
+<div class="container-categoria">
+    <div class="nav-categorias">
+        <a href="#" class="active" data-categoria="todos">Todos</a>
+        <a href="#" data-categoria="tradicionais">Tradicionais</a>
+        <a href="#" data-categoria="especiais">Especiais</a>
+        <a href="#" data-categoria="picantes">Picantes</a>
+    </div>
+</div>
+<div class="pedido">
+    <div class="pedido-grid">
+        <div class="pedido-item" data-id="100" data-categoria="tradicionais" data-descricao="Molho de ketchup tradicional" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/molhodeketchup.png" asp-append-version="true" alt="Ketchup">
+            <h3 class="pedido-titulo">Molho de Ketchup</h3> 
+            <h4 class="pedido-preco">R$ 4,90</h4>
         </div>
-        <div class="c1">
-             <div class="menu">
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/menuburguerimage.png" asp-append-version="true" alt="Lanches">
-                    <div>Lanches</div>
-                </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/combos.png" asp-append-version="true" alt="Combos">
-                    <div>Combos</div>
-                </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/sobremesa.png" asp-append-version="true" alt="Sobremesas">
-                    <div>Sobremesas</div>
-                </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/bebidas.png" asp-append-version="true" alt="Bebidas">
-                    <div>Bebidas</div>
-                </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/batata.png" asp-append-version="true" alt="Extras">
-                    <div>Extras</div>
-                </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/molhos.png" asp-append-version="true" alt="Molhos">
-                    <div>Molhos</div>
-                </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/cupom.png" asp-append-version="true" alt="Promoções">
-                    <div>Promoções</div>
-                </div>
-            </div>
-         
-            <div class="content">
-
-                <div class="container-categoria">
-                    <div class="nav-categorias">
-                        <a href="">Molhos Tradicionais</a>
-                        <a href="">Molhos Especiais</a>
-                    </div>
-                </div>
-                <div class="pedido">
-                    <div class="pedido-grid">
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/molhodeketchup.png" asp-append-version="true" alt="Ketchup">
-                            <h3 class="pedido-titulo">Molho de Ketchup</h3> 
-                            <h4 class="pedido-preco">R$ 4,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/molhodepimenta.png"asp-append-version="true" alt="Pimenta">
-                            <h3 class="pedido-titulo">Molho de Pimenta</h3> 
-                            <h4 class="pedido-preco">R$ 5,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/molhodebarbecue.png" asp-append-version="true" alt="Barbecue">
-                            <h3 class="pedido-titulo">Molho de Barbecue</h3> 
-                            <h4 class="pedido-preco">R$ 4,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/molhodequeijos.png" asp-append-version="true" alt="Queijos">
-                            <h3 class="pedido-titulo">Molho de Queijos</h3> 
-                            <h4 class="pedido-preco">R$ 5,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/maionese.png" asp-append-version="true" alt="Maionese">
-                            <h3 class="pedido-titulo">Molho de Maionese</h3> 
-                            <h4 class="pedido-preco">R$ 4,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/molhoverdedacsa.png" asp-append-version="true" alt="Verde">
-                            <h3 class="pedido-titulo">Molho Verde </h3> 
-                            <h4 class="pedido-preco">R$ 4,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                          <img class="pedido-imagem" src="~/img/molhorose.png" asp-append-version="true" alt="Rose">
-                            <h3 class="pedido-titulo">Molho Rose</h3> 
-                            <h4 class="pedido-preco">R$ 7,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                         <img class="pedido-imagem" src="~/img/molhodequeijos.png" asp-append-version="true" alt= "Mostarda">
-                            <h3 class="pedido-titulo">Molho de Mostarda</h3> 
-                            <h4 class="pedido-preco">R$ 8,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                           <img class="pedido-imagem" src="~/img/molhoultrasecretodacasa.png"asp-append-version="true" alt="Secreto">
-                            <h3 class="pedido-titulo">Molho Secreto do Chef</h3> 
-                            <h4 class="pedido-preco">R$ 10,90</h4>
-                        </div>
-                     
-                    </div>
-                </div>
-            </div>
+        <div class="pedido-item" data-id="101" data-categoria="picantes" data-descricao="Molho de pimenta picante" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/molhodepimenta.png" asp-append-version="true" alt="Pimenta">
+            <h3 class="pedido-titulo">Molho de Pimenta</h3> 
+            <h4 class="pedido-preco">R$ 5,90</h4>
+        </div>
+        <div class="pedido-item" data-id="102" data-categoria="tradicionais" data-descricao="Molho barbecue defumado" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/molhodebarbecue.png" asp-append-version="true" alt="Barbecue">
+            <h3 class="pedido-titulo">Molho de Barbecue</h3> 
+            <h4 class="pedido-preco">R$ 4,90</h4>
+        </div>
+        <div class="pedido-item" data-id="103" data-categoria="especiais" data-descricao="Molho cremoso de queijos" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/molhodequeijos.png" asp-append-version="true" alt="Queijos">
+            <h3 class="pedido-titulo">Molho de Queijos</h3> 
+            <h4 class="pedido-preco">R$ 5,90</h4>
+        </div>
+        <div class="pedido-item" data-id="104" data-categoria="tradicionais" data-descricao="Maionese especial" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/maionese.png" asp-append-version="true" alt="Maionese">
+            <h3 class="pedido-titulo">Molho de Maionese</h3> 
+            <h4 class="pedido-preco">R$ 4,90</h4>
+        </div>
+        <div class="pedido-item" data-id="105" data-categoria="tradicionais" data-descricao="Molho verde com ervas" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/molhoverdedacsa.png" asp-append-version="true" alt="Verde">
+            <h3 class="pedido-titulo">Molho Verde</h3> 
+            <h4 class="pedido-preco">R$ 4,90</h4>
+        </div>
+        <div class="pedido-item" data-id="106" data-categoria="tradicionais" data-descricao="Molho rose com tomate" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/molhorose.png" asp-append-version="true" alt="Rose">
+            <h3 class="pedido-titulo">Molho Rose</h3> 
+            <h4 class="pedido-preco">R$ 7,90</h4>
+        </div>
+        <div class="pedido-item" data-id="107" data-categoria="especiais" data-descricao="Molho de mostarda especial" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/molhodequeijos.png" asp-append-version="true" alt="Mostarda">
+            <h3 class="pedido-titulo">Molho de Mostarda</h3> 
+            <h4 class="pedido-preco">R$ 8,90</h4>
+        </div>
+        <div class="pedido-item" data-id="108" data-categoria="tradicionais" data-descricao="Molho especial da casa" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/molhoultrasecretodacasa.png" asp-append-version="true" alt="Secreto">
+            <h3 class="pedido-titulo">Molho Secreto do Chef</h3> 
+            <h4 class="pedido-preco">R$ 10,90</h4>
         </div>
     </div>
-
-</body>
-</html>
+</div>

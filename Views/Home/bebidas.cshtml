@@ -1,123 +1,65 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bebidas</title>
-    <link rel="stylesheet" href="~/css/bebidas.css" asp-append-version="true">
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
-</head>
-<body>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-    <div class="main">
-        <div class="banner">
-            <img src="~/img/telainicialbebidas.jpg" asp-append-version="true" alt="TelaBebidas">
-            <div class="buttons">
-                <button class="button"><img class="img-menu-item" src="~/img/simbolo.jpg"></button>
-            </div>
+<div class="container-categoria">
+    <div class="nav-categorias">
+        <a href="#" class="active" data-categoria="todos">Todos</a>
+        <a href="#" data-categoria="refrigerantes">Refrigerantes</a>
+        <a href="#" data-categoria="sucos">Sucos</a>
+        <a href="#" data-categoria="aguas">Águas</a>
+        <a href="#" data-categoria="zero">Zero Açúcar</a>
+    </div>
+</div>
+<div class="pedido">
+    <div class="pedido-grid">
+        <div class="pedido-item" data-id="200" data-categoria="refrigerantes" data-descricao="Refrigerante Coca-Cola" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/coca.png" asp-append-version="true" alt="Coca Cola">
+            <h3 class="pedido-titulo">Coca Cola</h3> 
+            <h4 class="pedido-preco">R$ 8,90</h4>
         </div>
-        <div class="c1">
-           <div class="menu">
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/menuburguerimage.png" asp-append-version="true" alt="Lanches">
-                    <div>Lanches</div>
-                </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/combos.png" asp-append-version="true" alt="Combos">
-                    <div>Combos</div>
-                </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/sobremesa.png" asp-append-version="true" alt="Sobremesas">
-                    <div>Sobremesas</div>
-                </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/bebidas.png" asp-append-version="true" alt="Bebidas">
-                    <div>Bebidas</div>
-                </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/batata.png" asp-append-version="true" alt="Extras">
-                    <div>Extras</div>
-                </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/molhos.png" asp-append-version="true" alt="Molhos">
-                    <div>Molhos</div>
-                </div>
-                <div class="menu-item">
-                    <img class="img-menu-item" src="~/img/cupom.png" asp-append-version="true" alt="Promoções">
-                    <div>Promoções</div>
-                </div>
-            </div>
-         
-            <div class="content">
-
-                <div class="container-categoria">
-                    <div class="nav-categorias">
-                        <a href="">Refrigerante</a>
-                        <a href="">Sucos</a>
-                        <a href="">Outros</a>
-                        <a href="">Categoria 4</a>
-                        <a href="">Categoria 5</a>
-                        <a href="">Categoria 6</a>
-                    </div>
-                </div>
-                <div class="pedido">
-                    <div class="pedido-grid">
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/coca.png" asp-append-version="true" alt="Coca Cola">
-                            <h3 class="pedido-titulo">Coca Cola</h3> 
-                            <h4 class="pedido-preco">R$ 8,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/cocazero.png" asp-append-version="true" alt="Coca Zero">
-                            <h3 class="pedido-titulo">Coca Zero</h3> 
-                            <h4 class="pedido-preco">R$ 8,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/spritezero.png" asp-append-version="true" alt="Sprite">
-                            <h3 class="pedido-titulo">Sprite Zero</h3> 
-                            <h4 class="pedido-preco">R$ 8,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/fantalaranja.png" asp-append-version="true" alt="Fanta Laranja">
-                            <h3 class="pedido-titulo">Fanta Laranja</h3> 
-                            <h4 class="pedido-preco">R$ 8,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/fantauva.png" asp-append-version="true" alt="Fanta Uva">
-                            <h3 class="pedido-titulo">Fanta Uva</h3> 
-                            <h4 class="pedido-preco">R$ 8,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/sprite.png" asp-append-version="true" alt="Sprite">
-                            <h3 class="pedido-titulo">Sprite</h3> 
-                            <h4 class="pedido-preco">R$ 8,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                        <img class="pedido-imagem" src="~/img/sucopessego.png" asp-append-version="true" alt="Suco Pessego">
-                            <h3 class="pedido-titulo">Suco de Pessego</h3> 
-                            <h4 class="pedido-preco">R$ 9,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                         <img class="pedido-imagem" src="~/img/sucouva.png" asp-append-version="true" alt="Suco Uva">
-                            <h3 class="pedido-titulo">Suco de Uva</h3> 
-                            <h4 class="pedido-preco">R$ 9,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                           <img class="pedido-imagem" src="~/img/agua.png" asp-append-version="true" alt="Agua">
-                            <h3 class="pedido-titulo">Água</h3> 
-                            <h4 class="pedido-preco">R$ 7,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                             <img class="pedido-imagem" src="~/img/aguacomgas.png" asp-append-version="true" alt="Agua c/ gás">
-                            <h3 class="pedido-titulo">Água com Gás</h3> 
-                            <h4 class="pedido-preco">R$ 7,90</h4>
-                        </div>
-                     
-                    </div>
-                </div>
-            </div>
+        <div class="pedido-item" data-id="201" data-categoria="refrigerantes" data-descricao="Refrigerante Coca-Cola Zero" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/cocazero.png" asp-append-version="true" alt="Coca Zero">
+            <h3 class="pedido-titulo">Coca Zero</h3> 
+            <h4 class="pedido-preco">R$ 8,90</h4>
+        </div>
+        <div class="pedido-item" data-id="202" data-categoria="refrigerantes" data-descricao="Refrigerante Sprite Zero" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/spritezero.png" asp-append-version="true" alt="Sprite">
+            <h3 class="pedido-titulo">Sprite Zero</h3> 
+            <h4 class="pedido-preco">R$ 8,90</h4>
+        </div>
+        <div class="pedido-item" data-id="203" data-categoria="refrigerantes" data-descricao="Refrigerante Fanta Laranja" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/fantalaranja.png" asp-append-version="true" alt="Fanta Laranja">
+            <h3 class="pedido-titulo">Fanta Laranja</h3> 
+            <h4 class="pedido-preco">R$ 8,90</h4>
+        </div>
+        <div class="pedido-item" data-id="204" data-categoria="refrigerantes" data-descricao="Refrigerante Fanta Uva" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/fantauva.png" asp-append-version="true" alt="Fanta Uva">
+            <h3 class="pedido-titulo">Fanta Uva</h3> 
+            <h4 class="pedido-preco">R$ 8,90</h4>
+        </div>
+        <div class="pedido-item" data-id="205" data-categoria="sucos" data-descricao="Refrigerante Sprite" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/sprite.png" asp-append-version="true" alt="Sprite">
+            <h3 class="pedido-titulo">Sprite</h3> 
+            <h4 class="pedido-preco">R$ 8,90</h4>
+        </div>
+        <div class="pedido-item" data-id="206" data-categoria="sucos" data-descricao="Suco de Pêssego" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/sucodepessego.png" asp-append-version="true" alt="Suco Pessego">
+            <h3 class="pedido-titulo">Suco de Pessego</h3> 
+            <h4 class="pedido-preco">R$ 9,90</h4>
+        </div>
+        <div class="pedido-item" data-id="207" data-categoria="sucos" data-descricao="Suco de Uva" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/sucouva.png" asp-append-version="true" alt="Suco Uva">
+            <h3 class="pedido-titulo">Suco de Uva</h3> 
+            <h4 class="pedido-preco">R$ 9,90</h4>
+        </div>
+        <div class="pedido-item" data-id="208" data-categoria="aguas" data-descricao="Água mineral" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/agua.png" asp-append-version="true" alt="Agua">
+            <h3 class="pedido-titulo">Água</h3> 
+            <h4 class="pedido-preco">R$ 7,90</h4>
+        </div>
+        <div class="pedido-item" data-id="209" data-categoria="aguas" data-descricao="Água mineral com gás" onclick="abrirModalEditar(this)">
+            <img class="pedido-imagem" src="~/img/aguacomgas.png" asp-append-version="true" alt="Agua c/ gás">
+            <h3 class="pedido-titulo">Água com Gás</h3> 
+            <h4 class="pedido-preco">R$ 7,90</h4>
         </div>
     </div>
-
-</body>
-</html>
+</div>

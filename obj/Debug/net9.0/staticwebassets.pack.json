@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\bebidas.css"
     },
     {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\css\\extras.css",
+      "PackagePath": "staticwebassets\\css\\extras.css"
+    },
+    {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\css\\molhos.css",
       "PackagePath": "staticwebassets\\css\\molhos.css"
     },
@@ -73,6 +77,22 @@
       "PackagePath": "staticwebassets\\img\\batata.png"
     },
     {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\batatacheddar.png",
+      "PackagePath": "staticwebassets\\img\\batatacheddar.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\batatacheddarcombacon.png",
+      "PackagePath": "staticwebassets\\img\\batatacheddarcombacon.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\batatachips.png",
+      "PackagePath": "staticwebassets\\img\\batatachips.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\batatarustica.png",
+      "PackagePath": "staticwebassets\\img\\batatarustica.png"
+    },
+    {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\bebidas.png",
       "PackagePath": "staticwebassets\\img\\bebidas.png"
     },
@@ -87,6 +107,10 @@
     {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\carrinhocom.png",
       "PackagePath": "staticwebassets\\img\\carrinhocom.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\chipsdebatatadoce.png",
+      "PackagePath": "staticwebassets\\img\\chipsdebatatadoce.png"
     },
     {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\coca.png",
@@ -193,6 +217,18 @@
       "PackagePath": "staticwebassets\\img\\molhoverdedacsa.png"
     },
     {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\nuggets.png",
+      "PackagePath": "staticwebassets\\img\\nuggets.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\nuggets5.png",
+      "PackagePath": "staticwebassets\\img\\nuggets5.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\nuggets8.png",
+      "PackagePath": "staticwebassets\\img\\nuggets8.png"
+    },
+    {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\petit.png",
       "PackagePath": "staticwebassets\\img\\petit.png"
     },
@@ -235,6 +271,10 @@
     {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\telainicialbebidas.png",
       "PackagePath": "staticwebassets\\img\\telainicialbebidas.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\telainicialextras.png",
+      "PackagePath": "staticwebassets\\img\\telainicialextras.png"
     },
     {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\telainicialmolhos.png",
