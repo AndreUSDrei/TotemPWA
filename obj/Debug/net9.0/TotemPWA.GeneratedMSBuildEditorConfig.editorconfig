@@ -9,57 +9,57 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TotemPWA
 build_property.RootNamespace = TotemPWA
-build_property.ProjectDir = C:\Users\andre\TotemPWA\
+build_property.ProjectDir = C:\Users\0031432512019\TotemPWA\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\andre\TotemPWA
+build_property.MSBuildProjectDirectory = C:\Users\0031432512019\TotemPWA
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/andre/TotemPWA/Views/Home/bebidas.cshtml]
+[C:/Users/0031432512019/TotemPWA/Views/Home/bebidas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxiZWJpZGFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/TotemPWA/Views/Home/ComerOuLevar.cshtml]
+[C:/Users/0031432512019/TotemPWA/Views/Home/ComerOuLevar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb21lck91TGV2YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/TotemPWA/Views/Home/extras.cshtml]
+[C:/Users/0031432512019/TotemPWA/Views/Home/extras.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxleHRyYXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/TotemPWA/Views/Home/index.cshtml]
+[C:/Users/0031432512019/TotemPWA/Views/Home/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/TotemPWA/Views/Home/molhos.cshtml]
+[C:/Users/0031432512019/TotemPWA/Views/Home/molhos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtb2xob3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/TotemPWA/Views/Home/ofertas.cshtml]
+[C:/Users/0031432512019/TotemPWA/Views/Home/ofertas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxvZmVydGFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/TotemPWA/Views/Home/sobremesa.cshtml]
+[C:/Users/0031432512019/TotemPWA/Views/Home/sobremesa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzb2JyZW1lc2EuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/TotemPWA/Views/Home/tela2.cshtml]
+[C:/Users/0031432512019/TotemPWA/Views/Home/tela2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx0ZWxhMi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/TotemPWA/Views/Shared/Error.cshtml]
+[C:/Users/0031432512019/TotemPWA/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/TotemPWA/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/0031432512019/TotemPWA/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/TotemPWA/Views/Shared/_Layout.cshtml]
+[C:/Users/0031432512019/TotemPWA/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-8xtumb19yc
