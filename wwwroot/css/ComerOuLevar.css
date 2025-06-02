@@ -133,8 +133,10 @@ body {
         line-height: normal;
         text-decoration: none;
         border-radius: 1.5vh;
-
         border: 0.5vh solid #414141;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     & #prosseguir{

@@ -26,6 +26,27 @@ document.addEventListener('DOMContentLoaded', function() {
             { nome: 'Molho de Queijos', quantidade: 1, preco: 0 },
             { nome: 'Ketchup', quantidade: 1, preco: 0 }
         ],
+        304: [ // Batata Chips
+            { nome: 'Batata Chips', quantidade: 1, preco: 8.90 },
+            { nome: 'Sal', quantidade: 1, preco: 0 },
+            { nome: 'Ketchup', quantidade: 1, preco: 0 }
+        ],
+        305: [ // Chips de Batata Doce
+            { nome: 'Chips de Batata Doce', quantidade: 1, preco: 9.90 },
+            { nome: 'Sal', quantidade: 1, preco: 0 }
+        ],
+        306: [ // Nuggets 5un
+            { nome: 'Nuggets de Frango', quantidade: 5, preco: 12.90 },
+            { nome: 'Ketchup', quantidade: 1, preco: 0 }
+        ],
+        307: [ // Nuggets 10un
+            { nome: 'Nuggets de Frango', quantidade: 10, preco: 19.90 },
+            { nome: 'Ketchup', quantidade: 2, preco: 0 }
+        ],
+        308: [ // Nuggets 20un
+            { nome: 'Nuggets de Frango', quantidade: 20, preco: 34.90 },
+            { nome: 'Ketchup', quantidade: 4, preco: 0 }
+        ],
         // Sobremesas
         1: [ { nome: 'Calda de Chocolate', quantidade: 0, preco: 2.00 }, { nome: 'Granulado', quantidade: 0, preco: 1.00 }, { nome: 'Chantilly', quantidade: 0, preco: 1.50 } ],
         2: [ { nome: 'Calda de Caramelo', quantidade: 0, preco: 2.00 }, { nome: 'Cookies extras', quantidade: 0, preco: 2.00 }, { nome: 'Chantilly', quantidade: 0, preco: 1.50 } ],
@@ -269,9 +290,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const event = new CustomEvent('atualizarCarrinho');
             window.dispatchEvent(event);
 
-            alert('Item adicionado ao carrinho com os ingredientes personalizados!');
+            modalEditar.style.display = 'none';
+            editedItem = null; // Limpar o item editado após confirmação
         }
-        modalEditar.style.display = 'none';
-        editedItem = null; // Limpar o item editado após confirmação
     });
 });

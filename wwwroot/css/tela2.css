@@ -91,6 +91,7 @@ body {
     flex-shrink: 0;
     scrollbar-width: thin;
     scrollbar-color: #888 #f1f1f1;
+    padding-bottom: 4vh; /* Mais espaço no final para o último item */
 }
 
 .menu::-webkit-scrollbar {
@@ -112,8 +113,8 @@ body {
 }
 
 .menu .menu-item {
-    height: 11vh;
-    min-height: 11vh;
+    height: 10vh;
+    min-height: 10vh;
     padding: 0.5vh;
     margin-bottom: 1vh;
     text-align: center;
@@ -125,6 +126,10 @@ body {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+}
+
+.menu .menu-item:last-child {
+    margin-bottom: 0; /* Remove margin from last item */
 }
 
 .menu .menu-item:hover,

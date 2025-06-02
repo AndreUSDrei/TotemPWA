@@ -1,0 +1,38 @@
+@model TotemPWA.ViewModels.PedidoViewModel
+@{
+    ViewData["Title"] = "Novo Pedido";
+}
+<h2>Novo Pedido</h2>
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success">@TempData["MensagemSucesso"]</div>
+}
+
+<form asp-action="Novo" method="post">
+    <div class="mb-3">
+        <label asp-for="NomeCliente" class="form-label"></label>
+        <input asp-for="NomeCliente" class="form-control" />
+        <span asp-validation-for="NomeCliente" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Itens Selecionados (IDs separados por vírgula)</label>
+        <input asp-for="ItensSelecionados" class="form-control" />
+        <span asp-validation-for="ItensSelecionados" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="MetodoPagamento" class="form-label"></label>
+        <select asp-for="MetodoPagamento" class="form-control">
+            <option value="">Selecione...</option>
+            <option>Dinheiro</option>
+            <option>Cartão</option>
+            <option>Pix</option>
+        </select>
+        <span asp-validation-for="MetodoPagamento" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+} 
