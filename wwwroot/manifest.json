@@ -1,19 +1,33 @@
 {
-  "name": "TotemPWA",
-  "short_name": "Totem",
+  "name": "ADS Burguer - Totem",
+  "short_name": "ADS Burguer",
+  "description": "Totem de autoatendimento para ADS Burguer",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#9FD942",
+  "orientation": "portrait",
+  "background_color": "#870303",
+  "theme_color": "#870303",
+  "scope": "/",
+  "lang": "pt-BR",
   "icons": [
     {
       "src": "/img/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/img/icon-512.png",
       "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["food", "business"],
+  "screenshots": [
+    {
+      "src": "/img/screenshot-1.png",
+      "sizes": "1280x720",
       "type": "image/png"
     }
   ]
