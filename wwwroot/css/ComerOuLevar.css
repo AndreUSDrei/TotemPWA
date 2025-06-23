@@ -98,14 +98,6 @@ body {
     background-color: #F0F0F0;
 }
 
-
-
-
-
-
-
-
-
 .ConteinerBtn {
     display: flex;
     gap: 1vh;
@@ -164,4 +156,28 @@ body {
 
     }
  
+}
+
+@media (max-width: 700px) {
+    .main {
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+    }
+    .opcao-grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .comer-aqui, .levar {
+        width: 90vw;
+        max-width: 320px;
+        height: 160px;
+    }
+    .opcao-imagem {
+        width: 70px;
+        height: 70px;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
 }

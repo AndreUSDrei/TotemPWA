@@ -1,0 +1,108 @@
+.revisao-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #222;
+    min-height: 100vh;
+}
+.revisao-banner img {
+    width: 100%;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: 0 0 20px 20px;
+}
+.revisao-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    margin-top: -40px;
+    padding: 32px 24px 24px 24px;
+    width: 350px;
+    max-width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.revisao-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+    color: #222;
+    font-weight: 700;
+}
+.revisao-lista {
+    max-height: 220px;
+    overflow-y: auto;
+    margin-bottom: 18px;
+}
+.revisao-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+.revisao-item img {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    margin-right: 12px;
+    object-fit: cover;
+}
+.revisao-info {
+    flex: 1;
+}
+.revisao-nome {
+    font-weight: 600;
+    color: #222;
+}
+.revisao-desc {
+    font-size: 0.95em;
+    color: #666;
+}
+.revisao-preco {
+    font-weight: 600;
+    color: #222;
+    margin-left: 10px;
+}
+.revisao-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    margin: 18px 0 10px 0;
+    font-weight: 700;
+}
+.revisao-total-valor {
+    color: #e53935;
+    font-size: 1.2em;
+}
+.revisao-botoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+.btn-cancelar {
+    background: #fff;
+    border: 2px solid #222;
+    color: #222;
+    border-radius: 8px;
+    padding: 8px 24px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+.btn-cancelar:hover {
+    background: #eee;
+}
+.btn-pagar {
+    background: #8bc34a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 24px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.btn-pagar:hover {
+    background: #689f38;
+} 
