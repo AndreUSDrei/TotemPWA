@@ -8,6 +8,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script>
+        // Mapeamento dinâmico de ingredientes por produto, gerado pelo backend
+        var ingredientesPorProduto = {};
+        @{
+            var produtos = ViewBag.Produtos as List<TotemPWA.Models.Product>;
+            var categorias = ViewBag.Categorias as List<TotemPWA.Models.Category>;
+            var categoriaCombos = categorias?.FirstOrDefault(c => c.Slug == "combos");
+            var combos = produtos?.Where(p => p.CategoryId == categoriaCombos?.Id).ToList() ?? new List<TotemPWA.Models.Product>();
+        }
+        @foreach (var produto in produtos)
+        {
+            var adicionais = produto.Additionals != null ? produto.Additionals.ToList() : new List<TotemPWA.Models.Additional>();
+            <text>
+            ingredientesPorProduto[@produto.Id] = [
+                @string.Join(",", adicionais.Select(a => {
+                    var ing = a.Ingredient;
+                    if (ing == null) return "";
+                    return $"{{id: {ing.Id}, nome: '{ing.Name}', preco: {ing.Price.ToString(System.Globalization.CultureInfo.InvariantCulture)}, limite: {ing.Limit}}}";
+                }).Where(s => !string.IsNullOrEmpty(s)))
+            ];
+            </text>
+        }
+    </script>
 
     <div class="main">
         <div class="banner">
@@ -59,52 +82,14 @@
                 </div>
                 <div class="pedido">
                     <div class="pedido-grid">
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/1.png">
-                            <h3 class="pedido-titulo">Combo 1</h3> 
-                            <h4 class="pedido-preco">R$ 54,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/2.png">
-                            <h3 class="pedido-titulo">Combo 2</h3> 
-                            <h4 class="pedido-preco">R$ 59,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/3.png">
-                            <h3 class="pedido-titulo">Combo 3</h3> 
-                            <h4 class="pedido-preco">R$ 49,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/4.png">
-                            <h3 class="pedido-titulo">Combo 4</h3> 
-                            <h4 class="pedido-preco">R$ 5,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/5.png">
-                            <h3 class="pedido-titulo">Combo 5</h3> 
-                            <h4 class="pedido-preco">R$ 4,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/6.png">
-                            <h3 class="pedido-titulo">Combo 6 </h3> 
-                            <h4 class="pedido-preco">R$ 4,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                          <br>  <img class="pedido-imagem" src="~/img/7.png">
-                            <h3 class="pedido-titulo">Casal Doce</h3> 
-                            <h4 class="pedido-preco">R$ 79,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                            <img class="pedido-imagem" src="~/img/9.png">
-                            <h3 class="pedido-titulo">Casal Apaixonado</h3> 
-                            <h4 class="pedido-preco">R$ 89,90</h4>
-                        </div>
-                        <div class="pedido-item">
-                        <img class="pedido-imagem" src="~/img/8.png">
-                            <h3 class="pedido-titulo">Familia</h3> 
-                            <h4 class="pedido-preco">R$ 115,90</h4>
-                        </div>
-                    
+                        @foreach (var produto in combos)
+                        {
+                            <div class="pedido-item" data-id="@produto.Id" data-categoria="@produto.CategoryId" data-descricao="@produto.Description" onclick="abrirModalEditar(this)">
+                                <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name">
+                                <h3 class="pedido-titulo">@produto.Name</h3>
+                                <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

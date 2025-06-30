@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andre\\TotemPWA\\TotemPWA.csproj": {}
+    "C:\\Users\\andre\\totemPWA\\TotemPWA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andre\\TotemPWA\\TotemPWA.csproj": {
+    "C:\\Users\\andre\\totemPWA\\TotemPWA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andre\\TotemPWA\\TotemPWA.csproj",
+        "projectUniqueName": "C:\\Users\\andre\\totemPWA\\TotemPWA.csproj",
         "projectName": "TotemPWA",
-        "projectPath": "C:\\Users\\andre\\TotemPWA\\TotemPWA.csproj",
+        "projectPath": "C:\\Users\\andre\\totemPWA\\TotemPWA.csproj",
         "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andre\\TotemPWA\\obj\\",
+        "outputPath": "C:\\Users\\andre\\totemPWA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -46,11 +46,11 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",

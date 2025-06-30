@@ -40,7 +40,31 @@
     </style>
 </head>
 <body>
-
+    <script>
+        // Mapeamento dinâmico de ingredientes por produto, gerado pelo backend
+        var ingredientesPorProduto = {};
+        @{
+            var produtos = ViewBag.Produtos as List<TotemPWA.Models.Product>;
+            var categorias = ViewBag.Categorias as List<TotemPWA.Models.Category>;
+            var categoriaLanches = categorias?.FirstOrDefault(c => c.Slug == "lanches");
+            var categoriaCombos = categorias?.FirstOrDefault(c => c.Slug == "combos");
+            var lanches = produtos?.Where(p => p.CategoryId == categoriaLanches?.Id).ToList() ?? new List<TotemPWA.Models.Product>();
+            var combos = produtos?.Where(p => p.CategoryId == categoriaCombos?.Id).ToList() ?? new List<TotemPWA.Models.Product>();
+        }
+        @foreach (var produto in produtos)
+        {
+            var adicionais = produto.Additionals != null ? produto.Additionals.ToList() : new List<TotemPWA.Models.Additional>();
+            <text>
+            ingredientesPorProduto[@produto.Id] = [
+                @string.Join(",", adicionais.Select(a => {
+                    var ing = a.Ingredient;
+                    if (ing == null) return "";
+                    return $"{{id: {ing.Id}, nome: '{ing.Name}', preco: {ing.Price.ToString(System.Globalization.CultureInfo.InvariantCulture)}, limite: {ing.Limit}}}";
+                }).Where(s => !string.IsNullOrEmpty(s)))
+            ];
+            </text>
+        }
+    </script>
     <div class="main">
         <!-- Banner para Lanches -->
         <div class="banner" id="banner-lanches">
@@ -102,13 +126,23 @@
             </div>
         </div>
 
+        <!-- Banner para Combos (usando o mesmo de lanches) -->
+        <div class="banner" id="banner-combos" style="display: none;">
+            <img src="~/img/banner.jpg" asp-append-version="true" alt="Banner Combos">
+            <div class="buttons">
+                <button class="button">
+                    <img class="img-menu-item" src="~/img/simbolo.jpg" asp-append-version="true" alt="Símbolo">
+                </button>
+            </div>
+        </div>
+
         <div class="c1">
             <div class="menu">
                 <div class="menu-item active" onclick="alternarConteudo('lanches')">
                     <img class="img-menu-item" src="~/img/menuburguerimage.png" asp-append-version="true" alt="Lanches">
                     <div>Lanches</div>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" onclick="alternarConteudo('combos')">
                     <img class="img-menu-item" src="~/img/combos.png" asp-append-version="true" alt="Combos">
                     <div>Combos</div>
                 </div>
@@ -146,76 +180,35 @@
                     </div>
                     <div class="pedido">
                         <div class="pedido-grid">
-                            <!-- Item 1 -->
-                            <div class="pedido-item" data-id="10" data-categoria="carne" data-descricao="Pão de gergelim, cebola, alface, queijo cheddar, dois hambúrgueres de costela 180g" onclick="abrirModalEditar(this)">
-                                <img class="pedido-imagem" src="~/img/menuburguerimage.png" asp-append-version="true" alt="Burguer 404">
-                                <h3 class="pedido-titulo">Burguer 404</h3> 
-                                <h4 class="pedido-preco">R$ 24,90</h4>
-                            </div>
+                            @foreach (var produto in lanches)
+                            {
+                                <div class="pedido-item" data-id="@produto.Id" data-categoria="@produto.CategoryId" data-descricao="@produto.Description" onclick="abrirModalEditar(this)">
+                                    <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name">
+                                    <h3 class="pedido-titulo">@produto.Name</h3>
+                                    <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
 
-                            <!-- Item 2 -->
-                            <div class="pedido-item" data-id="11" data-categoria="carne" data-descricao="Pão brioche, queijo prato, hambúrguer de costela 200g, bacon, cebola caramelizada" onclick="abrirModalEditar(this)">
-                                <img class="pedido-imagem" src="~/img/full.png" asp-append-version="true" alt="Full Stack">
-                                <h3 class="pedido-titulo">Full Stack</h3> 
-                                <h4 class="pedido-preco">R$ 39,90</h4>
-                            </div>
-
-                            <!-- Item 3 -->
-                            <div class="pedido-item" data-id="12" data-categoria="carne" data-descricao="Três hambúrgueres de costela 150g, queijo cheddar, cebola crispy, molho especial" onclick="abrirModalEditar(this)">
-                                <img class="pedido-imagem" src="~/img/loopingduplo.png" asp-append-version="true" alt="Looping Triplo">
-                                <h3 class="pedido-titulo">Looping Triplo</h3> 
-                                <h4 class="pedido-preco">R$ 32,90</h4>
-                            </div>
-
-                            <!-- Item 4 -->
-                            <div class="pedido-item" data-id="13" data-categoria="carne" data-descricao="Pão australiano, hambúrguer de fraldinha 180g, queijo, picles, cebola roxa" onclick="abrirModalEditar(this)">
-                                <img class="pedido-imagem" src="~/img/helloword.png" asp-append-version="true" alt="Hello Word">
-                                <h3 class="pedido-titulo">Hello Word</h3> 
-                                <h4 class="pedido-preco">R$ 24,90</h4>
-                            </div>
-
-                            <!-- Item 5 -->
-                            <div class="pedido-item" data-id="14" data-categoria="vegano" data-descricao="Pão integral, hambúrguer de grão-de-bico, abobrinha, berinjela e molho de iogurte" onclick="abrirModalEditar(this)">
-                                <img class="pedido-imagem" src="~/img/vegan.png" asp-append-version="true" alt="VS Veggie">
-                                <h3 class="pedido-titulo">VS Veggie</h3> 
-                                <h4 class="pedido-preco">R$ 21,90</h4>
-                            </div>
-
-                            <!-- Item 6 -->
-                            <div class="pedido-item" data-id="15" data-categoria="carne" data-descricao="Pão de hambúrguer tradicional, hambúrguer de costela 180g, queijo prato, alface, tomate" onclick="abrirModalEditar(this)">
-                                <img class="pedido-imagem" src="~/img/backend.jpg" asp-append-version="true" alt="Backend">
-                                <h3 class="pedido-titulo">Backend</h3> 
-                                <h4 class="pedido-preco">R$ 22,90</h4>
-                            </div>
-
-                            <!-- Item 7 -->
-                            <div class="pedido-item" data-id="16" data-categoria="carne" data-descricao="Pão brioche, dois hambúrgueres de costela 180g, queijo cheddar, bacon, molho barbecue" onclick="abrirModalEditar(this)">
-                                <img class="pedido-imagem" src="~/img/front.png" asp-append-version="true" alt="Frontend">
-                                <h3 class="pedido-titulo">Frontend</h3> 
-                                <h4 class="pedido-preco">R$ 44,90</h4>
-                            </div>
-
-                            <!-- Item 8 -->
-                            <div class="pedido-item" data-id="17" data-categoria="carne" data-descricao="Pão de hambúrguer com gergelim, hambúrguer de costela 200g, queijo, bacon, cebola crispy" onclick="abrirModalEditar(this)">
-                                <img class="pedido-imagem" src="~/img/devopsbacon.png" asp-append-version="true" alt="DevOps Bacon">
-                                <h3 class="pedido-titulo">DevOps Bacon</h3> 
-                                <h4 class="pedido-preco">R$ 34,90</h4>
-                            </div>
-
-                            <!-- Item 9 -->
-                            <div class="pedido-item" data-id="18" data-categoria="carne" data-descricao="Pão de batata, hambúrguer de costela 150g, queijo coalho, molho de pimenta" onclick="abrirModalEditar(this)">
-                                <img class="pedido-imagem" src="~/img/byte.png" asp-append-version="true" alt="Byte Burguer">
-                                <h3 class="pedido-titulo">Byte Burguer</h3> 
-                                <h4 class="pedido-preco">R$ 24,90</h4>
-                            </div>
-
-                            <!-- Item 10 -->
-                            <div class="pedido-item" data-id="19" data-categoria="carne" data-descricao="Pão de hambúrguer tradicional, hambúrguer de fraldinha 180g, queijo, alface, tomate" onclick="abrirModalEditar(this)">
-                                <img class="pedido-imagem" src="~/img/haburguer.png" asp-append-version="true" alt="Index Burguer">
-                                <h3 class="pedido-titulo">Index Burguer</h3> 
-                                <h4 class="pedido-preco">R$ 25,90</h4>
-                            </div>
-
+                <!-- Conteúdo de Combos -->
+                <div id="conteudo-combos" style="display: none;">
+                    <div class="container-categoria">
+                        <div class="nav-categorias">
+                            <a href="#" class="active" data-categoria="todos">Todos</a>
+                        </div>
+                    </div>
+                    <div class="pedido">
+                        <div class="pedido-grid">
+                            @foreach (var produto in combos)
+                            {
+                                <div class="pedido-item" data-id="@produto.Id" data-categoria="@produto.CategoryId" data-descricao="@produto.Description" onclick="abrirModalEditar(this)">
+                                    <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name">
+                                    <h3 class="pedido-titulo">@produto.Name</h3>
+                                    <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -351,6 +344,7 @@ function alternarConteudo(tipo) {
     document.getElementById('banner-ofertas').style.display = 'none';
     document.getElementById('banner-bebidas').style.display = 'none';
     document.getElementById('banner-extras').style.display = 'none';
+    document.getElementById('banner-combos').style.display = 'none';
     
     // Remove a classe active de todos os itens do menu
     document.querySelectorAll('.menu-item').forEach(item => {
