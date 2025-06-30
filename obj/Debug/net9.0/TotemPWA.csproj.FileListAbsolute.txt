@@ -244,7 +244,6 @@ C:\Users\andre\TotemPWA\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.r
 C:\Users\andre\TotemPWA\obj\Debug\net9.0\scopedcss\bundle\TotemPWA.styles.css
 C:\Users\andre\TotemPWA\obj\Debug\net9.0\scopedcss\projectbundle\TotemPWA.bundle.scp.css
 C:\Users\andre\TotemPWA\obj\Debug\net9.0\compressed\6avyvwmnm3-jrge3sgs8r.gz
-C:\Users\andre\TotemPWA\obj\Debug\net9.0\compressed\4yzklvyr7i-r2m81lbhti.gz
 C:\Users\andre\TotemPWA\obj\Debug\net9.0\compressed\sgupj33xht-jrge3sgs8r.gz
 C:\Users\andre\TotemPWA\obj\Debug\net9.0\compressed\tkbme0jfby-jrge3sgs8r.gz
 C:\Users\andre\TotemPWA\obj\Debug\net9.0\compressed\gjpd08i970-jrge3sgs8r.gz
@@ -335,3 +334,4 @@ C:\Users\andre\TotemPWA\obj\Debug\net9.0\refint\TotemPWA.dll
 C:\Users\andre\TotemPWA\obj\Debug\net9.0\TotemPWA.genruntimeconfig.cache
 C:\Users\andre\TotemPWA\obj\Debug\net9.0\ref\TotemPWA.dll
 C:\Users\andre\TotemPWA\obj\Debug\net9.0\compressed\pebobbe2b7-qwjgjwmzui.gz
+C:\Users\andre\TotemPWA\obj\Debug\net9.0\compressed\4yzklvyr7i-ogs42f1qpw.gz

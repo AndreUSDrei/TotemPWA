@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/D9oMiEtzeQkDCFl6I+TqeWEjyxCquzzuunm9s07hnE=",
+  "Hash": "mXIyq2trPL2BCbyF6vPQQKRsLsQLj5sKyjXAQ1z5SHs=",
   "Source": "TotemPWA",
   "BasePath": "_content/TotemPWA",
   "Mode": "Default",
@@ -185,12 +185,12 @@
       "OriginalItemSpec": "C:\\Users\\andre\\TotemPWA\\wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\andre\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\4yzklvyr7i-r2m81lbhti.gz",
+      "Identity": "C:\\Users\\andre\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\4yzklvyr7i-ogs42f1qpw.gz",
       "SourceId": "TotemPWA",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\andre\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/TotemPWA",
-      "RelativePath": "css/ComerOuLevar#[.{fingerprint=r2m81lbhti}]?.css.gz",
+      "RelativePath": "css/ComerOuLevar#[.{fingerprint=ogs42f1qpw}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -199,8 +199,8 @@
       "RelatedAsset": "C:\\Users\\andre\\TotemPWA\\wwwroot\\css\\ComerOuLevar.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "64fv1br4g4",
-      "Integrity": "RrsEWS6m76JFg7/9a/ymg54iLp4DtNQaP1a9YaWYy2g=",
+      "Fingerprint": "mwz4nwof8q",
+      "Integrity": "Ojor88UZ68TQ3nYclJmOwLSTPhRJ6cr9XpPH9QqZbaQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\andre\\TotemPWA\\wwwroot\\css\\ComerOuLevar.css"
@@ -1753,8 +1753,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "r2m81lbhti",
-      "Integrity": "wyZMW8UI7WV9OSPHF7n0TTElKyraCXLTwn/cTo6KbAA=",
+      "Fingerprint": "ogs42f1qpw",
+      "Integrity": "6CiPmeUZ/f7W8bmMYfkyyfJV3xAc3o+DtUkIIiFHw08=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\ComerOuLevar.css"
@@ -5211,12 +5211,12 @@
     },
     {
       "Route": "css/ComerOuLevar.css",
-      "AssetFile": "C:\\Users\\andre\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\4yzklvyr7i-r2m81lbhti.gz",
+      "AssetFile": "C:\\Users\\andre\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\4yzklvyr7i-ogs42f1qpw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000860585198"
+          "Quality": "0.000795544948"
         }
       ],
       "ResponseHeaders": [
@@ -5226,15 +5226,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1161"
+          "Value": "1256"
         },
         {
           "Name": "ETag",
-          "Value": "\"RrsEWS6m76JFg7/9a/ymg54iLp4DtNQaP1a9YaWYy2g=\""
+          "Value": "\"Ojor88UZ68TQ3nYclJmOwLSTPhRJ6cr9XpPH9QqZbaQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Jun 2025 02:33:07 GMT"
+          "Value": "Mon, 23 Jun 2025 12:59:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5254,13 +5254,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"wyZMW8UI7WV9OSPHF7n0TTElKyraCXLTwn/cTo6KbAA=\""
+          "Value": "W/\"6CiPmeUZ/f7W8bmMYfkyyfJV3xAc3o+DtUkIIiFHw08=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wyZMW8UI7WV9OSPHF7n0TTElKyraCXLTwn/cTo6KbAA="
+          "Value": "sha256-6CiPmeUZ/f7W8bmMYfkyyfJV3xAc3o+DtUkIIiFHw08="
         }
       ]
     },
@@ -5275,7 +5275,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4082"
+          "Value": "4496"
         },
         {
           "Name": "Content-Type",
@@ -5283,11 +5283,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wyZMW8UI7WV9OSPHF7n0TTElKyraCXLTwn/cTo6KbAA=\""
+          "Value": "\"6CiPmeUZ/f7W8bmMYfkyyfJV3xAc3o+DtUkIIiFHw08=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Jun 2025 02:33:07 GMT"
+          "Value": "Mon, 23 Jun 2025 12:59:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5297,13 +5297,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wyZMW8UI7WV9OSPHF7n0TTElKyraCXLTwn/cTo6KbAA="
+          "Value": "sha256-6CiPmeUZ/f7W8bmMYfkyyfJV3xAc3o+DtUkIIiFHw08="
         }
       ]
     },
     {
       "Route": "css/ComerOuLevar.css.gz",
-      "AssetFile": "C:\\Users\\andre\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\4yzklvyr7i-r2m81lbhti.gz",
+      "AssetFile": "C:\\Users\\andre\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\4yzklvyr7i-ogs42f1qpw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5312,7 +5312,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1161"
+          "Value": "1256"
         },
         {
           "Name": "Content-Type",
@@ -5320,11 +5320,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"RrsEWS6m76JFg7/9a/ymg54iLp4DtNQaP1a9YaWYy2g=\""
+          "Value": "\"Ojor88UZ68TQ3nYclJmOwLSTPhRJ6cr9XpPH9QqZbaQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Jun 2025 02:33:07 GMT"
+          "Value": "Mon, 23 Jun 2025 12:59:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5342,18 +5342,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-RrsEWS6m76JFg7/9a/ymg54iLp4DtNQaP1a9YaWYy2g="
+          "Value": "sha256-Ojor88UZ68TQ3nYclJmOwLSTPhRJ6cr9XpPH9QqZbaQ="
         }
       ]
     },
     {
-      "Route": "css/ComerOuLevar.r2m81lbhti.css",
-      "AssetFile": "C:\\Users\\andre\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\4yzklvyr7i-r2m81lbhti.gz",
+      "Route": "css/ComerOuLevar.ogs42f1qpw.css",
+      "AssetFile": "C:\\Users\\andre\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\4yzklvyr7i-ogs42f1qpw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000860585198"
+          "Quality": "0.000795544948"
         }
       ],
       "ResponseHeaders": [
@@ -5363,15 +5363,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1161"
+          "Value": "1256"
         },
         {
           "Name": "ETag",
-          "Value": "\"RrsEWS6m76JFg7/9a/ymg54iLp4DtNQaP1a9YaWYy2g=\""
+          "Value": "\"Ojor88UZ68TQ3nYclJmOwLSTPhRJ6cr9XpPH9QqZbaQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Jun 2025 02:33:07 GMT"
+          "Value": "Mon, 23 Jun 2025 12:59:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5391,13 +5391,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"wyZMW8UI7WV9OSPHF7n0TTElKyraCXLTwn/cTo6KbAA=\""
+          "Value": "W/\"6CiPmeUZ/f7W8bmMYfkyyfJV3xAc3o+DtUkIIiFHw08=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "r2m81lbhti"
+          "Value": "ogs42f1qpw"
         },
         {
           "Name": "label",
@@ -5405,12 +5405,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-wyZMW8UI7WV9OSPHF7n0TTElKyraCXLTwn/cTo6KbAA="
+          "Value": "sha256-6CiPmeUZ/f7W8bmMYfkyyfJV3xAc3o+DtUkIIiFHw08="
         }
       ]
     },
     {
-      "Route": "css/ComerOuLevar.r2m81lbhti.css",
+      "Route": "css/ComerOuLevar.ogs42f1qpw.css",
       "AssetFile": "C:\\Users\\andre\\TotemPWA\\wwwroot\\css\\ComerOuLevar.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -5420,7 +5420,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4082"
+          "Value": "4496"
         },
         {
           "Name": "Content-Type",
@@ -5428,11 +5428,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wyZMW8UI7WV9OSPHF7n0TTElKyraCXLTwn/cTo6KbAA=\""
+          "Value": "\"6CiPmeUZ/f7W8bmMYfkyyfJV3xAc3o+DtUkIIiFHw08=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Jun 2025 02:33:07 GMT"
+          "Value": "Mon, 23 Jun 2025 12:59:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5442,7 +5442,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "r2m81lbhti"
+          "Value": "ogs42f1qpw"
         },
         {
           "Name": "label",
@@ -5450,13 +5450,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-wyZMW8UI7WV9OSPHF7n0TTElKyraCXLTwn/cTo6KbAA="
+          "Value": "sha256-6CiPmeUZ/f7W8bmMYfkyyfJV3xAc3o+DtUkIIiFHw08="
         }
       ]
     },
     {
-      "Route": "css/ComerOuLevar.r2m81lbhti.css.gz",
-      "AssetFile": "C:\\Users\\andre\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\4yzklvyr7i-r2m81lbhti.gz",
+      "Route": "css/ComerOuLevar.ogs42f1qpw.css.gz",
+      "AssetFile": "C:\\Users\\andre\\TotemPWA\\obj\\Debug\\net9.0\\compressed\\4yzklvyr7i-ogs42f1qpw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5465,7 +5465,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1161"
+          "Value": "1256"
         },
         {
           "Name": "Content-Type",
@@ -5473,11 +5473,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"RrsEWS6m76JFg7/9a/ymg54iLp4DtNQaP1a9YaWYy2g=\""
+          "Value": "\"Ojor88UZ68TQ3nYclJmOwLSTPhRJ6cr9XpPH9QqZbaQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Jun 2025 02:33:07 GMT"
+          "Value": "Mon, 23 Jun 2025 12:59:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5495,7 +5495,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "r2m81lbhti"
+          "Value": "ogs42f1qpw"
         },
         {
           "Name": "label",
@@ -5503,7 +5503,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-RrsEWS6m76JFg7/9a/ymg54iLp4DtNQaP1a9YaWYy2g="
+          "Value": "sha256-Ojor88UZ68TQ3nYclJmOwLSTPhRJ6cr9XpPH9QqZbaQ="
         }
       ]
     },
