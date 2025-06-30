@@ -1,5 +1,6 @@
 using TotemPWA.Data;
 using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -18,7 +19,6 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
@@ -33,6 +33,7 @@ app.MapControllerRoute(
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<TotemPWA.Data.AppDbContext>();
+    db.Database.Migrate();
     TotemPWA.Data.AppDbContext.Seed(db);
 }
 

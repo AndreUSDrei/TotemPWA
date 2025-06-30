@@ -58,10 +58,45 @@ document.addEventListener('DOMContentLoaded', function() {
     // Atualiza a função alternarConteudo para reinicializar os filtros
     const alternarConteudoOriginal = window.alternarConteudo;
     window.alternarConteudo = function(tipo) {
-        // Chama a função original
-        alternarConteudoOriginal(tipo);
-        
-        // Reinicializa os filtros para a seção atual
-        inicializarFiltros(tipo);
+        // Esconde todos os conteúdos
+        document.getElementById('conteudo-lanches').style.display = 'none';
+        document.getElementById('conteudo-sobremesas').style.display = 'none';
+        document.getElementById('conteudo-molhos').style.display = 'none';
+        document.getElementById('conteudo-ofertas').style.display = 'none';
+        document.getElementById('conteudo-bebidas').style.display = 'none';
+        document.getElementById('conteudo-extras').style.display = 'none';
+        document.getElementById('conteudo-combos').style.display = 'none';
+        document.getElementById('banner-lanches').style.display = 'none';
+        document.getElementById('banner-sobremesas').style.display = 'none';
+        document.getElementById('banner-molhos').style.display = 'none';
+        document.getElementById('banner-ofertas').style.display = 'none';
+        document.getElementById('banner-bebidas').style.display = 'none';
+        document.getElementById('banner-extras').style.display = 'none';
+        document.getElementById('banner-combos') && (document.getElementById('banner-combos').style.display = 'none');
+
+        // Remove a classe active de todos os itens do menu
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        // Mostra o conteúdo selecionado
+        if (tipo === 'combos') {
+            document.getElementById('conteudo-combos').style.display = 'block';
+            // Se tiver um banner específico para combos, exiba
+            document.getElementById('banner-combos') && (document.getElementById('banner-combos').style.display = 'block');
+        } else {
+            document.getElementById('conteudo-' + tipo).style.display = 'block';
+            document.getElementById('banner-' + tipo).style.display = 'block';
+        }
+
+        // Adiciona a classe active ao item do menu clicado
+        event.currentTarget.classList.add('active');
+
+        // Atualiza os filtros ativos
+        document.querySelectorAll('.nav-categorias a').forEach(link => {
+            link.classList.remove('active');
+        });
+        var nav = tipo === 'combos' ? document.querySelector('#conteudo-combos .nav-categorias a:first-child') : document.querySelector(`#conteudo-${tipo} .nav-categorias a:first-child`);
+        nav && nav.classList.add('active');
     };
 });

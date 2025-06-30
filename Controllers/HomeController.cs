@@ -1,20 +1,16 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TotemPWA.Models;
-using TotemPWA.Data;
-using System.Linq;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Http;
-using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 
 namespace TotemPWA.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly AppDbContext _context;
+    private readonly Data.AppDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger, AppDbContext context)
+    public HomeController(ILogger<HomeController> logger, Data.AppDbContext context)
     {
         _logger = logger;
         _context = context;
@@ -32,22 +28,35 @@ public class HomeController : Controller
 
     public IActionResult Tela2()
     {
-        var produtos = _context.Products.ToList();
         var categorias = _context.Categories.ToList();
+        var produtos = _context.Products
+            .Include(p => p.Additionals)
+                .ThenInclude(a => a.Ingredient)
+            .ToList();
+        var ingredientes = _context.Ingredients.ToList();
         ViewBag.Categorias = categorias;
-        return View(produtos);
+        ViewBag.Produtos = produtos;
+        ViewBag.Ingredientes = ingredientes;
+        return View();
+    }
+
+    public IActionResult Combos()
+    {
+        var categorias = _context.Categories.ToList();
+        var produtos = _context.Products
+            .Include(p => p.Additionals)
+                .ThenInclude(a => a.Ingredient)
+            .ToList();
+        var ingredientes = _context.Ingredients.ToList();
+        ViewBag.Categorias = categorias;
+        ViewBag.Produtos = produtos;
+        ViewBag.Ingredientes = ingredientes;
+        return View();
     }
 
     public IActionResult Sobremesas()
     {
         return View();
-    }
-
-    public IActionResult TelaPagamento()
-    {
-        var carrinhoJson = HttpContext.Session.GetString("Carrinho");
-        var itens = string.IsNullOrEmpty(carrinhoJson) ? new List<TotemPWA.ViewModels.PedidoViewModel>() : JsonSerializer.Deserialize<List<TotemPWA.ViewModels.PedidoViewModel>>(carrinhoJson);
-        return View(itens);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
