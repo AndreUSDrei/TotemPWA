@@ -1,5 +1,9 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
+@{
+    var produtos = ViewBag.Produtos as List<TotemPWA.Models.Product>;
+    var bebidas = produtos?.Where(p => p.Category?.Slug == "bebidas").ToList() ?? new List<TotemPWA.Models.Product>();
+}
 <div class="container-categoria">
     <div class="nav-categorias">
         <a href="#" class="active" data-categoria="todos">Todos</a>
@@ -11,55 +15,13 @@
 </div>
 <div class="pedido">
     <div class="pedido-grid">
-        <div class="pedido-item" data-id="200" data-categoria="refrigerantes" data-descricao="Refrigerante Coca-Cola" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/coca.png" asp-append-version="true" alt="Coca Cola">
-            <h3 class="pedido-titulo">Coca Cola</h3> 
-            <h4 class="pedido-preco">R$ 8,90</h4>
-        </div>
-        <div class="pedido-item" data-id="201" data-categoria="zero" data-descricao="Refrigerante Coca-Cola Zero" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/cocazero.png" asp-append-version="true" alt="Coca Zero">
-            <h3 class="pedido-titulo">Coca Zero</h3> 
-            <h4 class="pedido-preco">R$ 8,90</h4>
-        </div>
-        <div class="pedido-item" data-id="202" data-categoria="zero" data-descricao="Refrigerante Sprite Zero" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/spritezero.png" asp-append-version="true" alt="Sprite">
-            <h3 class="pedido-titulo">Sprite Zero</h3> 
-            <h4 class="pedido-preco">R$ 8,90</h4>
-        </div>
-        <div class="pedido-item" data-id="203" data-categoria="refrigerantes" data-descricao="Refrigerante Fanta Laranja" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/fantalaranja.png" asp-append-version="true" alt="Fanta Laranja">
-            <h3 class="pedido-titulo">Fanta Laranja</h3> 
-            <h4 class="pedido-preco">R$ 8,90</h4>
-        </div>
-        <div class="pedido-item" data-id="204" data-categoria="refrigerantes" data-descricao="Refrigerante Fanta Uva" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/fantauva.png" asp-append-version="true" alt="Fanta Uva">
-            <h3 class="pedido-titulo">Fanta Uva</h3> 
-            <h4 class="pedido-preco">R$ 8,90</h4>
-        </div>
-        <div class="pedido-item" data-id="205" data-categoria="refrigerantes" data-descricao="Refrigerante Sprite" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/sprite.png" asp-append-version="true" alt="Sprite">
-            <h3 class="pedido-titulo">Sprite</h3> 
-            <h4 class="pedido-preco">R$ 8,90</h4>
-        </div>
-        <div class="pedido-item" data-id="206" data-categoria="sucos" data-descricao="Suco de Pêssego" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/sucodepessego.png" asp-append-version="true" alt="Suco Pessego">
-            <h3 class="pedido-titulo">Suco de Pessego</h3> 
-            <h4 class="pedido-preco">R$ 9,90</h4>
-        </div>
-        <div class="pedido-item" data-id="207" data-categoria="sucos" data-descricao="Suco de Uva" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/sucouva.png" asp-append-version="true" alt="Suco Uva">
-            <h3 class="pedido-titulo">Suco de Uva</h3> 
-            <h4 class="pedido-preco">R$ 9,90</h4>
-        </div>
-        <div class="pedido-item" data-id="208" data-categoria="aguas" data-descricao="Água mineral" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/agua.png" asp-append-version="true" alt="Agua">
-            <h3 class="pedido-titulo">Água</h3> 
-            <h4 class="pedido-preco">R$ 7,90</h4>
-        </div>
-        <div class="pedido-item" data-id="209" data-categoria="aguas" data-descricao="Água mineral com gás" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/aguacomgas.png" asp-append-version="true" alt="Agua c/ gás">
-            <h3 class="pedido-titulo">Água com Gás</h3> 
-            <h4 class="pedido-preco">R$ 7,90</h4>
-        </div>
+        @foreach (var produto in bebidas)
+        {
+            <div class="pedido-item" data-id="@produto.Id" data-categoria="@produto.CategoryId" onclick="abrirModalEditar(this)">
+                <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name">
+                <h3 class="pedido-titulo">@produto.Name</h3>
+                <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
+            </div>
+        }
     </div>
 </div>

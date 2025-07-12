@@ -6,23 +6,129 @@ namespace TotemPWA.Data
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Combo> Combos { get; set; }
+        public DbSet<ComboProduct> ComboProducts { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<Additional> Additionals { get; set; }
+        public DbSet<Customize> Customizes { get; set; }
+        public DbSet<Promotion> Promotions { get; set; }
+        public DbSet<Cupom> Cupoms { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Payment> Payments { get; set; }
 
-        public static void Seed(AppDbContext context)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            if (!context.Categories.Any())
-            {
-                var lanches = new Category { Name = "Lanches", Slug = "lanches" };
-                var combos = new Category { Name = "Combos", Slug = "combos" };
-                var sobremesas = new Category { Name = "Sobremesas", Slug = "sobremesas" };
-                var molhos = new Category { Name = "Molhos", Slug = "molhos" };
-                var bebidas = new Category { Name = "Bebidas", Slug = "bebidas" };
-                context.Categories.AddRange(lanches, combos, sobremesas, molhos, bebidas);
-                context.SaveChanges();
+            // Exemplo de configuração de chaves compostas e relacionamentos muitos-para-muitos
+            modelBuilder.Entity<Additional>()
+                .HasKey(a => a.Id);
+            modelBuilder.Entity<ComboProduct>()
+                .HasKey(cp => cp.Id);
+            modelBuilder.Entity<Customize>()
+                .HasKey(c => c.Id);
+            modelBuilder.Entity<OrderItem>()
+                .HasKey(oi => oi.Id);
 
+            // Relacionamento de categoria pai/filho
+            modelBuilder.Entity<Category>()
+                .HasMany(c => c.SubCategories)
+                .WithOne(c => c.ParentCategory)
+                .HasForeignKey(c => c.ParentCategoryId);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public void SeedDatabase()
+        {
+            if (!Categories.Any())
+            {
+                // Categorias
+                var catLanches = new Category { Name = "Lanches", Slug = "lanches" };
+                var catCombos = new Category { Name = "Combos", Slug = "combos" };
+                var catBebidas = new Category { Name = "Bebidas", Slug = "bebidas" };
+                var catExtras = new Category { Name = "Extras", Slug = "extras" };
+                var catMolhos = new Category { Name = "Molhos", Slug = "molhos" };
+                var catSobremesas = new Category { Name = "Sobremesas", Slug = "sobremesas" };
+                Categories.AddRange(catLanches, catCombos, catBebidas, catExtras, catMolhos, catSobremesas);
+                SaveChanges();
+
+                // Lanches (exemplo, adicione todos conforme views)
+                Products.AddRange(new[] {
+                    new Product { Name = "Burguer 404", Price = 24.90M, Image = "img/menuburguerimage.png", CategoryId = catLanches.Id },
+                    new Product { Name = "Full Stack", Price = 39.90M, Image = "img/full.png", CategoryId = catLanches.Id },
+                    new Product { Name = "Looping Triplo", Price = 32.90M, Image = "img/loopingduplo.png", CategoryId = catLanches.Id },
+                    new Product { Name = "Hello Word", Price = 24.90M, Image = "img/helloword.png", CategoryId = catLanches.Id },
+                    new Product { Name = "VS Veggie", Price = 21.90M, Image = "img/vegan.png", CategoryId = catLanches.Id },
+                    new Product { Name = "Backend", Price = 22.90M, Image = "img/backend.jpg", CategoryId = catLanches.Id },
+                    new Product { Name = "Frontend", Price = 44.90M, Image = "img/front.png", CategoryId = catLanches.Id },
+                    new Product { Name = "DevOps Bacon", Price = 34.90M, Image = "img/devopsbacon.png", CategoryId = catLanches.Id },
+                    new Product { Name = "Byte Burguer", Price = 24.90M, Image = "img/byte.png", CategoryId = catLanches.Id }
+                });
+                SaveChanges();
+
+                // Bebidas (exemplo)
+                Products.AddRange(new[] {
+                    new Product { Name = "Coca Cola", Price = 8.90M, Image = "img/coca.png", CategoryId = catBebidas.Id },
+                    new Product { Name = "Coca Zero", Price = 8.90M, Image = "img/cocazero.png", CategoryId = catBebidas.Id },
+                    new Product { Name = "Sprite Zero", Price = 8.90M, Image = "img/spritezero.png", CategoryId = catBebidas.Id },
+                    new Product { Name = "Fanta Laranja", Price = 8.90M, Image = "img/fantalaranja.png", CategoryId = catBebidas.Id },
+                    new Product { Name = "Fanta Uva", Price = 8.90M, Image = "img/fantauva.png", CategoryId = catBebidas.Id },
+                    new Product { Name = "Sprite", Price = 8.90M, Image = "img/sprite.png", CategoryId = catBebidas.Id },
+                    new Product { Name = "Suco de Pessego", Price = 9.90M, Image = "img/sucodepessego.png", CategoryId = catBebidas.Id },
+                    new Product { Name = "Suco de Uva", Price = 9.90M, Image = "img/sucouva.png", CategoryId = catBebidas.Id },
+                    new Product { Name = "Água", Price = 7.90M, Image = "img/agua.png", CategoryId = catBebidas.Id },
+                    new Product { Name = "Água com Gás", Price = 7.90M, Image = "img/aguacomgas.png", CategoryId = catBebidas.Id }
+                });
+                SaveChanges();
+
+                // Extras (exemplo)
+                Products.AddRange(new[] {
+                    new Product { Name = "Batata Frita", Price = 12.90M, Image = "img/batata.png", CategoryId = catExtras.Id },
+                    new Product { Name = "Batata com Cheddar", Price = 18.90M, Image = "img/batatacheddar.png", CategoryId = catExtras.Id },
+                    new Product { Name = "Batata com Cheddar e Bacon", Price = 22.90M, Image = "img/batatacheddarcombacon.png", CategoryId = catExtras.Id },
+                    new Product { Name = "Batata Rústica", Price = 15.90M, Image = "img/batatarustica.png", CategoryId = catExtras.Id },
+                    new Product { Name = "Batata Chips", Price = 8.90M, Image = "img/batatachips.png", CategoryId = catExtras.Id },
+                    new Product { Name = "Chips de Batata Doce", Price = 9.90M, Image = "img/chipsdebatatadoce.png", CategoryId = catExtras.Id },
+                    new Product { Name = "Nuggets 5un", Price = 12.90M, Image = "img/nuggets5.png", CategoryId = catExtras.Id },
+                    new Product { Name = "Nuggets 10un", Price = 19.90M, Image = "img/nuggets.png", CategoryId = catExtras.Id },
+                    new Product { Name = "Nuggets 20un", Price = 34.90M, Image = "img/nuggets8.png", CategoryId = catExtras.Id }
+                });
+                SaveChanges();
+
+                // Molhos (exemplo)
+                Products.AddRange(new[] {
+                    new Product { Name = "Molho de Ketchup", Price = 4.90M, Image = "img/molhodeketchup.png", CategoryId = catMolhos.Id },
+                    new Product { Name = "Molho de Pimenta", Price = 5.90M, Image = "img/molhodepimenta.png", CategoryId = catMolhos.Id },
+                    new Product { Name = "Molho de Barbecue", Price = 4.90M, Image = "img/molhodebarbecue.png", CategoryId = catMolhos.Id },
+                    new Product { Name = "Molho de Queijos", Price = 5.90M, Image = "img/molhodequeijos.png", CategoryId = catMolhos.Id },
+                    new Product { Name = "Molho de Maionese", Price = 4.90M, Image = "img/maionese.png", CategoryId = catMolhos.Id },
+                    new Product { Name = "Molho Verde", Price = 4.90M, Image = "img/molhoverdedacsa.png", CategoryId = catMolhos.Id },
+                    new Product { Name = "Molho Rose", Price = 7.90M, Image = "img/molhorose.png", CategoryId = catMolhos.Id },
+                    new Product { Name = "Molho de Mostarda", Price = 8.90M, Image = "img/molhodequeijos.png", CategoryId = catMolhos.Id },
+                    new Product { Name = "Molho Secreto do Chef", Price = 10.90M, Image = "img/molhoultrasecretodacasa.png", CategoryId = catMolhos.Id }
+                });
+                SaveChanges();
+
+                // Sobremesas (exemplo)
+                Products.AddRange(new[] {
+                    new Product { Name = "Sorvete de Morango", Price = 8.90M, Image = "img/sorvetemorango.png", CategoryId = catSobremesas.Id },
+                    new Product { Name = "Sorvete de Cookie", Price = 8.90M, Image = "img/sorvetecookie.png", CategoryId = catSobremesas.Id },
+                    new Product { Name = "Sorvete de Chocolate", Price = 8.90M, Image = "img/sorvetechocolate.png", CategoryId = catSobremesas.Id },
+                    new Product { Name = "Milk-Shake de Morango", Price = 18.90M, Image = "img/milkmorango.png", CategoryId = catSobremesas.Id },
+                    new Product { Name = "Milk-Shake de Pipoca Caramelizada", Price = 19.90M, Image = "img/milkpipoca.png", CategoryId = catSobremesas.Id },
+                    new Product { Name = "Milk-Shake de Baunilha", Price = 20.90M, Image = "img/milkbaunilha.png", CategoryId = catSobremesas.Id },
+                    new Product { Name = "Petit Gateau", Price = 22.90M, Image = "img/petit.png", CategoryId = catSobremesas.Id },
+                    new Product { Name = "Waffle", Price = 28.90M, Image = "img/waffle.png", CategoryId = catSobremesas.Id },
+                    new Product { Name = "Brownie", Price = 10.90M, Image = "img/brownie.png", CategoryId = catSobremesas.Id }
+                });
+                SaveChanges();
+
+                // Ingredientes
                 var ingredientes = new[] {
                     new Ingredient { Name = "Pão de gergelim", Price = 0.50M, Limit = 2 },
                     new Ingredient { Name = "Queijo cheddar", Price = 1.00M, Limit = 3 },
@@ -46,111 +152,68 @@ namespace TotemPWA.Data
                     new Ingredient { Name = "Hambúrguer de grão-de-bico", Price = 4.00M, Limit = 2 },
                     new Ingredient { Name = "Abobrinha", Price = 0.50M, Limit = 2 },
                     new Ingredient { Name = "Berinjela", Price = 0.50M, Limit = 2 },
-                    new Ingredient { Name = "Molho de iogurte", Price = 0.70M, Limit = 2 },
+                    new Ingredient { Name = "Molho de iogurte", Price = 0.70M, Limit = 2 }
                 };
-                context.Ingredients.AddRange(ingredientes);
-                context.SaveChanges();
+                Ingredients.AddRange(ingredientes);
+                SaveChanges();
 
-                var produtos = new[] {
-                    new Product { Name = "Burguer 404", Slug = "burguer-404", Price = 24.90M, CategoryId = lanches.Id, Image = "img/menuburguerimage.png", Description = "Hambúrguer de costela, cheddar, pão de gergelim e salada." },
-                    new Product { Name = "Full Stack", Slug = "full-stack", Price = 39.90M, CategoryId = lanches.Id, Image = "img/full.png", Description = "Duplo hambúrguer, queijo prato, bacon e cebola caramelizada." },
-                    new Product { Name = "Looping Triplo", Slug = "looping-triplo", Price = 32.90M, CategoryId = lanches.Id, Image = "img/loopingduplo.png", Description = "Três hambúrgueres, cheddar, crispy de cebola e molho especial." },
-                    new Product { Name = "Hello Word", Slug = "hello-word", Price = 24.90M, CategoryId = lanches.Id, Image = "img/helloword.png", Description = "Hambúrguer de fraldinha, queijo, picles e pão australiano." },
-                    new Product { Name = "VS Veggie", Slug = "vs-veggie", Price = 21.90M, CategoryId = lanches.Id, Image = "img/vegan.png", Description = "Hambúrguer de grão-de-bico, abobrinha, berinjela e pão integral." },
-                    new Product { Name = "Backend", Slug = "backend", Price = 22.90M, CategoryId = lanches.Id, Image = "img/backend.jpg", Description = "Hambúrguer de costela, queijo prato, alface e tomate." },
-                    new Product { Name = "Frontend", Slug = "frontend", Price = 44.90M, CategoryId = lanches.Id, Image = "img/front.png", Description = "Duplo hambúrguer, cheddar, bacon e molho barbecue." },
-                    new Product { Name = "DevOps Bacon", Slug = "devops-bacon", Price = 34.90M, CategoryId = lanches.Id, Image = "img/devopsbacon.png", Description = "Hambúrguer de costela, queijo, bacon e cebola crispy." },
-                    new Product { Name = "Byte Burguer", Slug = "byte-burguer", Price = 24.90M, CategoryId = lanches.Id, Image = "img/byte.png", Description = "Hambúrguer de costela, queijo coalho e molho de pimenta." },
-                };
-                context.Products.AddRange(produtos);
-                context.SaveChanges();
-
-                // Mapeamento de ingredientes por produto (exceto combos)
-                var produtoPorIngredientes = new Dictionary<string, string[]>
+                // Relacionamento Produto-Ingrediente (exemplo para lanches)
+                var produtos = Products.Where(p => p.CategoryId == catLanches.Id).ToList();
+                var mapLancheIngredientes = new Dictionary<string, string[]>
                 {
                     ["Burguer 404"] = new[] { "Pão de gergelim", "Queijo cheddar", "Hambúrguer de costela", "Alface", "Cebola" },
                     ["Full Stack"] = new[] { "Pão brioche", "Queijo prato", "Hambúrguer de costela", "Bacon", "Cebola caramelizada" },
-                    ["Looping Triplo"] = new[] { "Pão de gergelim", "Queijo cheddar", "Hambúrguer de costela", "Cebola crispy", "Molho especial" },
                     ["Hello Word"] = new[] { "Pão australiano", "Hambúrguer de fraldinha", "Queijo prato", "Picles", "Cebola" },
                     ["VS Veggie"] = new[] { "Pão integral", "Hambúrguer de grão-de-bico", "Abobrinha", "Berinjela", "Molho de iogurte" },
-                    ["Backend"] = new[] { "Pão de hambúrguer", "Hambúrguer de costela", "Queijo prato", "Alface", "Tomate" },
+                    ["Backend"] = new[] { "Pão de gergelim", "Hambúrguer de costela", "Queijo prato", "Alface", "Tomate" },
                     ["Frontend"] = new[] { "Pão brioche", "Hambúrguer de costela", "Queijo cheddar", "Bacon", "Molho barbecue" },
                     ["DevOps Bacon"] = new[] { "Pão de gergelim", "Hambúrguer de costela", "Queijo prato", "Bacon", "Cebola crispy" },
-                    ["Byte Burguer"] = new[] { "Pão de batata", "Hambúrguer de costela", "Queijo coalho", "Molho de pimenta" },
-                    // Exemplo para sobremesas, bebidas, molhos, extras (ajuste conforme necessário)
-                    // ["Nome do Produto"] = new[] { "Ingrediente 1", "Ingrediente 2" },
+                    ["Byte Burguer"] = new[] { "Pão de gergelim", "Hambúrguer de costela", "Queijo coalho", "Molho de pimenta" }
                 };
                 foreach (var produto in produtos)
                 {
-                    // Não vincular ingredientes aos combos
-                    var categoria = context.Categories.FirstOrDefault(c => c.Id == produto.CategoryId);
-                    if (categoria != null && categoria.Slug == "combos") continue;
-                    if (produtoPorIngredientes.TryGetValue(produto.Name, out var nomesIngredientes))
+                    if (mapLancheIngredientes.TryGetValue(produto.Name, out var nomesIngredientes))
                     {
                         foreach (var nomeIng in nomesIngredientes)
                         {
                             var ing = ingredientes.FirstOrDefault(i => i.Name == nomeIng);
                             if (ing != null)
-                                context.Additionals.Add(new Additional { ProductId = produto.Id, IngredientId = ing.Id });
+                                Additionals.Add(new Additional { ProductId = produto.Id, IngredientId = ing.Id });
                         }
                     }
                 }
-                context.SaveChanges();
+                SaveChanges();
 
-                // Combos criativos e funcionais
-                var comboCategoria = context.Categories.First(c => c.Slug == "combos");
-                var produtosCombos = new[] {
-                    new Product {
-                        Name = "Combo Full Stack",
-                        Slug = "combo-full-stack",
-                        Price = 49.90M,
-                        CategoryId = comboCategoria.Id,
-                        Image = "img/combos.png",
-                        Description = "1x Burguer 404, 1x Batata Frita, 1x Coca-Cola, 1x Molho Barbecue"
-                    },
-                    new Product {
-                        Name = "DevOps Duplo",
-                        Slug = "combo-devops-duplo",
-                        Price = 89.90M,
-                        CategoryId = comboCategoria.Id,
-                        Image = "img/combos.png",
-                        Description = "2x DevOps Bacon, 2x Batata Cheddar com Bacon, 2x Sprite, 2x Molho Rose"
-                    },
-                    new Product {
-                        Name = "Frontend Family",
-                        Slug = "combo-frontend-family",
-                        Price = 129.90M,
-                        CategoryId = comboCategoria.Id,
-                        Image = "img/combos.png",
-                        Description = "3x Frontend Burguer, 2x Batata Rústica, 3x Fanta Laranja, 3x Molho Verde, 2x Brownie"
-                    },
-                    new Product {
-                        Name = "Byte Solo",
-                        Slug = "combo-byte-solo",
-                        Price = 39.90M,
-                        CategoryId = comboCategoria.Id,
-                        Image = "img/combos.png",
-                        Description = "1x Byte Burguer, 1x Chips de Batata Doce, 1x Suco de Uva, 1x Molho de Queijos"
-                    },
-                    new Product {
-                        Name = "Stack Overflow",
-                        Slug = "combo-stack-overflow",
-                        Price = 99.90M,
-                        CategoryId = comboCategoria.Id,
-                        Image = "img/combos.png",
-                        Description = "2x Full Stack, 2x Batata Frita, 2x Coca Zero, 2x Molho Secreto do Chef, 1x Sorvete de Morango"
-                    }
+                // Combos (exemplo)
+                var combos = new[] {
+                    new Product { Name = "Combo Full Stack", Price = 49.90M, Image = "img/combos.png", CategoryId = catCombos.Id },
+                    new Product { Name = "DevOps Duplo", Price = 89.90M, Image = "img/combos.png", CategoryId = catCombos.Id },
+                    new Product { Name = "Frontend Family", Price = 129.90M, Image = "img/combos.png", CategoryId = catCombos.Id },
+                    new Product { Name = "Byte Solo", Price = 39.90M, Image = "img/combos.png", CategoryId = catCombos.Id },
+                    new Product { Name = "Stack Overflow", Price = 99.90M, Image = "img/combos.png", CategoryId = catCombos.Id }
                 };
-                context.Products.AddRange(produtosCombos);
-                context.SaveChanges();
-            }
-        }
+                Products.AddRange(combos);
+                SaveChanges();
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Additional>()
-                .HasKey(a => new { a.ProductId, a.IngredientId });
-            base.OnModelCreating(modelBuilder);
+                // Promoções (exemplo)
+                Promotions.Add(new Promotion { ProductId = produtos.First().Id, Percent = 10, ValidUntil = DateTime.Now.AddMonths(1) });
+                SaveChanges();
+
+                // Cliente de exemplo
+                var cliente = new Client { Name = "Cliente Teste", CPF = "000.000.000-00" };
+                Clients.Add(cliente);
+                SaveChanges();
+
+                // Funcionário de exemplo
+                var funcionario = new Employee { Type = "admin", User = "admin", Password = "admin123" };
+                Employees.Add(funcionario);
+                SaveChanges();
+
+                // Cupom de exemplo
+                var cupom = new Cupom { Code = "PROMO10", Type = "percent", Value = 10 };
+                Cupoms.Add(cupom);
+                SaveChanges();
+            }
         }
     }
 } 

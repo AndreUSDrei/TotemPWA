@@ -9,5 +9,6 @@ namespace TotemPWA.Models
         public decimal Price { get; set; }
         public int Limit { get; set; }
         public ICollection<Additional>? Additionals { get; set; }
+        public ICollection<Customize>? Customizes { get; set; }
     }
 } 

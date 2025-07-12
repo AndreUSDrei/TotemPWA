@@ -8,11 +8,11 @@ namespace TotemPWA.Models
         public int Id { get; set; }
         public int ClientId { get; set; }
         public Client? Client { get; set; }
+        public int? CupomId { get; set; }
+        public Cupom? Cupom { get; set; }
         public DateTime Date { get; set; }
         public decimal TotalPrice { get; set; }
         public string Status { get; set; } = string.Empty;
-        public int? CupomId { get; set; }
-        public Cupom? Cupom { get; set; }
         public ICollection<OrderItem>? OrderItems { get; set; }
         public ICollection<Payment>? Payments { get; set; }
     }

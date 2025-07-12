@@ -1,5 +1,7 @@
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-
+@{
+    var produtos = ViewBag.Produtos as List<TotemPWA.Models.Product>;
+    var promocoes = produtos?.Where(p => p.Promotions != null && p.Promotions.Any()).ToList() ?? new List<TotemPWA.Models.Product>();
+}
 <div class="container-categoria">
     <div class="nav-categorias">
         <a href="#" class="active" data-categoria="todos">Todos</a>
@@ -10,30 +12,13 @@
 </div>
 <div class="pedido">
     <div class="pedido-grid">
-        <div class="pedido-item" data-id="20" data-categoria="lanches" data-descricao="Byte Burguer com desconto" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/byte.png" asp-append-version="true" alt="byte">
-            <h3 class="pedido-titulo">Byte Burguer</h3> 
-            <h3 class="pedido-preco">R$ 25,90</h3>
-        </div>
-        <div class="pedido-item" data-id="21" data-categoria="lanches" data-descricao="Index Burguer com desconto" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/haburguer.png" asp-append-version="true" alt="index">
-            <h3 class="pedido-titulo">Index Burguer</h3> 
-            <h3 class="pedido-preco">R$ 24,90</h3>
-        </div>
-        <div class="pedido-item" data-id="3" data-categoria="sobremesas" data-descricao="Waffle com desconto" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/waffle.png" asp-append-version="true" alt="waffle">
-            <h3 class="pedido-titulo">Waffle</h3> 
-            <h3 class="pedido-preco">R$ 28,90</h3>
-        </div>
-        <div class="pedido-item" data-id="30" data-categoria="bebidas" data-descricao="Sprite com desconto" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/sprite.png" asp-append-version="true" alt="sprite">
-            <h3 class="pedido-titulo">Sprite</h3> 
-            <h3 class="pedido-preco">R$ 8,90</h3>
-        </div>
-        <div class="pedido-item" data-id="31" data-categoria="bebidas" data-descricao="Suco de Pêssego com desconto" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/sucodepessego.png" asp-append-version="true" alt="Pessego">
-            <h3 class="pedido-titulo">Suco de Pessego</h3> 
-            <h3 class="pedido-preco">R$ 9,90</h3>
-        </div>
+        @foreach (var produto in promocoes)
+        {
+            <div class="pedido-item" data-id="@produto.Id" data-categoria="@produto.CategoryId" onclick="abrirModalEditar(this)">
+                <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name">
+                <h3 class="pedido-titulo">@produto.Name</h3>
+                <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
+            </div>
+        }
     </div>
 </div>

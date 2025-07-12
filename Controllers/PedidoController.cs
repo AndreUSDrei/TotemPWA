@@ -4,6 +4,7 @@ using TotemPWA.Data;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 
 namespace TotemPWA.Controllers
 {
@@ -26,7 +27,54 @@ namespace TotemPWA.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Aqui você pode salvar o pedido no banco ou processar como desejar
+                // Buscar ou criar cliente
+                var cliente = _context.Clients.FirstOrDefault(c => c.Name == model.NomeCliente);
+                if (cliente == null)
+                {
+                    cliente = new Models.Client { Name = model.NomeCliente, CPF = "" };
+                    _context.Clients.Add(cliente);
+                    _context.SaveChanges();
+                }
+
+                // Criar pedido
+                var pedido = new Models.Order
+                {
+                    ClientId = cliente.Id,
+                    Date = DateTime.Now,
+                    Status = "Em andamento",
+                    TotalPrice = 0,
+                    OrderItems = new List<Models.OrderItem>()
+                };
+
+                // Adicionar itens ao pedido
+                foreach (var produtoId in model.ItensSelecionados)
+                {
+                    var produto = _context.Products.FirstOrDefault(p => p.Id == produtoId);
+                    if (produto != null)
+                    {
+                        pedido.OrderItems.Add(new Models.OrderItem
+                        {
+                            ProductId = produto.Id,
+                            Quantity = model.Quantidade > 0 ? model.Quantidade : 1,
+                            UnitPrice = produto.Price
+                        });
+                        pedido.TotalPrice += produto.Price * (model.Quantidade > 0 ? model.Quantidade : 1);
+                    }
+                }
+                _context.Orders.Add(pedido);
+                _context.SaveChanges();
+
+                // Criar pagamento
+                var pagamento = new Models.Payment
+                {
+                    OrderId = pedido.Id,
+                    Type = model.MetodoPagamento,
+                    Value = pedido.TotalPrice,
+                    Status = "Pendente"
+                };
+                _context.Payments.Add(pagamento);
+                _context.SaveChanges();
+
                 TempData["MensagemSucesso"] = "Pedido realizado com sucesso!";
                 return RedirectToAction("Novo");
             }
@@ -50,24 +98,33 @@ namespace TotemPWA.Controllers
         }
 
         // Action para tela de revisão do pedido
-        public IActionResult Revisao(int id = 1) // Exemplo: pedido em andamento com Id=1
+        public IActionResult Revisao(int id)
         {
             var pedido = _context.Orders
                 .Where(o => o.Id == id)
+                .Include(o => o.OrderItems)
+                    .ThenInclude(oi => oi.Product)
+                .Include(o => o.Client)
+                .Include(o => o.Payments)
                 .Select(o => new {
                     o.Id,
                     o.TotalPrice,
+                    o.Status,
+                    Cliente = o.Client.Name,
                     Itens = o.OrderItems.Select(oi => new {
                         oi.Product.Name,
                         oi.Product.Image,
                         oi.Product.Price,
                         oi.Quantity,
-                        oi.Product.Slug,
                         oi.ProductId
-                    }).ToList()
+                    }).ToList(),
+                    Pagamentos = o.Payments.Select(p => new { p.Type, p.Value, p.Status }).ToList()
                 }).FirstOrDefault();
             if (pedido == null) return NotFound();
             ViewBag.Total = pedido.TotalPrice;
+            ViewBag.Status = pedido.Status;
+            ViewBag.Cliente = pedido.Cliente;
+            ViewBag.Pagamentos = pedido.Pagamentos;
             return View(pedido.Itens);
         }
     }

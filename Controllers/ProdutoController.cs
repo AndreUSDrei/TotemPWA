@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TotemPWA.Data;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace TotemPWA.Controllers
 {
@@ -14,10 +15,15 @@ namespace TotemPWA.Controllers
         }
 
         
-        [Route("produto/{slug}")]
-        public IActionResult Detalhe(string slug)
+        [Route("produto/{id:int}")]
+        public IActionResult Detalhe(int id)
         {
-            var produto = _context.Produtos.FirstOrDefault(p => p.Slug == slug);
+            var produto = _context.Products
+                .Include(p => p.Additionals)
+                    .ThenInclude(a => a.Ingredient)
+                .Include(p => p.Category)
+                .Include(p => p.Promotions)
+                .FirstOrDefault(p => p.Id == id);
             if (produto == null)
                 return NotFound();
 

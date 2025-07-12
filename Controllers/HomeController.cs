@@ -32,6 +32,9 @@ public class HomeController : Controller
         var produtos = _context.Products
             .Include(p => p.Additionals)
                 .ThenInclude(a => a.Ingredient)
+            .Include(p => p.Category)
+            .Include(p => p.Promotions)
+            .Include(p => p.ComboProducts)
             .ToList();
         var ingredientes = _context.Ingredients.ToList();
         ViewBag.Categorias = categorias;
@@ -46,6 +49,9 @@ public class HomeController : Controller
         var produtos = _context.Products
             .Include(p => p.Additionals)
                 .ThenInclude(a => a.Ingredient)
+            .Include(p => p.Category)
+            .Include(p => p.Promotions)
+            .Include(p => p.ComboProducts)
             .ToList();
         var ingredientes = _context.Ingredients.ToList();
         ViewBag.Categorias = categorias;

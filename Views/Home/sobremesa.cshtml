@@ -1,5 +1,9 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
+@{
+    var produtos = ViewBag.Produtos as List<TotemPWA.Models.Product>;
+    var sobremesas = produtos?.Where(p => p.Category?.Slug == "sobremesas").ToList() ?? new List<TotemPWA.Models.Product>();
+}
 <div class="container-categoria">
     <div class="nav-categorias">
         <a href="#" class="active" data-categoria="todos">Todos</a>
@@ -10,50 +14,13 @@
 </div>
 <div class="pedido">
     <div class="pedido-grid">
-        <div class="pedido-item" data-id="1" data-categoria="sorvetes" data-descricao="Sorvete de Morango" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/sorvetemorango.png" asp-append-version="true" alt="Sorvete de Morango">
-            <h3 class="pedido-titulo">Sorvete de Morango</h3> 
-            <h4 class="pedido-preco">R$ 8,90</h4>
-        </div>
-        <div class="pedido-item" data-id="2" data-categoria="sorvetes" data-descricao="Sorvete de Cookie" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/sorvetecookie.png" asp-append-version="true" alt="Sorvete de Cookie">
-            <h3 class="pedido-titulo">Sorvete de Cookie</h3> 
-            <h4 class="pedido-preco">R$ 8,90</h4>
-        </div>
-        <div class="pedido-item" data-id="3" data-categoria="sorvetes" data-descricao="Sorvete de Chocolate" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/sorvetechocolate.png" asp-append-version="true" alt="Sorvete de Chocolate">
-            <h3 class="pedido-titulo">Sorvete de Chocolate</h3> 
-            <h4 class="pedido-preco">R$ 8,90</h4>
-        </div>
-        <div class="pedido-item" data-id="4" data-categoria="milkshakes" data-descricao="Milk-Shake de Morango" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/milkmorango.png" asp-append-version="true" alt="Milk-Shake de Morango">
-            <h3 class="pedido-titulo">Milk-Shake de Morango</h3> 
-            <h4 class="pedido-preco">R$ 18,90</h4>
-        </div>
-        <div class="pedido-item" data-id="5" data-categoria="milkshakes" data-descricao="Milk-Shake de Pipoca Caramelizada" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/milkpipoca.png" asp-append-version="true" alt="Milk-Shake de Pipoca Caramelizada">
-            <h3 class="pedido-titulo">Milk-Shake de Pipoca Caramelizada</h3> 
-            <h4 class="pedido-preco">R$ 19,90</h4>
-        </div>
-        <div class="pedido-item" data-id="6" data-categoria="milkshakes" data-descricao="Milk-Shake de Baunilha" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/milkbaunilha.png" asp-append-version="true" alt="Milk-Shake de Baunilha">
-            <h3 class="pedido-titulo">Milk-Shake de Baunilha</h3> 
-            <h4 class="pedido-preco">R$ 20,90</h4>
-        </div>
-        <div class="pedido-item" data-id="7" data-categoria="doces" data-descricao="Petit Gateau" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/petit.png" asp-append-version="true" alt="Petit Gateau">
-            <h3 class="pedido-titulo">Petit Gateau</h3> 
-            <h4 class="pedido-preco">R$ 22,90</h4>
-        </div>
-        <div class="pedido-item" data-id="8" data-categoria="doces" data-descricao="Waffle" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/waffle.png" asp-append-version="true" alt="Waffle">
-            <h3 class="pedido-titulo">Waffle</h3> 
-            <h4 class="pedido-preco">R$ 28,90</h4>
-        </div>
-        <div class="pedido-item" data-id="9" data-categoria="doces" data-descricao="Brownie" onclick="abrirModalEditar(this)">
-            <img class="pedido-imagem" src="~/img/brownie.png" asp-append-version="true" alt="Brownie">
-            <h3 class="pedido-titulo">Brownie</h3> 
-            <h4 class="pedido-preco">R$ 10,90</h4>
-        </div>
+        @foreach (var produto in sobremesas)
+        {
+            <div class="pedido-item" data-id="@produto.Id" data-categoria="@produto.CategoryId" onclick="abrirModalEditar(this)">
+                <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name">
+                <h3 class="pedido-titulo">@produto.Name</h3>
+                <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
+            </div>
+        }
     </div>
 </div>

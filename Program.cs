@@ -34,7 +34,7 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<TotemPWA.Data.AppDbContext>();
     db.Database.Migrate();
-    TotemPWA.Data.AppDbContext.Seed(db);
+    db.SeedDatabase();
 }
 
 app.Run();
