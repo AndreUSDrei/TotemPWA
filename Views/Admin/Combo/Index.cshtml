@@ -1,0 +1,39 @@
+@model IEnumerable<TotemPWA.Models.Combo>
+@{
+    ViewData["Title"] = "Combos";
+}
+<h2>Combos</h2>
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Novo Combo</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Produtos</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var combo in Model)
+    {
+        <tr>
+            <td>@combo.Id</td>
+            <td>
+                @if (combo.ComboProducts != null && combo.ComboProducts.Any())
+                {
+                    foreach (var cp in combo.ComboProducts)
+                    {
+                        <span class="badge bg-secondary">@cp.Product?.Name</span> 
+                    }
+                }
+            </td>
+            <td>
+                <a href="@Url.Action("Details", new { id = combo.Id })" class="btn btn-sm btn-info">Detalhes</a>
+                <a href="@Url.Action("Edit", new { id = combo.Id })" class="btn btn-sm btn-warning">Editar</a>
+                <a href="@Url.Action("Delete", new { id = combo.Id })" class="btn btn-sm btn-danger">Excluir</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table> 

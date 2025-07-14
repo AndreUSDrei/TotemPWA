@@ -1,0 +1,31 @@
+@model TotemPWA.Models.Client
+@{
+    ViewData["Title"] = "Detalhes do Cliente";
+}
+<h1>Detalhes do Cliente</h1>
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Id
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.Id
+        </dd>
+        <dt class = "col-sm-2">
+            Nome
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.Name
+        </dd>
+        <dt class = "col-sm-2">
+            CPF
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.CPF
+        </dd>
+    </dl>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</div> 

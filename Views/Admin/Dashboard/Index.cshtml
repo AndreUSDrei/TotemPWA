@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Painel Admin";
+}
+<h2>Painel do Administrador</h2>
+<ul class="admin-menu">
+    <li><a href="/Admin/Promotion">Promoções</a></li>
+    <li><a href="/Admin/Produto">Produtos</a></li>
+    <li><a href="/Admin/Category">Categorias</a></li>
+    <li><a href="/Admin/Ingredient">Ingredientes</a></li>
+    <li><a href="@Url.Action("Index", "Combo")">Combos</a></li>
+    <li><a href="@Url.Action("Index", "Additional")">Adicionais</a></li>
+    <li><a href="/Admin/Cupom">Cupons</a></li>
+    <li><a href="/Admin/Client">Clientes</a></li>
+</ul>
+<a class="btn btn-secondary" href="/">Voltar ao Totem</a>
+<a class="btn btn-danger" href="/Admin/Auth/Logout" style="float:right;">Sair</a>
+<style>
+    .admin-menu { list-style: none; padding: 0; margin: 24px 0; }
+    .admin-menu li { margin-bottom: 12px; }
+    .admin-menu a { font-size: 1.1rem; color: #1976d2; text-decoration: none; font-weight: 600; }
+    .admin-menu a:hover { text-decoration: underline; }
+    .btn { padding: 7px 16px; border-radius: 6px; text-decoration: none; border: none; cursor: pointer; margin-right: 8px; }
+    .btn-secondary { background: #888; color: #fff; }
+    .btn-danger { background: #e74c3c; color: #fff; }
+    .btn:hover { opacity: 0.85; }
+</style> 

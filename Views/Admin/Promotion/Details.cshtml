@@ -1,0 +1,18 @@
+@model TotemPWA.Models.Promotion
+@{
+    ViewData["Title"] = "Detalhes da Promoção";
+}
+<h2>Detalhes da Promoção</h2>
+<table class="table">
+    <tr><th>Produto</th><td>@Model.Product?.Name</td></tr>
+    <tr><th>Desconto (%)</th><td>@Model.Percent</td></tr>
+    <tr><th>Válido até</th><td>@Model.ValidUntil.ToString("dd/MM/yyyy")</td></tr>
+</table>
+<a class="btn btn-secondary" href="/Admin/Promotion">Voltar</a>
+<style>
+    .btn { padding: 7px 16px; border-radius: 6px; text-decoration: none; border: none; cursor: pointer; }
+    .btn-secondary { background: #888; color: #fff; }
+    .btn:hover { opacity: 0.85; }
+    table { margin-top: 18px; }
+    th, td { padding: 8px; }
+</style> 

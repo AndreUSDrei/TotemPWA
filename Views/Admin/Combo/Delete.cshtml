@@ -1,0 +1,31 @@
+@model TotemPWA.Models.Combo
+@{
+    ViewData["Title"] = "Excluir Combo";
+}
+<h2>Excluir Combo</h2>
+<h4>Tem certeza que deseja excluir este combo?</h4>
+<dl class="row">
+    <dt class="col-sm-2">ID</dt>
+    <dd class="col-sm-10">@Model.Id</dd>
+    <dt class="col-sm-2">Produtos</dt>
+    <dd class="col-sm-10">
+        @if (Model.ComboProducts != null && Model.ComboProducts.Any())
+        {
+            <ul>
+            @foreach (var cp in Model.ComboProducts)
+            {
+                <li>@cp.Product?.Name (@cp.Product?.Price.ToString("C"))</li>
+            }
+            </ul>
+        }
+        else
+        {
+            <span>Nenhum produto.</span>
+        }
+    </dd>
+</dl>
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form> 

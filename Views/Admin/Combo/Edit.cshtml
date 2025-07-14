@@ -1,0 +1,24 @@
+@model TotemPWA.Models.Combo
+@{
+    ViewData["Title"] = "Editar Combo";
+    var products = ViewBag.Products as List<TotemPWA.Models.Product>;
+    int[] selectedProducts = ViewBag.SelectedProducts as int[] ?? new int[0];
+}
+<h2>Editar Combo</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div class="mb-3">
+        <label>Produtos do Combo</label>
+        <div>
+            @foreach (var product in products)
+            {
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="selectedProducts" value="@product.Id" id="prod_@product.Id" @(selectedProducts.Contains(product.Id) ? "checked" : "") />
+                    <label class="form-check-label" for="prod_@product.Id">@product.Name (@product.Price.ToString("C"))</label>
+                </div>
+            }
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form> 

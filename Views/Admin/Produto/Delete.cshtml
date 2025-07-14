@@ -1,0 +1,17 @@
+@model TotemPWA.Models.Product
+@{
+    ViewData["Title"] = "Excluir Produto";
+}
+<h2>Excluir Produto</h2>
+<div style="margin-bottom:18px;">Tem certeza que deseja excluir o produto <b>@Model.Name</b>?</div>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button class="btn btn-danger" type="submit">Excluir</button>
+    <a class="btn btn-secondary" href="/Admin/Produto">Cancelar</a>
+</form>
+<style>
+    .btn { padding: 7px 16px; border-radius: 6px; text-decoration: none; margin-right: 4px; border: none; cursor: pointer; }
+    .btn-danger { background: #e74c3c; color: #fff; }
+    .btn-secondary { background: #888; color: #fff; }
+    .btn:hover { opacity: 0.85; }
+</style> 

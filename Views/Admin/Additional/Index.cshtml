@@ -1,0 +1,44 @@
+@model IEnumerable<TotemPWA.Models.Additional>
+@{
+    ViewData["Title"] = "Adicionais";
+}
+<h2>Adicionais</h2>
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Novo Adicional</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Produto</th>
+            <th>Ingrediente</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var adicional in Model)
+    {
+        <tr>
+            <td>@adicional.Id</td>
+            <td>@adicional.Product?.Name</td>
+            <td>@adicional.Ingredient?.Name</td>
+            <td>
+                <a href="@Url.Action("Details", new { id = adicional.Id })" class="btn btn-sm btn-info">Detalhes</a>
+                <a href="@Url.Action("Edit", new { id = adicional.Id })" class="btn btn-sm btn-warning">Editar</a>
+                <a href="@Url.Action("Delete", new { id = adicional.Id })" class="btn btn-sm btn-danger">Excluir</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a href="/Admin/Dashboard">&larr; Voltar ao painel</a>
+<style>
+    .btn { padding: 6px 14px; border-radius: 6px; text-decoration: none; margin-right: 4px; }
+    .btn-success { background: #43b324; color: #fff; }
+    .btn-primary { background: #1976d2; color: #fff; }
+    .btn-info { background: #0097a7; color: #fff; }
+    .btn-danger { background: #e74c3c; color: #fff; }
+    .btn:hover { opacity: 0.85; }
+    table { width: 100%; margin-top: 18px; }
+    th, td { padding: 8px; }
+</style> 

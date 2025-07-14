@@ -1,0 +1,35 @@
+@model TotemPWA.Models.Additional
+@{
+    ViewData["Title"] = "Novo Adicional";
+    var products = ViewBag.Products as List<TotemPWA.Models.Product>;
+    var ingredients = ViewBag.Ingredients as List<TotemPWA.Models.Ingredient>;
+}
+<h2>Novo Adicional</h2>
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label for="ProductId">Produto</label>
+        <select class="form-select" id="ProductId" name="ProductId" required>
+            <option value="">Selecione...</option>
+            @foreach (var product in products)
+            {
+                <option value="@product.Id">@product.Name</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="IngredientId">Ingrediente</label>
+        <select class="form-select" id="IngredientId" name="IngredientId" required>
+            <option value="">Selecione...</option>
+            @foreach (var ingredient in ingredients)
+            {
+                <option value="@ingredient.Id">@ingredient.Name</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger mt-2">@Html.ValidationSummary()</div>
+} 

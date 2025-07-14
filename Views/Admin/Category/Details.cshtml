@@ -1,0 +1,19 @@
+@model TotemPWA.Models.Category
+@{
+    ViewData["Title"] = "Detalhes da Categoria";
+}
+<h2>Detalhes da Categoria</h2>
+<table class="table">
+    <tr><th>Nome</th><td>@Model.Name</td></tr>
+    <tr><th>Slug</th><td>@Model.Slug</td></tr>
+    <tr><th>Ícone</th><td>@Model.Icon</td></tr>
+    <tr><th>Categoria Pai</th><td>@Model.ParentCategory?.Name</td></tr>
+</table>
+<a class="btn btn-secondary" href="/Admin/Category">Voltar</a>
+<style>
+    .btn { padding: 7px 16px; border-radius: 6px; text-decoration: none; border: none; cursor: pointer; }
+    .btn-secondary { background: #888; color: #fff; }
+    .btn:hover { opacity: 0.85; }
+    table { margin-top: 18px; }
+    th, td { padding: 8px; }
+</style> 

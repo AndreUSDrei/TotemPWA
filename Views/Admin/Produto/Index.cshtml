@@ -1,0 +1,44 @@
+@model IEnumerable<TotemPWA.Models.Product>
+@{
+    ViewData["Title"] = "Produtos";
+}
+<h2>Produtos</h2>
+<p>
+    <a class="btn btn-success" href="/Admin/Produto/Create">Novo Produto</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>R$ @item.Price.ToString("N2")</td>
+            <td>@item.Category?.Name</td>
+            <td>
+                <a class="btn btn-sm btn-primary" href="/Admin/Produto/Edit/@item.Id">Editar</a>
+                <a class="btn btn-sm btn-info" href="/Admin/Produto/Details/@item.Id">Detalhes</a>
+                <a class="btn btn-sm btn-danger" href="/Admin/Produto/Delete/@item.Id">Excluir</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a href="/Admin/Dashboard">&larr; Voltar ao painel</a>
+<style>
+    .btn { padding: 6px 14px; border-radius: 6px; text-decoration: none; margin-right: 4px; }
+    .btn-success { background: #43b324; color: #fff; }
+    .btn-primary { background: #1976d2; color: #fff; }
+    .btn-info { background: #0097a7; color: #fff; }
+    .btn-danger { background: #e74c3c; color: #fff; }
+    .btn:hover { opacity: 0.85; }
+    table { width: 100%; margin-top: 18px; }
+    th, td { padding: 8px; }
+</style> 

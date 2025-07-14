@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Login Admin";
+}
+<h2>Login do Administrador</h2>
+<form asp-action="Login" method="post">
+    <div>
+        <label>Usuário</label>
+        <input name="username" required />
+    </div>
+    <div>
+        <label>Senha</label>
+        <input name="password" type="password" required />
+    </div>
+    <button class="btn btn-success" type="submit">Entrar</button>
+</form>
+@if (ViewBag.Error != null)
+{
+    <div style="color:red; margin-top:10px;">@ViewBag.Error</div>
+}
+<style>
+    form { max-width: 320px; margin-top: 18px; }
+    label { font-weight: 600; margin-bottom: 2px; display: block; }
+    input { width: 100%; padding: 7px; border-radius: 6px; border: 1px solid #bbb; margin-bottom: 14px; font-size: 1rem; }
+    .btn { padding: 7px 16px; border-radius: 6px; text-decoration: none; border: none; cursor: pointer; background: #43b324; color: #fff; }
+    .btn:hover { opacity: 0.85; }
+</style> 

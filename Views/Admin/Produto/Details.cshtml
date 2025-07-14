@@ -1,0 +1,18 @@
+@model TotemPWA.Models.Product
+@{
+    ViewData["Title"] = "Detalhes do Produto";
+}
+<h2>Detalhes do Produto</h2>
+<table class="table">
+    <tr><th>Nome</th><td>@Model.Name</td></tr>
+    <tr><th>Preço</th><td>R$ @Model.Price.ToString("N2")</td></tr>
+    <tr><th>Categoria</th><td>@Model.Category?.Name</td></tr>
+</table>
+<a class="btn btn-secondary" href="/Admin/Produto">Voltar</a>
+<style>
+    .btn { padding: 7px 16px; border-radius: 6px; text-decoration: none; border: none; cursor: pointer; }
+    .btn-secondary { background: #888; color: #fff; }
+    .btn:hover { opacity: 0.85; }
+    table { margin-top: 18px; }
+    th, td { padding: 8px; }
+</style> 

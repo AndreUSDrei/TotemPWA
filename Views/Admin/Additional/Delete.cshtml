@@ -1,0 +1,19 @@
+@model TotemPWA.Models.Additional
+@{
+    ViewData["Title"] = "Excluir Adicional";
+}
+<h2>Excluir Adicional</h2>
+<h4>Tem certeza que deseja excluir este adicional?</h4>
+<dl class="row">
+    <dt class="col-sm-2">ID</dt>
+    <dd class="col-sm-10">@Model.Id</dd>
+    <dt class="col-sm-2">Produto</dt>
+    <dd class="col-sm-10">@Model.Product?.Name</dd>
+    <dt class="col-sm-2">Ingrediente</dt>
+    <dd class="col-sm-10">@Model.Ingredient?.Name</dd>
+</dl>
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form> 

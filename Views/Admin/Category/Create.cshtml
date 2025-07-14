@@ -1,0 +1,44 @@
+@model TotemPWA.Models.Category
+@{
+    ViewData["Title"] = "Nova Categoria";
+    var categories = ViewBag.Categories as List<TotemPWA.Models.Category>;
+}
+<h2>Nova Categoria</h2>
+<form asp-action="Create" method="post">
+    <div>
+        <label>Nome</label>
+        <input asp-for="Name" required />
+    </div>
+    <div>
+        <label>Slug</label>
+        <input asp-for="Slug" required />
+    </div>
+    <div>
+        <label>Ícone (opcional)</label>
+        <input asp-for="Icon" />
+    </div>
+    <div>
+        <label>Categoria Pai (opcional)</label>
+        <select asp-for="ParentCategoryId">
+            <option value="">Nenhuma</option>
+            @if (categories != null)
+            {
+                foreach (var c in categories)
+                {
+                    <option value="@c.Id">@c.Name</option>
+                }
+            }
+        </select>
+    </div>
+    <button class="btn btn-success" type="submit">Salvar</button>
+    <a class="btn btn-secondary" href="/Admin/Category">Cancelar</a>
+</form>
+<style>
+    form { max-width: 340px; margin-top: 18px; }
+    label { font-weight: 600; margin-bottom: 2px; display: block; }
+    input, select { width: 100%; padding: 7px; border-radius: 6px; border: 1px solid #bbb; margin-bottom: 14px; font-size: 1rem; }
+    .btn { padding: 7px 16px; border-radius: 6px; text-decoration: none; margin-right: 4px; border: none; cursor: pointer; }
+    .btn-success { background: #43b324; color: #fff; }
+    .btn-secondary { background: #888; color: #fff; }
+    .btn:hover { opacity: 0.85; }
+</style> 

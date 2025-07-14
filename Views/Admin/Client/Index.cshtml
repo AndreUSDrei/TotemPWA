@@ -1,0 +1,33 @@
+@model IEnumerable<TotemPWA.Models.Client>
+@{
+    ViewData["Title"] = "Clientes";
+}
+<h1>Clientes</h1>
+<p>
+    <a asp-action="Create">Novo Cliente</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.CPF</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table> 
