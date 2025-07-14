@@ -1,11 +1,8 @@
 Arquitetura do Sistema
-
-- O sistema do totem do ADS Burguer foi projetado como uma aplicação web voltada para o autoatendimento, com ênfase na interface do usuário. A arquitetura adotada segue o padrão Model-View-Controller (MVC), permitindo uma separação clara entre as responsabilidades do código. Essa organização modular contribui para um desenvolvimento mais eficiente e colaborativo, especialmente quando combinada com o uso da metodologia Gitflow para o controle de versões e o trabalho em equipe.
+- O totem do ADS Burguer é um sistema web de autoatendimento, focado na interface para o usuário. Ele usa o padrão MVC para organizar melhor o código e facilitar o desenvolvimento. O controle de versões é feito com Git, seguindo o fluxo Gitflow para ajudar no trabalho em equipe.
 
 Tecnologias Utilizadas no Totem ADS Burguer:
-
 - Frontend:** HTML (CSHTML), CSS, JavaScript
 - Linguagem:** C#
 - Controle de Versão: Git (Gitflow)
 - Framework Web: ASP.NET Core MVC
-
