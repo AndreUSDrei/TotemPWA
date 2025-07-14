@@ -1,0 +1,79 @@
+Fazer Login
+Ator Principal: Cliente
+Ator Secundário: N/A
+
+Fluxo Principal
+1 - Cliente acessa o totem
+2 - O cliente efetua o Login com CPF
+3 - O cliente escolhe se vai levar para a viagem ou consumir no local
+4 - O cliente coloca seu nome para retirar seu pedido
+
+Fluxo de Exceção
+E1 - Caso o sistema esteja fora de ar, exibirá uma mensagem orientando o cliente a seguir para o balcão
+
+Realizar Pedido
+Ator Principal: Cliente
+Ator Secundário: Sistema
+
+Fluxo Principal
+1 - O cliente visualiza o cardápio
+2 - O cliente escolhe o seu tipo de pedido
+3 - O sistema confirma o pedido e adiciona no carrinho
+4 - O cliente poderá adicionar mais pedidos ao carrinho
+5 - O cliente poderá remover seus pedidos do carrinho
+
+Editar Pedido
+Ator Principal: Cliente
+Ator Secundário: N/A
+
+Fluxo Principal
+1 - O cliente poderá editar os pedidos que estão adicionados no carrinho
+2 - O cliente poderá adicionar os ingredientes disponíveis em cada pedido
+3 - O cliente terá um limite de ingredientes disponíveis
+
+Fluxo de Exceção
+E1 - Caso o cliente ultrapasse o limite de ingredientes, ele não irá conseguir
+adicionar mais ingredientes
+
+Colocar na Lista de Preparo
+Ator Principal: Sistema
+Ator Secundário: N/A
+
+Fluxo Principal
+1 - O sistema exibirá o pedido depois que o cliente confirmar
+2 - O preparo do pedido será feito
+
+Realizar Pagamento
+Ator Principal: Cliente
+Ator Secundário: Sistema
+
+Fluxo Principal
+1 - O cliente confirma se seu pedido está correto
+2 - O cliente vai escolher a forma de pagamento que deseja fazer
+3 - O pagamento será registrado no sistema
+4 - Após o pagamento ser efetuado com sucesso o cliente vai pegar a nota para retirar seu pedido
+5 - O cliente terá a opção de adicionar o CPF na nota fiscal
+6 - O cliente poderá adicionar cupom para receber desconto
+
+Fluxo de Exceção
+E1 - Caso o pagamento seja negado, o cliente terá de escolher outra forma de
+pagamento ou cancelar seu pedido
+Emitir Nota Fiscal
+Ator Principal: Sistema
+Ator Secundário: N/A
+
+Fluxo Principal
+1 - O cliente tem que efetuar corretamente o pagamento
+2 - O sistema vai emitir a sua nota fiscal
+
+Conferir Pedidos
+Ator Principal: Funcionário
+Ator Secundário: N/A
+
+Fluxo Principal
+1 - O funcionário vai conferir os pedidos em preparação no painel
+2 - O funcionário vai conferir os pedidos prontos no painel
+3 - O funcionário vai chamar o cliente pelo nome para retirar o pedido
+
+Fluxo de Exceção
+E1 - Caso o cliente não responda ao chamado para retirar o pedido, o seu pedido será descartado
