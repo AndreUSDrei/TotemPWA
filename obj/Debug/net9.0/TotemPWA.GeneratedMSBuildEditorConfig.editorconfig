@@ -192,6 +192,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb21lck91TGV2YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/Users/andre/TotemPWA/Views/Home/Cpf.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcGYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/andre/TotemPWA/Views/Home/extras.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxleHRyYXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -202,6 +206,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [c:/Users/andre/TotemPWA/Views/Home/molhos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtb2xob3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/andre/TotemPWA/Views/Home/Nome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/andre/TotemPWA/Views/Home/ofertas.cshtml]
@@ -220,8 +228,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZWxhUGFnYW1lbnRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/Users/andre/TotemPWA/Views/Pedido/CartaoTipo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXENhcnRhb1RpcG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/andre/TotemPWA/Views/Pedido/Concluido.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXENvbmNsdWlkby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/andre/TotemPWA/Views/Pedido/Dinheiro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXERpbmhlaXJvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/andre/TotemPWA/Views/Pedido/Negado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXE5lZ2Fkby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/andre/TotemPWA/Views/Pedido/Novo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXE5vdm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/andre/TotemPWA/Views/Pedido/Pagamento.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBhZ2FtZW50by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/andre/TotemPWA/Views/Pedido/Pix.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBpeC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/andre/TotemPWA/Views/Pedido/Revisao.cshtml]

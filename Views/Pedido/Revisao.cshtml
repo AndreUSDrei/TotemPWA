@@ -1,45 +1,112 @@
-@model List<TotemPWA.ViewModels.PedidoViewModel>
 @{
-    ViewData["Title"] = "Tela revisão";
-    decimal total = Model?.Sum(x => x.Preco * x.Quantidade) ?? 0;
+    ViewData["Title"] = "Revisão do Pedido";
 }
-<div style="background:#222; color:#fff; padding:0; min-height:100vh; font-family:sans-serif;">
-    <div style="background:#111; padding:10px 20px; font-size:20px; font-weight:bold;">Tela revisão</div>
-    <img src="/img/banner.jpg" alt="Banner" style="width:100%; max-height:120px; object-fit:cover;">
-    <div style="background:#fff; color:#222; margin:20px auto; max-width:400px; border-radius:10px; box-shadow:0 2px 8px #0002; padding:20px;">
-        <div style="font-weight:bold; margin-bottom:10px;">Confira seu pedido</div>
-        <div style="max-height:220px; overflow-y:auto;">
-            @if (Model != null && Model.Count > 0)
-            {
-                foreach (var item in Model)
-                {
-                    <div style="display:flex; align-items:center; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:10px;">
-                        <img src="@item.Imagem" alt="@item.Nome" style="width:50px; height:50px; object-fit:cover; border-radius:8px; margin-right:10px;">
-                        <div style="flex:1;">
-                            <div style="font-weight:bold; color:#222;">@item.Nome</div>
-                            <div style="font-size:13px; color:#666;">@item.Descricao</div>
-                            <div style="font-size:15px; color:#222; margin-top:2px;">R$ @item.Preco.ToString("N2")</div>
-                        </div>
-                        <div style="font-size:15px; color:#222; margin-left:10px;">x @item.Quantidade</div>
-                    </div>
-                }
-            }
-            else
-            {
-                <div style="color:#888; text-align:center;">Nenhum item no pedido.</div>
-            }
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão do Pedido</title>
+    <link rel="stylesheet" href="~/css/tela2.css" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="banner">
+            <img src="~/img/banner.jpg" asp-append-version="true" alt="Banner" />
         </div>
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
-            <span style="font-weight:bold;">Total:</span>
-            <span style="font-weight:bold; color:#e74c3c; font-size:18px;">R$ @total.ToString("N2")</span>
-        </div>
-        <div style="display:flex; gap:10px; margin-top:15px;">
-            <form asp-action="CancelarPedido" method="post" style="flex:1;">
-                <button type="submit" style="width:100%; padding:8px; border-radius:6px; border:1px solid #222; background:#fff; color:#222; font-weight:bold;">Cancelar</button>
-            </form>
-            <form asp-action="TelaPagamento" asp-controller="Home" method="get" style="flex:1;">
-                <button type="submit" style="width:100%; padding:8px; border-radius:6px; border:none; background:#8BC34A; color:#fff; font-weight:bold;">Pagar</button>
-            </form>
+        <div class="c1" style="justify-content:center;align-items:center;">
+            <div style="width:90%;max-width:500px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 2px 12px #0001;padding:24px 16px;">
+                <h2 style="margin-bottom:18px;font-size:1.3rem;font-weight:600;color:#222;">Confira seu pedido</h2>
+                <div id="revisao-lista-itens"></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;">
+                    <span style="font-weight:bold;">Total:</span>
+                    <span id="revisao-total" style="font-weight:bold;color:#e74c3c;font-size:1.2rem;">R$ 0,00</span>
+                </div>
+                <div style="margin-top:18px;display:flex;gap:8px;align-items:center;">
+                    <input id="input-cupom" type="text" placeholder="Cupom de desconto" style="flex:2;padding:8px;border-radius:6px;border:1px solid #ccc;font-size:1rem;" />
+                    <button id="btn-aplicar-cupom" style="flex:1;padding:8px 0;border-radius:6px;border:none;background:#2196F3;color:#fff;font-weight:bold;">Aplicar</button>
+                </div>
+                <div id="cupom-msg" style="margin-top:6px;font-size:0.95rem;color:#27ae60;display:none;"></div>
+                <div id="cupom-bloqueado-msg" style="margin-top:6px;font-size:0.95rem;color:#c00;display:none;">Para usar cupom, informe o CPF na nota.</div>
+                <div style="display:flex;gap:10px;margin-top:20px;">
+                    <a href="/Home/Tela2" id="btnCancelar" style="flex:1;padding:10px;border-radius:6px;border:1px solid #222;background:#fff;color:#222;font-weight:bold;text-align:center;text-decoration:none;">Cancelar</a>
+                    <a href="/Pedido/Pagamento" id="btnPagar" style="flex:1;padding:10px;border-radius:6px;border:none;background:#8BC34A;color:#fff;font-weight:bold;text-align:center;text-decoration:none;">Pagar</a>
+                </div>
+            </div>
         </div>
     </div>
-</div> 
+    <script>
+    // Carregar itens do carrinho do localStorage
+    function renderizarRevisaoPedido() {
+        const lista = document.getElementById('revisao-lista-itens');
+        const totalSpan = document.getElementById('revisao-total');
+        let carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens')) || [];
+        let desconto = parseFloat(localStorage.getItem('descontoPedido')) || 0;
+        if (!carrinhoItens.length) {
+            lista.innerHTML = '<div style="color:#888;text-align:center;">Nenhum item no pedido.</div>';
+            totalSpan.textContent = 'R$ 0,00';
+            document.getElementById('btnPagar').classList.add('desabilitado');
+            document.getElementById('btnPagar').style.pointerEvents = 'none';
+            document.getElementById('btnPagar').style.opacity = '0.5';
+            return;
+        }
+        let total = 0;
+        let html = '';
+        carrinhoItens.forEach(item => {
+            total += item.preco * item.quantidade;
+            html += `
+                <div style="display:flex;align-items:center;margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:10px;">
+                    <img src="${item.imagem}" alt="${item.nome}" style="width:54px;height:54px;object-fit:cover;border-radius:8px;margin-right:12px;">
+                    <div style="flex:1;">
+                        <div style="font-weight:bold;color:#222;">${item.nome}</div>
+                        <div style="font-size:13px;color:#666;">${item.descricao || ''}</div>
+                        <div style="font-size:15px;color:#222;margin-top:2px;">R$ ${item.preco.toFixed(2)}</div>
+                    </div>
+                    <div style="font-size:15px;color:#222;margin-left:10px;">x ${item.quantidade}</div>
+                </div>
+            `;
+        });
+        lista.innerHTML = html;
+        let totalComDesconto = total;
+        if (desconto > 0) {
+            totalComDesconto = total * (1 - desconto);
+            totalSpan.innerHTML = `<span style='text-decoration:line-through;color:#888;font-size:1rem;margin-right:8px;'>R$ ${total.toFixed(2)}</span> R$ ${totalComDesconto.toFixed(2)}`;
+        } else {
+            totalSpan.textContent = `R$ ${total.toFixed(2)}`;
+        }
+        document.getElementById('btnPagar').classList.remove('desabilitado');
+        document.getElementById('btnPagar').style.pointerEvents = 'auto';
+        document.getElementById('btnPagar').style.opacity = '1';
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        renderizarRevisaoPedido();
+        // Bloquear cupom se não informou CPF
+        if (localStorage.getItem('cpfInformado') !== 'sim') {
+            document.getElementById('input-cupom').disabled = true;
+            document.getElementById('btn-aplicar-cupom').disabled = true;
+            document.getElementById('cupom-bloqueado-msg').style.display = 'block';
+        }
+        document.getElementById('btn-aplicar-cupom').addEventListener('click', function() {
+            const input = document.getElementById('input-cupom');
+            const msg = document.getElementById('cupom-msg');
+            let valor = input.value.trim().toUpperCase();
+            if (valor === 'FOME10') {
+                localStorage.setItem('descontoPedido', '0.10');
+                msg.textContent = 'Cupom aplicado! 10% de desconto.';
+                msg.style.display = 'block';
+            } else {
+                localStorage.setItem('descontoPedido', '0');
+                msg.textContent = 'Cupom inválido.';
+                msg.style.display = 'block';
+            }
+            renderizarRevisaoPedido();
+        });
+        document.getElementById('btnCancelar').addEventListener('click', function() {
+            localStorage.removeItem('carrinhoItens');
+            localStorage.removeItem('descontoPedido');
+        });
+    });
+    </script>
+</body>
+</html> 

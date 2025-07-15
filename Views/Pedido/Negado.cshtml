@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Pagamento Negado";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pagamento Negado</title>
+    <link rel="stylesheet" href="~/css/tela2.css" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <style>
+        .negado-content {
+            width: 100%;
+            height: 100vh;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #ff4747;
+            border-radius: 16px;
+        }
+        .negado-top { font-size: 2.1vh; font-weight: 600; color: #fff; text-align: center; margin-bottom: 5vh; margin-top: 0; }
+        .negado-check { margin: 0 auto 5vh auto; display: flex; justify-content: center; align-items: center; }
+        .negado-bottom { font-size: 1.7vh; color: #fff; text-align: center; margin-bottom: 0; }
+        .x-icon { width: 13vh; height: 13vh; display: block; }
+    </style>
+</head>
+<body>
+    <div class="main" style="background:transparent;box-shadow:none;">
+        <div class="c1" style="justify-content:center;align-items:center;height:100vh;">
+            <div class="negado-content">
+                <div class="negado-top">Pagamento Negado</div>
+                <div class="negado-check">
+                    <svg class="x-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="48" stroke="#fff" stroke-width="4" fill="none"/>
+                        <path d="M35 35 L65 65 M65 35 L35 65" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="negado-bottom">Pagamento negado!</div>
+            </div>
+        </div>
+    </div>
+<script>
+setTimeout(function() {
+    localStorage.removeItem('carrinhoItens');
+    localStorage.removeItem('descontoPedido');
+    window.location.href = "/";
+}, 4000);
+</script>
+</body>
+</html> 

@@ -33,6 +33,8 @@ function atualizarCarrinho() {
     const totalElement = document.querySelector('.modal-carrinho-total');
     const subtotalBarraInferior = document.getElementById('cartTotal');
     const carrinhoVazio = document.querySelector('.carrinho-vazio');
+    const finalizarBtn = document.getElementById('finalizarPedidoBtn');
+    const prosseguirBtn = document.getElementById('prosseguir');
 
     // Verifica se o carrinho está vazio
     if (!carrinhoItens || carrinhoItens.length === 0) {
@@ -45,6 +47,16 @@ function atualizarCarrinho() {
         }
         if (totalElement) totalElement.textContent = 'R$ 0,00';
         if (subtotalBarraInferior) subtotalBarraInferior.textContent = 'R$ 0,00';
+        if (finalizarBtn) {
+            finalizarBtn.classList.add('desabilitado');
+            finalizarBtn.style.pointerEvents = 'none';
+            finalizarBtn.style.opacity = '0.5';
+        }
+        if (prosseguirBtn) {
+            prosseguirBtn.classList.add('desabilitado');
+            prosseguirBtn.style.pointerEvents = 'none';
+            prosseguirBtn.style.opacity = '0.5';
+        }
         return;
     }
 
@@ -80,6 +92,16 @@ function atualizarCarrinho() {
     if (totalElement) totalElement.textContent = `R$ ${total.toFixed(2)}`;
     if (subtotalBarraInferior) subtotalBarraInferior.textContent = `R$ ${total.toFixed(2)}`;
     if (carrinhoVazio) carrinhoVazio.style.display = 'none';
+    if (finalizarBtn) {
+        finalizarBtn.classList.remove('desabilitado');
+        finalizarBtn.style.pointerEvents = 'auto';
+        finalizarBtn.style.opacity = '1';
+    }
+    if (prosseguirBtn) {
+        prosseguirBtn.classList.remove('desabilitado');
+        prosseguirBtn.style.pointerEvents = 'auto';
+        prosseguirBtn.style.opacity = '1';
+    }
 
     // Salva as alterações
     salvarCarrinho();
@@ -168,6 +190,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Atualiza o carrinho ao carregar a página
     atualizarCarrinho();
+
+    const prosseguirBtn = document.getElementById('prosseguir');
+    if (prosseguirBtn) {
+        prosseguirBtn.addEventListener('click', function(e) {
+            if (!carrinhoItens || carrinhoItens.length === 0) {
+                e.preventDefault();
+                return;
+            }
+            // Salva o carrinho no localStorage para a tela de revisão
+            localStorage.setItem('carrinhoItens', JSON.stringify(carrinhoItens));
+            // Redireciona para a tela de revisão normalmente (link já faz isso)
+        });
+    }
 });
 
 // Listener para atualizar o carrinho quando um item for editado

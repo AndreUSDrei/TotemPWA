@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "Pagamento Pix";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Pix</title>
+    <link rel="stylesheet" href="~/css/tela2.css" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <style>
+        .pix-box { width: 100%; max-width: 350px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px #0001; padding: 32px 18px; display: flex; flex-direction: column; align-items: center; }
+        .pix-logo { width: 64px; height: 64px; margin-bottom: 32px; }
+        .pix-text { font-size: 1.1rem; color: #222; text-align: center; margin-bottom: 32px; font-weight: 600; }
+        .pix-qr { width: 120px; height: 120px; margin-bottom: 32px; }
+        .pix-btn-cancelar { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #222; background: #fff; color: #222; font-weight: bold; text-align: center; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="banner">
+            <img src="~/img/banner.jpg" asp-append-version="true" alt="Banner" />
+        </div>
+        <div class="c1" style="justify-content:center;align-items:center;">
+            <div class="pix-box">
+                <img src="/img/pix.png" alt="Pix" class="pix-logo" />
+                <div class="pix-text">Escaneie o código QR code:</div>
+                <img src="/img/pix-qr.png" alt="QR Code Pix" class="pix-qr" />
+                <a href="/Pedido/Pagamento" class="pix-btn-cancelar">Cancelar</a>
+            </div>
+        </div>
+    </div>
+    <script>
+setTimeout(function() {
+    window.location.href = '/Pedido/Concluido';
+}, 4000);
+</script>
+</body>
+</html> 

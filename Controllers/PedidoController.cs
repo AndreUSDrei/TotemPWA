@@ -97,6 +97,42 @@ namespace TotemPWA.Controllers
             return View(itens);
         }
 
+        [HttpGet]
+        public IActionResult Pagamento()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Pix()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Dinheiro()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult CartaoTipo()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Concluido()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Negado()
+        {
+            return View();
+        }
+
         // Action para tela de revisão do pedido
         public IActionResult Revisao(int id)
         {

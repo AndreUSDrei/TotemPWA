@@ -65,3 +65,19 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+
+// --- Inatividade: resetar sistema após 60s sem interação ---
+let inatividadeTimeout;
+function resetarInatividade() {
+    clearTimeout(inatividadeTimeout);
+    inatividadeTimeout = setTimeout(() => {
+        localStorage.removeItem('carrinhoItens');
+        localStorage.removeItem('descontoPedido');
+        localStorage.removeItem('cpfInformado');
+        window.location.href = '/';
+    }, 60000);
+}
+['click','touchstart','keydown','scroll'].forEach(evt => {
+    document.addEventListener(evt, resetarInatividade, true);
+});
+resetarInatividade();

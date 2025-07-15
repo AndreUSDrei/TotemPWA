@@ -1,0 +1,91 @@
+@{
+    ViewData["Title"] = "Digite seu nome";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Digite seu nome</title>
+    <link rel="stylesheet" href="~/css/tela2.css" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <style>
+        .nome-content {
+            width: 100%;
+            height: 100vh;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            border-radius: 16px;
+        }
+        .nome-label { font-size: 2.1vh; font-weight: 600; color: #222; text-align: center; margin-bottom: 4vh; margin-top: 0; }
+        .nome-input { width: 28vh; font-size: 2vh; padding: 1vh; border-radius: 8px; border: 2px solid #444; margin-bottom: 3vh; text-align: center; outline: none; }
+        .teclado { display: flex; flex-direction: column; gap: 0.7vh; margin-bottom: 4vh; }
+        .teclado-linha { display: flex; gap: 0.7vh; justify-content: center; }
+        .tecla { background: #f5f5f5; border: 1px solid #bbb; border-radius: 6px; font-size: 1.5vh; padding: 0.7vh 1.3vh; cursor: pointer; transition: background 0.2s; min-width: 3.2vh; min-height: 3.2vh; }
+        .tecla:active { background: #e0e0e0; }
+        .tecla-func { background: #eee; color: #444; font-weight: bold; }
+        .nome-btns { display: flex; flex-direction: column; gap: 1.2vh; width: 28vh; margin-top: 2vh; }
+        .nome-btn-confirmar { width: 100%; padding: 10px; border-radius: 6px; border: 2px solid #8BC34A; background: #8BC34A; color: #fff; font-weight: bold; text-align: center; text-decoration: none; font-size: 2vh; }
+        .nome-btn-cancelar { width: 60%; align-self: center; padding: 8px; border-radius: 6px; border: 2px solid #222; background: #fff; color: #222; font-weight: bold; text-align: center; text-decoration: none; font-size: 1.7vh; }
+    </style>
+</head>
+<body>
+    <div class="main" style="background:transparent;box-shadow:none;">
+        <div class="c1" style="justify-content:center;align-items:center;height:100vh;">
+            <form method="post" action="/Home/Nome" autocomplete="off" style="width:100%;display:flex;flex-direction:column;align-items:center;">
+                <div class="nome-content">
+                    <div class="nome-label">Digite seu nome:</div>
+                    <input type="text" id="nomeInput" name="nome" class="nome-input" placeholder="Digite seu nome" readonly required />
+                    <div class="teclado" id="teclado">
+                        <div class="teclado-linha">
+                            <button class="tecla">Q</button><button class="tecla">W</button><button class="tecla">E</button><button class="tecla">R</button><button class="tecla">T</button><button class="tecla">Y</button><button class="tecla">U</button><button class="tecla">I</button><button class="tecla">O</button><button class="tecla">P</button>
+                        </div>
+                        <div class="teclado-linha">
+                            <button class="tecla">A</button><button class="tecla">S</button><button class="tecla">D</button><button class="tecla">F</button><button class="tecla">G</button><button class="tecla">H</button><button class="tecla">J</button><button class="tecla">K</button><button class="tecla">L</button><button class="tecla">Ç</button>
+                        </div>
+                        <div class="teclado-linha">
+                            <button class="tecla">Z</button><button class="tecla">X</button><button class="tecla">C</button><button class="tecla">V</button><button class="tecla">B</button><button class="tecla">N</button><button class="tecla">M</button><button class="tecla">-</button><button class="tecla">_</button><button class="tecla">.</button>
+                        </div>
+                        <div class="teclado-linha">
+                            <button class="tecla"> </button>
+                            <button class="tecla tecla-func" id="teclaBack">←</button>
+                            <button class="tecla tecla-func" id="teclaClear">Limpar</button>
+                        </div>
+                    </div>
+                    <div class="nome-btns">
+                        <button type="submit" class="nome-btn-confirmar">Confirmar</button>
+                        <a href="/" class="nome-btn-cancelar">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+    const nomeInput = document.getElementById('nomeInput');
+    document.querySelectorAll('.tecla').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (btn.id === 'teclaBack') {
+                nomeInput.value = nomeInput.value.slice(0, -1);
+            } else if (btn.id === 'teclaClear') {
+                nomeInput.value = '';
+            } else {
+                nomeInput.value += btn.textContent;
+            }
+        });
+    });
+    // Impede submit se o campo estiver vazio
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        if (!nomeInput.value.trim()) {
+            e.preventDefault();
+            nomeInput.focus();
+        }
+    });
+    </script>
+</body>
+</html> 

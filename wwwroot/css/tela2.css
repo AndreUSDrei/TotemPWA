@@ -774,6 +774,14 @@ body {
     background: #229954;
 }
 
+.modal-carrinho-finalizar.desabilitado {
+    background: #ccc !important;
+    color: #888 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+    opacity: 0.5 !important;
+}
+
 .carrinho-vazio {
     text-align: center;
     padding: 40px 20px;
@@ -935,6 +943,14 @@ body {
     .preco-original {
         font-size: 0.7rem;
     }
+}
+
+.ConteinerBtn .NavBtn #prosseguir.desabilitado {
+    background: #ccc !important;
+    color: #888 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+    opacity: 0.5 !important;
 }
 
 

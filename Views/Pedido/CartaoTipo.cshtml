@@ -1,0 +1,72 @@
+@{
+    ViewData["Title"] = "Tipo de Cartão";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de Cartão</title>
+    <link rel="stylesheet" href="~/css/tela2.css" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <style>
+        .cartao-box { width: 100%; max-width: 400px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px #0001; padding: 32px 18px; display: flex; flex-direction: column; align-items: center; }
+        .cartao-icone { width: 80px; height: 80px; margin-bottom: 32px; }
+        .cartao-titulo { font-size: 1.1rem; color: #222; text-align: center; margin-bottom: 32px; font-weight: 600; }
+        .cartao-opcoes { display: flex; gap: 24px; margin-bottom: 32px; }
+        .cartao-opcao { background: #fff; border: 2px solid #eee; border-radius: 12px; padding: 18px 24px; display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: border 0.2s, box-shadow 0.2s; }
+        .cartao-opcao.selected { border: 2px solid #8BC34A; box-shadow: 0 0 0 2px #8BC34A33; }
+        .cartao-opcao svg { width: 38px; height: 38px; margin-bottom: 8px; }
+        .cartao-opcao span { font-size: 1rem; color: #222; }
+        .cartao-botoes { width: 100%; display: flex; gap: 10px; margin-top: 24px; }
+        .cartao-btn-cancelar { flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #222; background: #fff; color: #222; font-weight: bold; text-align: center; text-decoration: none; }
+        .cartao-btn-prosseguir { flex: 1; padding: 10px; border-radius: 6px; border: none; background: #8BC34A; color: #fff; font-weight: bold; text-align: center; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="banner">
+            <img src="~/img/banner.jpg" asp-append-version="true" alt="Banner" />
+        </div>
+        <div class="c1" style="justify-content:center;align-items:center;">
+            <div class="cartao-box">
+                <div class="cartao-icone">
+                    <svg viewBox="0 0 64 64" fill="none"><rect x="6" y="16" width="52" height="32" rx="6" stroke="#444" stroke-width="3" fill="#fff"/><rect x="6" y="24" width="52" height="8" fill="#eee"/><rect x="44" y="36" width="10" height="4" rx="2" fill="#eee"/></svg>
+                </div>
+                <div class="cartao-titulo">Débito ou crédito?</div>
+                <div class="cartao-opcoes">
+                    <div class="cartao-opcao" id="opcaoDebito" onclick="selecionarTipo('debito', this)">
+                        <svg viewBox="0 0 64 64" fill="none"><rect x="6" y="16" width="52" height="32" rx="6" stroke="#444" stroke-width="3" fill="#fff"/><rect x="6" y="24" width="52" height="8" fill="#8BC34A"/><rect x="44" y="36" width="10" height="4" rx="2" fill="#eee"/></svg>
+                        <span>Débito</span>
+                    </div>
+                    <div class="cartao-opcao" id="opcaoCredito" onclick="selecionarTipo('credito', this)">
+                        <svg viewBox="0 0 64 64" fill="none"><rect x="6" y="16" width="52" height="32" rx="6" stroke="#444" stroke-width="3" fill="#fff"/><rect x="6" y="24" width="52" height="8" fill="#eee"/><rect x="44" y="36" width="10" height="4" rx="2" fill="#8BC34A"/></svg>
+                        <span>Crédito</span>
+                    </div>
+                </div>
+                <div class="cartao-botoes">
+                    <a href="/Pedido/Pagamento" class="cartao-btn-cancelar">Cancelar</a>
+                    <a href="#" class="cartao-btn-prosseguir" id="btnProsseguir">Prosseguir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    let tipoSelecionado = null;
+    function selecionarTipo(tipo, el) {
+        tipoSelecionado = tipo;
+        document.getElementById('opcaoDebito').classList.remove('selected');
+        document.getElementById('opcaoCredito').classList.remove('selected');
+        el.classList.add('selected');
+    }
+    document.getElementById('btnProsseguir').addEventListener('click', function(e) {
+        e.preventDefault();
+        if (!tipoSelecionado) {
+            alert('Selecione débito ou crédito!');
+            return;
+        }
+        window.location.href = '/Pedido/Negado';
+    });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = "Pagamento em Dinheiro";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento em Dinheiro</title>
+    <link rel="stylesheet" href="~/css/tela2.css" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <style>
+        .dinheiro-box { width: 100%; max-width: 400px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px #0001; padding: 32px 18px; display: flex; flex-direction: column; align-items: center; }
+        .dinheiro-icone { width: 80px; height: 80px; margin-bottom: 32px; }
+        .dinheiro-texto { font-size: 1.1rem; color: #222; text-align: center; margin-bottom: 8px; font-weight: 600; }
+        .dinheiro-valor { color: #e74c3c; font-weight: bold; font-size: 1.3rem; margin-bottom: 32px; }
+        .dinheiro-botoes { width: 100%; display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+        .dinheiro-btn-cancelar { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #222; background: #fff; color: #222; font-weight: bold; text-align: center; text-decoration: none; }
+        .dinheiro-btn-entendi { width: 100%; padding: 10px; border-radius: 6px; border: 2px solid #8BC34A; background: #fff; color: #388e00; font-weight: bold; text-align: center; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="banner">
+            <img src="~/img/banner.jpg" asp-append-version="true" alt="Banner" />
+        </div>
+        <div class="c1" style="justify-content:center;align-items:center;">
+            <div class="dinheiro-box">
+                <img src="/img/dinheiro.png" alt="Dinheiro" class="dinheiro-icone" />
+                <div class="dinheiro-texto">Vá até o caixa e pague<br>em dinheiro no valor de:</div>
+                <div class="dinheiro-valor" id="dinheiro-valor">R$ 0,00</div>
+                <div class="dinheiro-botoes">
+                    <a href="/Pedido/Pagamento" class="dinheiro-btn-cancelar">Cancelar</a>
+                    <a href="#" class="dinheiro-btn-entendi" id="btnEntendi">Entendi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    // Carregar valor do localStorage
+    document.addEventListener('DOMContentLoaded', function() {
+        let carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens')) || [];
+        let desconto = parseFloat(localStorage.getItem('descontoPedido')) || 0;
+        let total = 0;
+        carrinhoItens.forEach(item => {
+            total += item.preco * item.quantidade;
+        });
+        if (desconto > 0) total = total * (1 - desconto);
+        document.getElementById('dinheiro-valor').textContent = `R$ ${total.toFixed(2)}`;
+        document.getElementById('btnEntendi').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = '/Pedido/Concluido';
+        });
+    });
+    </script>
+</body>
+</html> 

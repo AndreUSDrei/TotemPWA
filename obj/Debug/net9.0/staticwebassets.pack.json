@@ -153,6 +153,10 @@
       "PackagePath": "staticwebassets\\img\\carrinhocom.png"
     },
     {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\cartao.png",
+      "PackagePath": "staticwebassets\\img\\cartao.png"
+    },
+    {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\chipsdebatatadoce.png",
       "PackagePath": "staticwebassets\\img\\chipsdebatatadoce.png"
     },
@@ -175,6 +179,10 @@
     {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\devopsbacon.png",
       "PackagePath": "staticwebassets\\img\\devopsbacon.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\dinheiro.png",
+      "PackagePath": "staticwebassets\\img\\dinheiro.png"
     },
     {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\fantalaranja.png",
@@ -279,6 +287,14 @@
     {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\petit.png",
       "PackagePath": "staticwebassets\\img\\petit.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\pix-qr.png",
+      "PackagePath": "staticwebassets\\img\\pix-qr.png"
+    },
+    {
+      "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\pix.png",
+      "PackagePath": "staticwebassets\\img\\pix.png"
     },
     {
       "Id": "C:\\Users\\andre\\TotemPWA\\wwwroot\\img\\simbolo.jpg",

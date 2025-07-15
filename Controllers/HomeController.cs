@@ -21,6 +21,32 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpGet]
+    public IActionResult Nome()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Nome(string nome)
+    {
+        // Aqui você pode salvar o nome se quiser
+        return RedirectToAction("Cpf");
+    }
+
+    [HttpGet]
+    public IActionResult Cpf()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Cpf(string cpf)
+    {
+        // Aqui você pode salvar o CPF se quiser
+        return RedirectToAction("ComerOuLevar");
+    }
+
     public IActionResult ComerOuLevar()
     {
         return View();

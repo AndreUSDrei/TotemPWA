@@ -1,0 +1,126 @@
+@{
+    ViewData["Title"] = "CPF na nota";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CPF na nota</title>
+    <link rel="stylesheet" href="~/css/tela2.css" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <style>
+        .cpf-content {
+            width: 100%;
+            height: 100vh;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            border-radius: 16px;
+        }
+        .cpf-label { font-size: 2.1vh; font-weight: 600; color: #222; text-align: center; margin-bottom: 4vh; margin-top: 0; }
+        .cpf-input { width: 32vh; font-size: 2.1vh; padding: 1.2vh; border-radius: 8px; border: 2px solid #444; margin-bottom: 4vh; text-align: center; outline: none; }
+        .teclado { display: flex; flex-direction: column; gap: 1vh; margin-bottom: 6vh; }
+        .teclado-linha { display: flex; gap: 1vh; justify-content: center; }
+        .tecla { background: #f5f5f5; border: 1px solid #bbb; border-radius: 6px; font-size: 2.1vh; padding: 1.2vh 2.2vh; cursor: pointer; transition: background 0.2s; }
+        .tecla:active { background: #e0e0e0; }
+        .tecla-func { background: #eee; color: #444; font-weight: bold; }
+        .cpf-btn { width: 32vh; padding: 10px; border-radius: 6px; border: 2px solid #222; background: #fff; color: #222; font-weight: bold; text-align: center; text-decoration: none; margin-top: 1.5vh; }
+    </style>
+</head>
+<body>
+    <div class="main" style="background:transparent;box-shadow:none;">
+        <div class="c1" style="justify-content:center;align-items:center;height:100vh;">
+            <div class="cpf-content">
+                <div class="cpf-label">CPF na nota?</div>
+                <input type="text" id="cpfInput" class="cpf-input" placeholder="Digite o CPF" maxlength="14" readonly />
+                <div id="cpfError" style="color:#c00;font-size:2vh;margin-bottom:2vh;display:none;text-align:center;"></div>
+                <div class="teclado" id="teclado">
+                    <div class="teclado-linha">
+                        <button class="tecla">1</button><button class="tecla">2</button><button class="tecla">3</button>
+                    </div>
+                    <div class="teclado-linha">
+                        <button class="tecla">4</button><button class="tecla">5</button><button class="tecla">6</button>
+                    </div>
+                    <div class="teclado-linha">
+                        <button class="tecla">7</button><button class="tecla">8</button><button class="tecla">9</button>
+                    </div>
+                    <div class="teclado-linha">
+                        <button class="tecla">0</button>
+                        <button class="tecla tecla-func" id="teclaBack">←</button>
+                        <button class="tecla tecla-func" id="teclaClear">Limpar</button>
+                    </div>
+                </div>
+                <a href="#" class="cpf-btn" id="btnNaoColocar">Não colocar</a>
+                <button class="cpf-btn" id="btnConfirmar" style="background:#222;color:#fff;margin-top:1.5vh;">Confirmar</button>
+                <a href="/" class="cpf-btn">Cancelar</a>
+            </div>
+        </div>
+    </div>
+    <script>
+    const cpfInput = document.getElementById('cpfInput');
+    const cpfError = document.getElementById('cpfError');
+    function aplicarMascaraCPF(valor) {
+        valor = valor.replace(/\D/g, '');
+        valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+        valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+        valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+        return valor;
+    }
+    function validarCPF(cpf) {
+        cpf = cpf.replace(/\D/g, '');
+        if (cpf.length !== 11 || /^([0-9])\1+$/.test(cpf)) return false;
+        let soma = 0, resto;
+        for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i-1, i)) * (11 - i);
+        resto = (soma * 10) % 11;
+        if ((resto === 10) || (resto === 11)) resto = 0;
+        if (resto !== parseInt(cpf.substring(9, 10))) return false;
+        soma = 0;
+        for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i-1, i)) * (12 - i);
+        resto = (soma * 10) % 11;
+        if ((resto === 10) || (resto === 11)) resto = 0;
+        if (resto !== parseInt(cpf.substring(10, 11))) return false;
+        return true;
+    }
+    document.querySelectorAll('.tecla').forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (btn.id === 'teclaBack') {
+                cpfInput.value = cpfInput.value.slice(0, -1);
+            } else if (btn.id === 'teclaClear') {
+                cpfInput.value = '';
+            } else {
+                let raw = cpfInput.value.replace(/\D/g, '');
+                if (raw.length < 11) {
+                    cpfInput.value = aplicarMascaraCPF(raw + btn.textContent);
+                }
+            }
+            cpfError.style.display = 'none';
+        });
+    });
+    document.getElementById('btnNaoColocar').addEventListener('click', function(e) {
+        e.preventDefault();
+        localStorage.setItem('cpfInformado', 'nao');
+        window.location.href = '/Home/ComerOuLevar';
+    });
+    document.getElementById('btnConfirmar').addEventListener('click', function(e) {
+        e.preventDefault();
+        let cpf = cpfInput.value;
+        if (cpf.replace(/\D/g, '').length === 0) {
+            localStorage.setItem('cpfInformado', 'nao');
+            window.location.href = '/Home/ComerOuLevar';
+            return;
+        }
+        if (!validarCPF(cpf)) {
+            cpfError.textContent = 'CPF inválido';
+            cpfError.style.display = 'block';
+            return;
+        }
+        localStorage.setItem('cpfInformado', 'sim');
+        window.location.href = '/Home/ComerOuLevar';
+    });
+    </script>
+</body>
+</html> 

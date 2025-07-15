@@ -1,0 +1,100 @@
+@{
+    ViewData["Title"] = "Tela pagamento";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela pagamento</title>
+    <link rel="stylesheet" href="~/css/tela2.css" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <style>
+        .pagamento-box { width: 100%; max-width: 400px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px #0001; padding: 32px 18px; }
+        .pagamento-titulo { font-size: 1.2rem; font-weight: 600; color: #222; text-align: center; margin-bottom: 32px; }
+        .pagamento-opcoes { display: flex; justify-content: center; gap: 18px; margin-bottom: 32px; }
+        .pagamento-opcao { background: #fafafa; border: 2px solid #eee; border-radius: 10px; padding: 18px 12px; display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: border 0.2s; width: 90px; }
+        .pagamento-opcao.selected { border: 2px solid #8BC34A; }
+        .pagamento-opcao img { width: 38px; height: 38px; margin-bottom: 8px; }
+        .pagamento-opcao span { font-size: 1rem; color: #222; }
+        .pagamento-total-label { font-weight: bold; color: #222; }
+        .pagamento-total { color: #e74c3c; font-weight: bold; font-size: 1.2rem; margin-left: 8px; }
+        .pagamento-botoes { display: flex; gap: 10px; margin-top: 28px; }
+        .pagamento-btn-cancelar { flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #222; background: #fff; color: #222; font-weight: bold; text-align: center; text-decoration: none; }
+        .pagamento-btn-prosseguir { flex: 1; padding: 10px; border-radius: 6px; border: none; background: #8BC34A; color: #fff; font-weight: bold; text-align: center; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="banner">
+            <img src="~/img/banner.jpg" asp-append-version="true" alt="Banner" />
+        </div>
+        <div class="c1" style="justify-content:center;align-items:center;">
+            <div class="pagamento-box">
+                <div class="pagamento-titulo">Escolha sua forma de pagamento</div>
+                <div class="pagamento-opcoes">
+                    <div class="pagamento-opcao" data-metodo="Pix" onclick="selecionarMetodo(this)">
+                        <img src="/img/pix.png" alt="Pix">
+                        <span>Pix</span>
+                    </div>
+                    <div class="pagamento-opcao" data-metodo="Cartão" onclick="selecionarMetodo(this)">
+                        <img src="/img/cartao.png" alt="Cartão">
+                        <span>Cartão</span>
+                    </div>
+                    <div class="pagamento-opcao" data-metodo="Dinheiro" onclick="selecionarMetodo(this)">
+                        <img src="/img/dinheiro.png" alt="Dinheiro">
+                        <span>Dinheiro</span>
+                    </div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;">
+                    <span class="pagamento-total-label">Total:</span>
+                    <span class="pagamento-total" id="pagamento-total">R$ 0,00</span>
+                </div>
+                <div class="pagamento-botoes">
+                    <a href="/Home/Tela2" class="pagamento-btn-cancelar">Cancelar</a>
+                    <a href="#" class="pagamento-btn-prosseguir" id="btnProsseguir">Prosseguir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    function selecionarMetodo(el) {
+        document.querySelectorAll('.pagamento-opcao').forEach(op => op.classList.remove('selected'));
+        el.classList.add('selected');
+        window.metodoPagamento = el.getAttribute('data-metodo');
+    }
+    // Carregar total do localStorage
+    document.addEventListener('DOMContentLoaded', function() {
+        let carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens')) || [];
+        let desconto = parseFloat(localStorage.getItem('descontoPedido')) || 0;
+        let total = 0;
+        carrinhoItens.forEach(item => {
+            total += item.preco * item.quantidade;
+        });
+        if (desconto > 0) total = total * (1 - desconto);
+        document.getElementById('pagamento-total').textContent = `R$ ${total.toFixed(2)}`;
+        document.getElementById('btnProsseguir').addEventListener('click', function(e) {
+            if (!window.metodoPagamento) {
+                alert('Selecione uma forma de pagamento!');
+                e.preventDefault();
+                return false;
+            }
+            if (window.metodoPagamento === 'Pix') {
+                window.location.href = '/Pedido/Pix';
+                return;
+            }
+            if (window.metodoPagamento === 'Dinheiro') {
+                window.location.href = '/Pedido/Dinheiro';
+                return;
+            }
+            if (window.metodoPagamento === 'Cartão') {
+                window.location.href = '/Pedido/CartaoTipo';
+                return;
+            }
+            // Aqui você pode redirecionar para a tela de confirmação ou finalizar pedido para outras formas
+            alert('Pedido finalizado com pagamento via ' + window.metodoPagamento + '!');
+        });
+    });
+    </script>
+</body>
+</html> 
