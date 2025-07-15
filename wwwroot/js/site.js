@@ -32,33 +32,6 @@ document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
 
-// Add loading indicator for navigation
-document.addEventListener('click', function(e) {
-    if (e.target.tagName === 'A' || e.target.closest('a') || 
-        e.target.tagName === 'BUTTON' || e.target.closest('button')) {
-        
-        const loading = document.querySelector('.loading');
-        if (!loading) {
-            const newLoading = document.createElement('div');
-            newLoading.className = 'loading';
-            newLoading.innerHTML = '<div>Carregando...</div>';
-            document.body.appendChild(newLoading);
-        }
-        
-        setTimeout(() => {
-            document.querySelector('.loading').classList.add('show');
-        }, 100);
-    }
-});
-
-// Hide loading when page loads
-window.addEventListener('load', function() {
-    const loading = document.querySelector('.loading');
-    if (loading) {
-        loading.classList.remove('show');
-    }
-});
-
 // Add touch feedback
 document.addEventListener('touchstart', function(e) {
     if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {

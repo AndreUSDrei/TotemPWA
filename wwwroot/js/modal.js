@@ -12,7 +12,7 @@ function salvarCarrinho() {
 function abrirModalCarrinho() {
     const modal = document.getElementById('modalCarrinho');
     if (modal) {
-        modal.classList.add('active'); // Adiciona a classe 'active' para exibir o modal
+        modal.style.display = 'flex';
         atualizarCarrinho();
         document.body.style.overflow = 'hidden'; // Impede scroll da página
     }
@@ -22,15 +22,16 @@ function abrirModalCarrinho() {
 function fecharModalCarrinho() {
     const modal = document.getElementById('modalCarrinho');
     if (modal) {
-        modal.classList.remove('active'); // Remove a classe 'active' para ocultar o modal
+        modal.style.display = 'none';
         document.body.style.overflow = 'auto'; // Restaura scroll da página
     }
 }
 
 // Função para atualizar a exibição do carrinho (estilizada)
 function atualizarCarrinho() {
-    const carrinhoContainer = document.querySelector('.modal-content .modal-grid');
-    const totalElement = document.querySelector('.barra-inferior .preco span');
+    const carrinhoContainer = document.querySelector('.modal-carrinho-grid');
+    const totalElement = document.querySelector('.modal-carrinho-total');
+    const subtotalBarraInferior = document.getElementById('cartTotal');
     const carrinhoVazio = document.querySelector('.carrinho-vazio');
 
     // Verifica se o carrinho está vazio
@@ -43,6 +44,7 @@ function atualizarCarrinho() {
             `;
         }
         if (totalElement) totalElement.textContent = 'R$ 0,00';
+        if (subtotalBarraInferior) subtotalBarraInferior.textContent = 'R$ 0,00';
         return;
     }
 
@@ -66,7 +68,7 @@ function atualizarCarrinho() {
                     <span class="quantidade-item">${item.quantidade}x</span>
                     <button class="botao-adiciona" onclick="adicionarItemCarrinho(${item.id})">+</button>
                     <button class="btn-remover-carrinho" onclick="removerTodoItem(${item.id})">
-                     <a>X</a>
+                        <img src="/img/lixeira.png" alt="Remover" style="width:24px;height:24px;object-fit:contain;" />
                     </button>
                 </div>
             </div>
@@ -76,6 +78,7 @@ function atualizarCarrinho() {
     // Atualiza a interface
     if (carrinhoContainer) carrinhoContainer.innerHTML = htmlItens;
     if (totalElement) totalElement.textContent = `R$ ${total.toFixed(2)}`;
+    if (subtotalBarraInferior) subtotalBarraInferior.textContent = `R$ ${total.toFixed(2)}`;
     if (carrinhoVazio) carrinhoVazio.style.display = 'none';
 
     // Salva as alterações
@@ -147,12 +150,8 @@ function limparCarrinho() {
 
 // Configuração dos eventos quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', function() {
-    // Limpar o carrinho ao iniciar o sistema
-    localStorage.removeItem('carrinhoItens');
-    carrinhoItens = []; // Garantir que a variável global também esteja vazia
-
     // Fechar modal quando clicar no X
-    const fecharBtn = document.querySelector('.fechar-modal');
+    const fecharBtn = document.querySelector('.fechar-modal-carrinho');
     if (fecharBtn) {
         fecharBtn.addEventListener('click', fecharModalCarrinho);
     }
@@ -166,14 +165,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // Remover qualquer lógica que adicione itens ao carrinho ao clicar nos itens do menu
-    document.querySelectorAll('.pedido-item').forEach(item => {
-        item.addEventListener('click', function() {
-            const id = parseInt(this.getAttribute('data-id'));
-            abrirModalEditar(this); // Apenas abrir o modal de edição
-        });
-    });
 
     // Atualiza o carrinho ao carregar a página
     atualizarCarrinho();

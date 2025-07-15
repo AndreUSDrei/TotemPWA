@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sI6PRV3q7EA=",
+  "dgSpecHash": "EO9tLtppwFQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\andre\\totemPWA\\TotemPWA.csproj",
+  "projectFilePath": "C:\\Users\\andre\\TotemPWA\\TotemPWA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andre\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

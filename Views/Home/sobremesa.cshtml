@@ -16,7 +16,7 @@
     <div class="pedido-grid">
         @foreach (var produto in sobremesas)
         {
-            <div class="pedido-item" data-id="@produto.Id" data-categoria="@produto.CategoryId" onclick="abrirModalEditar(this)">
+            <div class="pedido-item" data-id="@produto.Id" data-categoria="@produto.CategoryId" data-categoria-slug="@produto.Category?.Slug" onclick="abrirModalEditar(this)">
                 <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name">
                 <h3 class="pedido-titulo">@produto.Name</h3>
                 <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>

@@ -1,8 +1,10 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @using Newtonsoft.Json
 @{
-    var categorias = ViewBag.Categorias as List<TotemPWA.Models.Category>;
+    ViewData["Title"] = "Cardápio";
     var produtos = ViewBag.Produtos as List<TotemPWA.Models.Product>;
+    var categorias = ViewBag.Categorias as List<TotemPWA.Models.Category>;
+    var ingredientes = ViewBag.Ingredientes as List<TotemPWA.Models.Ingredient>;
     var categoriaSelecionada = categorias?.FirstOrDefault();
     var produtosFiltrados = produtos?.Where(p => p.CategoryId == categoriaSelecionada?.Id).ToList() ?? new List<TotemPWA.Models.Product>();
     Func<string, string> ObterIconeCategoria = slug => slug switch
@@ -65,37 +67,278 @@
         <div class="c1">
             <!-- Menu lateral -->
             <div class="menu">
-                @foreach (var cat in categorias)
-                {
-                    <div class="menu-item @(cat.Id == categoriaSelecionada?.Id ? "active" : "")" onclick="trocarCategoria('@cat.Slug', @cat.Id)">
-                        <img class="img-menu-item" src="/img/@(cat.Icon ?? ObterIconeCategoria(cat.Slug))" alt="@cat.Name" />
-                        <div>@cat.Name</div>
-                    </div>
-                }
+                <div class="menu-item active" onclick="alternarConteudo('lanches', event)">
+                    <img class="img-menu-item" src="/img/menuburguerimage.png" alt="Lanches">
+                    <div>Lanches</div>
+                </div>
+                <div class="menu-item" onclick="alternarConteudo('combos', event)">
+                    <img class="img-menu-item" src="/img/combos.png" alt="Combos">
+                    <div>Combos</div>
+                </div>
+                <div class="menu-item" onclick="alternarConteudo('sobremesas', event)">
+                    <img class="img-menu-item" src="/img/sobremesa.png" alt="Sobremesas">
+                    <div>Sobremesas</div>
+                </div>
+                <div class="menu-item" onclick="alternarConteudo('molhos', event)">
+                    <img class="img-menu-item" src="/img/molhos.png" alt="Molhos">
+                    <div>Molhos</div>
+                </div>
+                <div class="menu-item" onclick="alternarConteudo('ofertas', event)">
+                    <img class="img-menu-item" src="/img/cupom.png" alt="Promoções">
+                    <div>Promoções</div>
+                </div>
+                <div class="menu-item" onclick="alternarConteudo('bebidas', event)">
+                    <img class="img-menu-item" src="/img/bebidas.png" alt="Bebidas">
+                    <div>Bebidas</div>
+                </div>
+                <div class="menu-item" onclick="alternarConteudo('extras', event)">
+                    <img class="img-menu-item" src="/img/batata.png" alt="Extras">
+                    <div>Extras</div>
+                </div>
             </div>
             <!-- Conteúdo principal -->
             <div class="content">
-                @if (filtrosAtuais.Count > 0)
-                {
-                <div class="container-categoria">
-                    <div class="nav-categorias" id="navCategorias">
-                        @for (int i = 0; i < filtrosAtuais.Count; i++)
-                        {
-                            <a href="#" class="@(i == 0 ? "active" : "")" onclick="filtrarPorFiltro('@filtrosAtuais[i]'); return false;">@filtrosAtuais[i]</a>
-                        }
+                <!-- Conteúdo de Lanches -->
+                <div id="conteudo-lanches">
+                    <div class="container-categoria">
+                        <div class="nav-categorias">
+                            <a href="#" class="active" data-categoria="todos">Todos</a>
+                            <a href="#" data-categoria="vegano">Vegano</a>
+                            <a href="#" data-categoria="carne">Carne</a>
+                            <a href="#" data-categoria="frango">Frango</a>
+                        </div>
+                    </div>
+                    <div class="pedido">
+                        <div class="pedido-grid">
+                            @foreach (var produto in produtos.Where(p => p.Category?.Slug == "lanches"))
+                            {
+                                var subcat = "carne";
+                                var nome = produto.Name.ToLower();
+                                if (nome.Contains("veg")) subcat = "vegano";
+                                else if (nome.Contains("frango")) subcat = "frango";
+                                <div class="pedido-item" data-id="@produto.Id" data-categoria="@subcat" data-categoria-slug="lanches" data-descricao="@produto.Description" onclick="abrirModalEditar(this)">
+                                    <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name" />
+                                    <h3 class="pedido-titulo">@produto.Name</h3>
+                                    <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
+                                </div>
+                            }
+                        </div>
                     </div>
                 </div>
-                }
-                <div class="pedido">
-                    <div class="pedido-grid" id="productsGrid">
-                        @foreach (var produto in produtosFiltrados)
-                        {
-                            <div class="pedido-item" data-id="@produto.Id" data-categoria="@produto.CategoryId" onclick="abrirModalEditar(this)">
-                                <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name" />
-                                <h3 class="pedido-titulo">@produto.Name</h3>
-                                <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
-                            </div>
-                        }
+                <!-- Conteúdo de Combos -->
+                <div id="conteudo-combos" style="display:none;">
+                    <div class="container-categoria">
+                        <div class="nav-categorias">
+                            <a href="#" class="active" data-categoria="todos">Todos</a>
+                        </div>
+                    </div>
+                    <div class="pedido">
+                        <div class="pedido-grid">
+                            @foreach (var produto in produtos.Where(p => p.Category?.Slug == "combos"))
+                            {
+                                <div class="pedido-item" data-id="@produto.Id" data-categoria="@produto.CategoryId" data-categoria-slug="combos" data-descricao="@produto.Description" onclick="abrirModalEditar(this)">
+                                    <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name" />
+                                    <h3 class="pedido-titulo">@produto.Name</h3>
+                                    <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <!-- Conteúdo de Sobremesas -->
+                <div id="conteudo-sobremesas" style="display:none;">
+                    <div class="container-categoria">
+                        <div class="nav-categorias">
+                            <a href="#" class="active" data-categoria="todos">Todos</a>
+                            <a href="#" data-categoria="sorvetes">Sorvetes</a>
+                            <a href="#" data-categoria="milkshakes">Milk Shakes</a>
+                            <a href="#" data-categoria="doces">Doces</a>
+                        </div>
+                    </div>
+                    <div class="pedido">
+                        <div class="pedido-grid">
+                            @foreach (var produto in produtos.Where(p => p.Category?.Slug == "sobremesas"))
+                            {
+                                var subcat = "doces";
+                                var nome = produto.Name.ToLower();
+                                if (nome.Contains("sorvete")) subcat = "sorvetes";
+                                else if (nome.Contains("milk")) subcat = "milkshakes";
+                                <div class="pedido-item" data-id="@produto.Id" data-categoria="@subcat" data-categoria-slug="sobremesas" data-descricao="@produto.Description" onclick="abrirModalEditar(this)">
+                                    <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name" />
+                                    <h3 class="pedido-titulo">@produto.Name</h3>
+                                    <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <!-- Conteúdo de Molhos -->
+                <div id="conteudo-molhos" style="display:none;">
+                    <div class="container-categoria">
+                        <div class="nav-categorias">
+                            <a href="#" class="active" data-categoria="todos">Todos</a>
+                            <a href="#" data-categoria="tradicionais">Tradicionais</a>
+                            <a href="#" data-categoria="especiais">Especiais</a>
+                            <a href="#" data-categoria="picantes">Picantes</a>
+                        </div>
+                    </div>
+                    <div class="pedido">
+                        <div class="pedido-grid">
+                            @foreach (var produto in produtos.Where(p => p.Category?.Slug == "molhos"))
+                            {
+                                var subcat = "tradicionais";
+                                var nome = produto.Name.ToLower();
+                                if (nome.Contains("pimenta")) subcat = "picantes";
+                                else if (nome.Contains("queijo") || nome.Contains("mostarda")) subcat = "especiais";
+                                <div class="pedido-item" data-id="@produto.Id" data-categoria="@subcat" data-categoria-slug="molhos" data-descricao="@produto.Description" onclick="abrirModalEditar(this)">
+                                    <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name" />
+                                    <h3 class="pedido-titulo">@produto.Name</h3>
+                                    <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <!-- Conteúdo de Ofertas (Promoções) -->
+                <div id="conteudo-ofertas" style="display:none;">
+                    @{
+                        // Escolha dos produtos promocionais fixos
+                        var lanchePromo = produtos.FirstOrDefault(p => p.Category?.Slug == "lanches");
+                        var bebidasPromo = produtos.Where(p => p.Category?.Slug == "bebidas").Take(2).ToList();
+                        var sobremesaPromo = produtos.FirstOrDefault(p => p.Category?.Slug == "sobremesas");
+                        var molhosPromo = produtos.Where(p => p.Category?.Slug == "molhos").Take(3).ToList();
+                    }
+                    <div class="pedido">
+                        <div class="pedido-grid">
+                            <!-- Lanche Promocional -->
+                            @if (lanchePromo != null)
+                            {
+                                <div class="pedido-item" data-id="@lanchePromo.Id" data-categoria="lanches" data-descricao="@lanchePromo.Description" data-preco-original="@lanchePromo.Price" data-preco-promocional="8.90" onclick="abrirModalEditar(this)">
+                                    <img class="pedido-imagem" src="/@lanchePromo.Image" alt="@lanchePromo.Name">
+                                    <h3 class="pedido-titulo">@lanchePromo.Name</h3>
+                                    <div class="preco-container">
+                                        <span class="preco-original" style="text-decoration:line-through;color:#888;font-size:14px;">R$ @lanchePromo.Price.ToString("N2")</span>
+                                        <span class="pedido-preco" style="color:#27ae60;">R$ 8,90</span>
+                                    </div>
+                                </div>
+                            }
+                            <!-- Bebidas Promocionais -->
+                            @foreach (var bebida in bebidasPromo)
+                            {
+                                <div class="pedido-item" data-id="@bebida.Id" data-categoria="bebidas" data-descricao="@bebida.Description" data-preco-original="@bebida.Price" data-preco-promocional="4.90" onclick="abrirModalEditar(this)">
+                                    <img class="pedido-imagem" src="/@bebida.Image" alt="@bebida.Name">
+                                    <h3 class="pedido-titulo">@bebida.Name</h3>
+                                    <div class="preco-container">
+                                        <span class="preco-original" style="text-decoration:line-through;color:#888;font-size:14px;">R$ @bebida.Price.ToString("N2")</span>
+                                        <span class="pedido-preco" style="color:#27ae60;">R$ 4,90</span>
+                                    </div>
+                                </div>
+                            }
+                            <!-- Sobremesa Promocional -->
+                            @if (sobremesaPromo != null)
+                            {
+                                <div class="pedido-item" data-id="@sobremesaPromo.Id" data-categoria="sobremesas" data-descricao="@sobremesaPromo.Description" data-preco-original="@sobremesaPromo.Price" data-preco-promocional="6.90" onclick="abrirModalEditar(this)">
+                                    <img class="pedido-imagem" src="/@sobremesaPromo.Image" alt="@sobremesaPromo.Name">
+                                    <h3 class="pedido-titulo">@sobremesaPromo.Name</h3>
+                                    <div class="preco-container">
+                                        <span class="preco-original" style="text-decoration:line-through;color:#888;font-size:14px;">R$ @sobremesaPromo.Price.ToString("N2")</span>
+                                        <span class="pedido-preco" style="color:#27ae60;">R$ 6,90</span>
+                                    </div>
+                                </div>
+                            }
+                            <!-- Molhos Promocionais -->
+                            @foreach (var molho in molhosPromo)
+                            {
+                                <div class="pedido-item" data-id="@molho.Id" data-categoria="molhos" data-descricao="@molho.Description" data-preco-original="@molho.Price" data-preco-promocional="2.90" onclick="abrirModalEditar(this)">
+                                    <img class="pedido-imagem" src="/@molho.Image" alt="@molho.Name">
+                                    <h3 class="pedido-titulo">@molho.Name</h3>
+                                    <div class="preco-container">
+                                        <span class="preco-original" style="text-decoration:line-through;color:#888;font-size:14px;">R$ @molho.Price.ToString("N2")</span>
+                                        <span class="pedido-preco" style="color:#27ae60;">R$ 2,90</span>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <!-- Conteúdo de Bebidas -->
+                <div id="conteudo-bebidas" style="display:none;">
+                    <div class="container-categoria">
+                        <div class="nav-categorias">
+                            <a href="#" class="active" data-categoria="todos">Todos</a>
+                            <a href="#" data-categoria="refrigerantes">Refrigerantes</a>
+                            <a href="#" data-categoria="sucos">Sucos</a>
+                            <a href="#" data-categoria="aguas">Águas</a>
+                            <a href="#" data-categoria="zero">Zero Açúcar</a>
+                        </div>
+                    </div>
+                    <div class="pedido">
+                        <div class="pedido-grid">
+                            @foreach (var produto in produtos.Where(p => p.Category?.Slug == "bebidas"))
+                            {
+                                var subcat = "refrigerantes";
+                                var nome = produto.Name.ToLower();
+                                if (nome.Contains("suco")) subcat = "sucos";
+                                else if (nome.Contains("água")) subcat = "aguas";
+                                else if (nome.Contains("zero")) subcat = "zero";
+                                <div class="pedido-item" data-id="@produto.Id" data-categoria="@subcat" data-categoria-slug="bebidas" data-descricao="@produto.Description" onclick="abrirModalEditar(this)">
+                                    <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name" />
+                                    <h3 class="pedido-titulo">@produto.Name</h3>
+                                    <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <!-- Conteúdo de Extras -->
+                <div id="conteudo-extras" style="display:none;">
+                    <div class="container-categoria">
+                        <div class="nav-categorias">
+                            <a href="#" class="active" data-categoria="todos">Todos</a>
+                            <a href="#" data-categoria="batatas">Batatas</a>
+                            <a href="#" data-categoria="nuggets">Nuggets</a>
+                        </div>
+                    </div>
+                    <div class="pedido">
+                        <div class="pedido-grid">
+                            @foreach (var produto in produtos.Where(p => p.Category?.Slug == "extras"))
+                            {
+                                var subcat = "batatas";
+                                var nome = produto.Name.ToLower();
+                                if (nome.Contains("nugget")) subcat = "nuggets";
+                                <div class="pedido-item" data-id="@produto.Id" data-categoria="@subcat" data-categoria-slug="extras" data-descricao="@produto.Description" onclick="abrirModalEditar(this)">
+                                    <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name" />
+                                    <h3 class="pedido-titulo">@produto.Name</h3>
+                                    <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal de Edição de Item (100% funcional) -->
+                <div id="modalEditarItem" class="modal-editar">
+                    <div class="modal-editar-content">
+                        <span class="fechar-modal-editar">&times;</span>
+                        <img class="modal-editar-imagem" src="" alt="Imagem do produto">
+                        <h2 class="modal-editar-titulo"></h2>
+                        <p class="modal-editar-descricao"></p>
+                        <div class="modal-editar-ingredientes"></div>
+                        <span class="modal-editar-preco"></span>
+                        <button class="modal-btn-confirm">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+                <!-- Modal do Carrinho -->
+                <div id="modalCarrinho" class="modal-carrinho" style="display:none; align-items:center; justify-content:center;">
+                    <div class="modal-carrinho-content">
+                        <div class="modal-carrinho-header">
+                            <span class="modal-carrinho-titulo">Carrinho</span>
+                            <span class="fechar-modal-carrinho" style="cursor:pointer;font-size:1.5rem;">&times;</span>
+                        </div>
+                        <div class="modal-carrinho-grid"></div>
+                        <div class="modal-carrinho-footer">
+                            <span class="modal-carrinho-total-label">Total:</span>
+                            <span class="modal-carrinho-total">R$ 0,00</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -118,110 +361,333 @@
         </div>
     </div>
     <script>
-        // Dados serializados
-        var produtos = @Html.Raw(produtosJson);
-        var categorias = @Html.Raw(categoriasJson);
-        var filtrosPorCategoria = {
-            lanches: ["Todos", "Vegano", "Carne", "Frango"],
-            combos: [],
-            bebidas: ["Todos", "Refrigerantes", "Sucos", "Águas"],
-            extras: ["Todos", "Batatas", "Nuggets"],
-            molhos: ["Todos", "Tradicionais", "Especiais", "Picantes"],
-            sobremesas: ["Todos", "Sorvetes", "Milk Shakes", "Doces"]
+    // Modal Editar Item 100% funcional
+    let modalAberto = false;
+    let editedItem = null;
+    let currentCategoriaSlug = null;
+    let currentItemBasePrice = 0;
+    let currentQuantidade = 1;
+    const modalEditar = document.getElementById('modalEditarItem');
+    const fecharModalEditar = document.querySelector('.fechar-modal-editar');
+    const botaoAdicionarEditar = document.querySelector('.modal-btn-confirm');
+    function abrirModalEditar(elemento) {
+        modalAberto = true;
+        const id = parseInt(elemento.getAttribute('data-id'));
+        currentCategoriaSlug = elemento.getAttribute('data-categoria-slug');
+        const titulo = elemento.querySelector('.pedido-titulo').textContent;
+        const imagem = elemento.querySelector('.pedido-imagem').src;
+        const precoText = elemento.querySelector('.pedido-preco').textContent;
+        currentItemBasePrice = parseFloat(precoText.replace('R$', '').replace(',', '.').trim());
+        const descricao = elemento.getAttribute('data-descricao') || '';
+        currentQuantidade = 1;
+        editedItem = {
+            id: id,
+            nome: titulo,
+            preco: currentItemBasePrice,
+            imagem: imagem,
+            quantidade: 1,
+            ingredientes: []
         };
-        var categoriaAtual = '@slugSelecionado';
-        var categoriaIdAtual = @categoriaSelecionada?.Id ?? 0;
-        // Troca de categoria (menu lateral)
-        function trocarCategoria(slug, id) {
-            categoriaAtual = slug;
-            categoriaIdAtual = id;
-            // Atualiza filtros
-            var nav = document.getElementById('navCategorias');
-            if (nav) {
-                nav.innerHTML = '';
-                (filtrosPorCategoria[slug] || []).forEach(function(filtro, idx) {
-                    nav.innerHTML += `<a href="#" class="${idx === 0 ? 'active' : ''}" onclick="filtrarPorFiltro('${filtro}'); return false;">${filtro}</a>`;
-                });
-            }
-            // Atualiza produtos
-            filtrarPorFiltro((filtrosPorCategoria[slug] || [])[0] || null);
-            // Atualiza menu lateral
-            document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
-            var menuItems = document.querySelectorAll('.menu-item');
-            if (menuItems && menuItems[id-1]) menuItems[id-1].classList.add('active');
-        }
-        // Filtro por filtro específico
-        function filtrarPorFiltro(filtro) {
-            var grid = document.getElementById('productsGrid');
-            grid.innerHTML = '';
-            var filtrados = produtos.filter(p => p.CategoryId === categoriaIdAtual);
-            // Filtros específicos por categoria
-            if (categoriaAtual === 'lanches') {
-                if (filtro === 'Vegano') filtrados = filtrados.filter(p => p.Name.toLowerCase().includes('veg'));
-                else if (filtro === 'Carne') filtrados = filtrados.filter(p => !p.Name.toLowerCase().includes('veg') && !p.Name.toLowerCase().includes('frango'));
-                else if (filtro === 'Frango') filtrados = filtrados.filter(p => p.Name.toLowerCase().includes('frango'));
-            } else if (categoriaAtual === 'bebidas') {
-                if (filtro === 'Refrigerantes') filtrados = filtrados.filter(p => p.Name.toLowerCase().includes('coca') || p.Name.toLowerCase().includes('fanta') || p.Name.toLowerCase().includes('sprite'));
-                else if (filtro === 'Sucos') filtrados = filtrados.filter(p => p.Name.toLowerCase().includes('suco'));
-                else if (filtro === 'Águas') filtrados = filtrados.filter(p => p.Name.toLowerCase().includes('água'));
-            } else if (categoriaAtual === 'extras') {
-                if (filtro === 'Batatas') filtrados = filtrados.filter(p => p.Name.toLowerCase().includes('batata'));
-                else if (filtro === 'Nuggets') filtrados = filtrados.filter(p => p.Name.toLowerCase().includes('nugget'));
-            } else if (categoriaAtual === 'molhos') {
-                if (filtro === 'Tradicionais') filtrados = filtrados.filter(p => p.Name.toLowerCase().includes('ketchup') || p.Name.toLowerCase().includes('maionese') || p.Name.toLowerCase().includes('barbecue') || p.Name.toLowerCase().includes('verde') || p.Name.toLowerCase().includes('rose'));
-                else if (filtro === 'Especiais') filtrados = filtrados.filter(p => p.Name.toLowerCase().includes('queijo') || p.Name.toLowerCase().includes('mostarda'));
-                else if (filtro === 'Picantes') filtrados = filtrados.filter(p => p.Name.toLowerCase().includes('pimenta'));
-            } else if (categoriaAtual === 'sobremesas') {
-                if (filtro === 'Sorvetes') filtrados = filtrados.filter(p => p.Name.toLowerCase().includes('sorvete'));
-                else if (filtro === 'Milk Shakes') filtrados = filtrados.filter(p => p.Name.toLowerCase().includes('milk'));
-                else if (filtro === 'Doces') filtrados = filtrados.filter(p => p.Name.toLowerCase().includes('brownie') || p.Name.toLowerCase().includes('waffle') || p.Name.toLowerCase().includes('petit'));
-            }
-            filtrados.forEach(produto => {
-                grid.innerHTML += `
-                <div class=\"pedido-item\" data-id=\"${produto.Id}\" data-categoria=\"${produto.CategoryId}\" onclick=\"abrirModalEditar(this)\">
-                    <img class=\"pedido-imagem\" src=\"/${produto.Image}\" alt=\"${produto.Name}\" />
-                    <h3 class=\"pedido-titulo\">${produto.Name}</h3>
-                    <h4 class=\"pedido-preco\">R$ ${produto.Price.toFixed(2).replace('.', ',')}</h4>
-                </div>`;
-            });
-            // Atualiza filtro ativo
-            document.querySelectorAll('.nav-categorias a').forEach(btn => btn.classList.remove('active'));
-            var btn = Array.from(document.querySelectorAll('.nav-categorias a')).find(b => b.textContent.trim() === filtro);
-            if (btn) btn.classList.add('active');
-        }
-        // Inicialização: seleciona a categoria inicial
-        window.onload = function() {
-            trocarCategoria(categoriaAtual, categoriaIdAtual);
-            // Remover qualquer texto ou overlay de carregando
-            document.querySelectorAll('.pedido-item').forEach(function(item) {
-                if (item.textContent.includes('Carregando')) {
-                    item.remove();
+        document.querySelector('.modal-editar-titulo').textContent = titulo;
+        document.querySelector('.modal-editar-imagem').src = imagem;
+        document.querySelector('.modal-editar-preco').textContent = `R$ ${currentItemBasePrice.toFixed(2)}`;
+        document.querySelector('.modal-editar-descricao').textContent = descricao;
+        const lista = document.querySelector('.modal-editar-ingredientes');
+        lista.innerHTML = '';
+        if (currentCategoriaSlug && currentCategoriaSlug.toLowerCase().trim() === 'lanches') {
+            // Buscar ingredientes do backend
+            fetch(`/api/produto/${id}/ingredientes`).then(resp => resp.json()).then(ingredientes => {
+                // Limitar a 10 ingredientes
+                ingredientes = ingredientes.slice(0, 10);
+                if (ingredientes.length > 0) {
+                    editedItem.ingredientes = ingredientes.map(ing => ({
+                        id: ing.id,
+                        nome: ing.nome,
+                        preco: ing.preco,
+                        quantidade: 1
+                    }));
+                    ingredientes.forEach(ing => {
+                        const divIngrediente = document.createElement('div');
+                        divIngrediente.className = 'modal-editar-ingrediente';
+                        divIngrediente.innerHTML = `
+                            <button class='botao-remover-editar'>-</button>
+                            <span class='modal-editar-ingrediente-nome' style='font-weight:400;'>${ing.nome}</span>
+                            <span class='modal-editar-ingrediente-quantidade'>1x</span>
+                            <button class='botao-adicionar-editar'>+</button>
+                        `;
+                        lista.appendChild(divIngrediente);
+                    });
+                } else {
+                    lista.innerHTML = '<p>Nenhum ingrediente disponível para edição.</p>';
                 }
+            }).catch(() => {
+                lista.innerHTML = '<p>Erro ao carregar ingredientes.</p>';
             });
-            var loading = document.querySelector('.loading');
-            if (loading) loading.remove();
-            // Também remove qualquer texto "Carregando..." solto
-            document.querySelectorAll('*').forEach(function(el) {
-                if (el && el.innerText && el.innerText.trim() === 'Carregando...') el.remove();
-            });
-        };
-        // Corrigir modais: abrir o modal real
-        window.abrirModalEditar = function(el) {
-            var modal = document.querySelector('.modal-editar');
-            if (!modal) return;
-            // Preencher dados do produto
-            var nome = el.querySelector('.pedido-titulo').innerText;
-            var preco = el.querySelector('.pedido-preco').innerText;
-            var imagem = el.querySelector('.pedido-imagem').getAttribute('src');
-            modal.querySelector('.modal-editar-titulo').innerText = nome;
-            modal.querySelector('.modal-editar-preco').innerText = preco;
-            modal.querySelector('.modal-editar-imagem').setAttribute('src', imagem);
-            // Exibir modal
-            modal.style.display = 'flex';
-            // Fechar modal ao clicar no X
-            var fechar = modal.querySelector('.fechar-modal-editar');
-            if (fechar) fechar.onclick = function() { modal.style.display = 'none'; };
+        } else {
+            // Produtos não editáveis: só quantidade
+            lista.innerHTML = `
+                <div style="display:flex;align-items:center;justify-content:center;gap:16px;">
+                    <button class="botao-remover-editar">-</button>
+                    <span class="modal-editar-quantidade">1x</span>
+                    <button class="botao-adicionar-editar">+</button>
+                </div>
+            `;
         }
+        modalEditar.style.display = 'flex';
+    }
+    fecharModalEditar.addEventListener('click', function() {
+        modalEditar.style.display = 'none';
+        modalAberto = false;
+        editedItem = null;
+    });
+    window.addEventListener('click', function(event) {
+        if (event.target === modalEditar) {
+            modalEditar.style.display = 'none';
+            modalAberto = false;
+            editedItem = null;
+        }
+    });
+    document.querySelector('.modal-editar-ingredientes').addEventListener('click', function(e) {
+        const target = e.target;
+        if (currentCategoriaSlug && currentCategoriaSlug.toLowerCase().trim() === 'lanches') {
+            const ingredienteDiv = target.closest('.modal-editar-ingrediente');
+            if (!ingredienteDiv) return;
+            const quantidadeSpan = ingredienteDiv.querySelector('.modal-editar-ingrediente-quantidade');
+            const nomeIngrediente = ingredienteDiv.querySelector('.modal-editar-ingrediente-nome').textContent;
+            let quantidade = parseInt(quantidadeSpan.textContent) || 0;
+            const ingrediente = editedItem.ingredientes.find(ing => ing.nome === nomeIngrediente);
+            // Corrige qualquer ingrediente acima de 10
+            if (ingrediente.quantidade > 10) ingrediente.quantidade = 10;
+            if (ingrediente.quantidade < 0 || isNaN(ingrediente.quantidade)) ingrediente.quantidade = 0;
+            if (target.classList.contains('botao-adicionar-editar')) {
+                if (quantidade < 10) {
+                    quantidade++;
+                    ingrediente.quantidade = quantidade;
+                    currentItemBasePrice += ingrediente.preco;
+                }
+            } else if (target.classList.contains('botao-remover-editar')) {
+                if (quantidade > 0) {
+                    quantidade--;
+                    ingrediente.quantidade = quantidade;
+                    currentItemBasePrice -= ingrediente.preco;
+                }
+            }
+            // Nunca deixar NaN, negativo ou passar de 10 por ingrediente
+            if (isNaN(quantidade) || quantidade < 0) quantidade = 0;
+            if (quantidade > 10) quantidade = 10;
+            quantidadeSpan.textContent = `${quantidade}x`;
+            document.querySelector('.modal-editar-preco').textContent = `R$ ${currentItemBasePrice.toFixed(2)}`;
+            editedItem.preco = currentItemBasePrice;
+        } else {
+            // Produtos não editáveis: só quantidade
+            if (target.classList.contains('botao-adicionar-editar')) {
+                currentQuantidade++;
+            } else if (target.classList.contains('botao-remover-editar')) {
+                if (currentQuantidade > 1) currentQuantidade--;
+            }
+            document.querySelector('.modal-editar-quantidade').textContent = `${currentQuantidade}x`;
+            editedItem.quantidade = currentQuantidade;
+            document.querySelector('.modal-editar-preco').textContent = `R$ ${(currentItemBasePrice * currentQuantidade).toFixed(2)}`;
+            editedItem.preco = currentItemBasePrice * currentQuantidade;
+        }
+    });
+    botaoAdicionarEditar.addEventListener('click', function() {
+        if (editedItem) {
+            const carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens')) || [];
+            const existingItem = carrinhoItens.find(item => item.id === editedItem.id);
+            if (existingItem) {
+                existingItem.preco = editedItem.preco;
+                existingItem.ingredientes = editedItem.ingredientes;
+                existingItem.quantidade = editedItem.quantidade;
+            } else {
+                carrinhoItens.push(editedItem);
+            }
+            localStorage.setItem('carrinhoItens', JSON.stringify(carrinhoItens));
+            const event = new CustomEvent('atualizarCarrinho');
+            window.dispatchEvent(event);
+            modalEditar.style.display = 'none';
+            modalAberto = false;
+            editedItem = null;
+        }
+    });
+    // Impede re-renderização da grid se o modal estiver aberto
+    const originalFiltrarPorFiltro = window.filtrarPorFiltro;
+    window.filtrarPorFiltro = function(...args) {
+        if (modalAberto) return;
+        return originalFiltrarPorFiltro.apply(this, args);
+    };
+    
+    // Sistema de promoções
+    let itensPromocionais = {
+        lanches: [],
+        bebidas: [],
+        sobremesas: [],
+        molhos: []
+    };
+
+    window.abrirModalPromocao = function(elemento) {
+        const categoria = elemento.getAttribute('data-categoria');
+        const id = parseInt(elemento.getAttribute('data-id'));
+        const nome = elemento.querySelector('.pedido-titulo').textContent;
+        const imagem = elemento.querySelector('.pedido-imagem').src;
+        const precoOriginal = parseFloat(elemento.getAttribute('data-preco-original'));
+        const precoPromocional = parseFloat(elemento.getAttribute('data-preco-promocional'));
+        const descricao = elemento.getAttribute('data-descricao') || '';
+        
+        // Verificar se já existe um item desta categoria no carrinho promocional
+        if (itensPromocionais[categoria].length > 0) {
+            alert('Você já selecionou um item desta categoria na promoção. Máximo 1 item por categoria.');
+            return;
+        }
+        
+        // Verificar se já tem o máximo de itens promocionais
+        const totalItens = itensPromocionais.lanches.length + itensPromocionais.bebidas.length + 
+                          itensPromocionais.sobremesas.length + itensPromocionais.molhos.length;
+        
+        if (totalItens >= 7) { // 1 lanche + 2 bebidas + 1 sobremesa + 3 molhos = 7 itens
+            alert('Você já selecionou o máximo de itens para esta promoção!');
+            return;
+        }
+        
+        // Adicionar item à promoção
+        const itemPromocional = {
+            id: id,
+            nome: nome,
+            imagem: imagem,
+            precoOriginal: precoOriginal,
+            precoPromocional: precoPromocional,
+            categoria: categoria,
+            descricao: descricao
+        };
+        
+        itensPromocionais[categoria].push(itemPromocional);
+        
+        // Adicionar ao carrinho com preço promocional
+        const carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens')) || [];
+        const itemExistente = carrinhoItens.find(item => item.id === id);
+        
+        if (itemExistente) {
+            itemExistente.quantidade += 1;
+            itemExistente.preco = precoPromocional; // Usar preço promocional
+        } else {
+            carrinhoItens.push({
+                id: id,
+                nome: nome,
+                preco: precoPromocional, // Usar preço promocional
+                imagem: imagem,
+                quantidade: 1,
+                ingredientes: [],
+                promocional: true
+            });
+        }
+        
+        localStorage.setItem('carrinhoItens', JSON.stringify(carrinhoItens));
+        
+        // Atualizar carrinho
+        const event = new CustomEvent('atualizarCarrinho');
+        window.dispatchEvent(event);
+        
+        // Feedback visual
+        elemento.style.border = '3px solid #27ae60';
+        elemento.style.transform = 'scale(1.05)';
+        
+        setTimeout(() => {
+            elemento.style.transform = 'scale(1)';
+        }, 200);
+        
+        // Mostrar resumo da promoção
+        mostrarResumoPromocao();
+    }
+
+    function mostrarResumoPromocao() {
+        const totalItens = itensPromocionais.lanches.length + itensPromocionais.bebidas.length + 
+                          itensPromocionais.sobremesas.length + itensPromocionais.molhos.length;
+        
+        let resumo = '🎉 Itens da Promoção:\n';
+        resumo += `🍔 Lanches: ${itensPromocionais.lanches.length}/1\n`;
+        resumo += `🥤 Bebidas: ${itensPromocionais.bebidas.length}/2\n`;
+        resumo += `🍰 Sobremesas: ${itensPromocionais.sobremesas.length}/1\n`;
+        resumo += `🥫 Molhos: ${itensPromocionais.molhos.length}/3\n`;
+        resumo += `\nTotal: ${totalItens}/7 itens`;
+        
+        if (totalItens === 7) {
+            resumo += '\n\n✅ Promoção completa!';
+        }
+        
+        console.log(resumo);
+    }
     </script>
+    <script src="~/js/modal.js" asp-append-version="true"></script>
+    <script>
+    // Adicionar evento de clique no botão do carrinho
+    document.addEventListener('DOMContentLoaded', function() {
+        const botaoCarrinho = document.getElementById('botaoCarrinho');
+        if (botaoCarrinho) {
+            botaoCarrinho.addEventListener('click', function(e) {
+                e.preventDefault();
+                abrirModalCarrinho();
+            });
+        }
+    });
+    </script>
+    <script>
+function alternarConteudo(tipo, event) {
+    // Esconde todos os conteúdos
+    ['lanches','combos','sobremesas','molhos','ofertas','bebidas','extras'].forEach(function(cat) {
+        var conteudo = document.getElementById('conteudo-' + cat);
+        var banner = document.getElementById('banner-' + cat);
+        if (conteudo) conteudo.style.display = 'none';
+        if (banner) banner.style.display = 'none';
+    });
+    // Remove a classe active de todos os itens do menu
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    // Mostra o conteúdo selecionado
+    var conteudoSel = document.getElementById('conteudo-' + tipo);
+    var bannerSel = document.getElementById('banner-' + tipo);
+    if (conteudoSel) conteudoSel.style.display = 'block';
+    if (bannerSel) bannerSel.style.display = 'block';
+    // Adiciona a classe active ao item do menu clicado
+    if (event && event.currentTarget) event.currentTarget.classList.add('active');
+    // Atualiza os filtros ativos
+    var nav = document.querySelector(`#conteudo-${tipo} .nav-categorias a`);
+    if (nav) {
+        document.querySelectorAll('.nav-categorias a').forEach(link => link.classList.remove('active'));
+        nav.classList.add('active');
+    }
+}
+
+// Filtro funcional para cada categoria
+function filtrarProdutosNav(categoria, filtro) {
+    var grid = document.querySelector(`#conteudo-${categoria} .pedido-grid`);
+    if (!grid) return;
+    var itens = grid.querySelectorAll('.pedido-item');
+    itens.forEach(function(item) {
+        var cat = (item.getAttribute('data-categoria') || '').toLowerCase();
+        if (filtro === 'todos') {
+            item.style.display = '';
+        } else if (cat === filtro) {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+// Ativa filtro ao clicar
+['lanches','combos','sobremesas','molhos','ofertas','bebidas','extras'].forEach(function(cat) {
+    var nav = document.querySelector(`#conteudo-${cat} .nav-categorias`);
+    if (nav) {
+        nav.addEventListener('click', function(e) {
+            var link = e.target.closest('a[data-categoria]');
+            if (!link) return;
+            e.preventDefault();
+            nav.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+            link.classList.add('active');
+            filtrarProdutosNav(cat, link.getAttribute('data-categoria').toLowerCase());
+        });
+    }
+});
+</script>
 </body>
 </html>

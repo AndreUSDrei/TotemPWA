@@ -1,24 +1,221 @@
 @{
     var produtos = ViewBag.Produtos as List<TotemPWA.Models.Product>;
     var promocoes = produtos?.Where(p => p.Promotions != null && p.Promotions.Any()).ToList() ?? new List<TotemPWA.Models.Product>();
+    
+    // Definir produtos promocionais específicos
+    var lanchesPromocionais = produtos?.Where(p => p.Category?.Slug == "lanches").Take(3).ToList() ?? new List<TotemPWA.Models.Product>();
+    var bebidasPromocionais = produtos?.Where(p => p.Category?.Slug == "bebidas").Take(4).ToList() ?? new List<TotemPWA.Models.Product>();
+    var sobremesasPromocionais = produtos?.Where(p => p.Category?.Slug == "sobremesas").Take(2).ToList() ?? new List<TotemPWA.Models.Product>();
+    var molhosPromocionais = produtos?.Where(p => p.Category?.Slug == "molhos").Take(3).ToList() ?? new List<TotemPWA.Models.Product>();
 }
+
+<div class="promocao-banner">
+    <h2>🎉 PROMOÇÃO ESPECIAL 🎉</h2>
+    <p>1 Lanche + 2 Bebidas + 1 Sobremesa + 3 Molhos</p>
+    <p class="promocao-preco">Por apenas R$ 29,90</p>
+    <small>*Máximo 1 item por categoria na promoção</small>
+</div>
+
 <div class="container-categoria">
     <div class="nav-categorias">
         <a href="#" class="active" data-categoria="todos">Todos</a>
         <a href="#" data-categoria="lanches">Lanches</a>
         <a href="#" data-categoria="bebidas">Bebidas</a>
         <a href="#" data-categoria="sobremesas">Sobremesas</a>
+        <a href="#" data-categoria="molhos">Molhos</a>
     </div>
 </div>
+
 <div class="pedido">
     <div class="pedido-grid">
-        @foreach (var produto in promocoes)
+        <!-- Lanches Promocionais -->
+        @foreach (var produto in lanchesPromocionais)
         {
-            <div class="pedido-item" data-id="@produto.Id" data-categoria="@produto.CategoryId" onclick="abrirModalEditar(this)">
+            <div class="pedido-item promocional" data-id="@produto.Id" data-categoria="lanches" data-categoria-slug="lanches" data-descricao="@produto.Description" data-preco-original="@produto.Price" data-preco-promocional="8.90" onclick="abrirModalPromocao(this)">
+                <div class="promocao-badge">PROMOÇÃO</div>
                 <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name">
                 <h3 class="pedido-titulo">@produto.Name</h3>
-                <h4 class="pedido-preco">R$ @produto.Price.ToString("N2")</h4>
+                <div class="preco-container">
+                    <span class="preco-original">R$ @produto.Price.ToString("N2")</span>
+                    <span class="preco-promocional">R$ 8,90</span>
+                </div>
+            </div>
+        }
+        
+        <!-- Bebidas Promocionais -->
+        @foreach (var produto in bebidasPromocionais)
+        {
+            <div class="pedido-item promocional" data-id="@produto.Id" data-categoria="bebidas" data-categoria-slug="bebidas" data-descricao="@produto.Description" data-preco-original="@produto.Price" data-preco-promocional="4.90" onclick="abrirModalPromocao(this)">
+                <div class="promocao-badge">PROMOÇÃO</div>
+                <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name">
+                <h3 class="pedido-titulo">@produto.Name</h3>
+                <div class="preco-container">
+                    <span class="preco-original">R$ @produto.Price.ToString("N2")</span>
+                    <span class="preco-promocional">R$ 4,90</span>
+                </div>
+            </div>
+        }
+        
+        <!-- Sobremesas Promocionais -->
+        @foreach (var produto in sobremesasPromocionais)
+        {
+            <div class="pedido-item promocional" data-id="@produto.Id" data-categoria="sobremesas" data-categoria-slug="sobremesas" data-descricao="@produto.Description" data-preco-original="@produto.Price" data-preco-promocional="6.90" onclick="abrirModalPromocao(this)">
+                <div class="promocao-badge">PROMOÇÃO</div>
+                <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name">
+                <h3 class="pedido-titulo">@produto.Name</h3>
+                <div class="preco-container">
+                    <span class="preco-original">R$ @produto.Price.ToString("N2")</span>
+                    <span class="preco-promocional">R$ 6,90</span>
+                </div>
+            </div>
+        }
+        
+        <!-- Molhos Promocionais -->
+        @foreach (var produto in molhosPromocionais)
+        {
+            <div class="pedido-item promocional" data-id="@produto.Id" data-categoria="molhos" data-categoria-slug="molhos" data-descricao="@produto.Description" data-preco-original="@produto.Price" data-preco-promocional="2.90" onclick="abrirModalPromocao(this)">
+                <div class="promocao-badge">PROMOÇÃO</div>
+                <img class="pedido-imagem" src="/@produto.Image" alt="@produto.Name">
+                <h3 class="pedido-titulo">@produto.Name</h3>
+                <div class="preco-container">
+                    <span class="preco-original">R$ @produto.Price.ToString("N2")</span>
+                    <span class="preco-promocional">R$ 2,90</span>
+                </div>
             </div>
         }
     </div>
 </div>
+
+<script>
+// Sistema de promoções
+let itensPromocionais = {
+    lanches: [],
+    bebidas: [],
+    sobremesas: [],
+    molhos: []
+};
+
+function abrirModalPromocao(elemento) {
+    const categoria = elemento.getAttribute('data-categoria');
+    const id = parseInt(elemento.getAttribute('data-id'));
+    const nome = elemento.querySelector('.pedido-titulo').textContent;
+    const imagem = elemento.querySelector('.pedido-imagem').src;
+    const precoOriginal = parseFloat(elemento.getAttribute('data-preco-original'));
+    const precoPromocional = parseFloat(elemento.getAttribute('data-preco-promocional'));
+    const descricao = elemento.getAttribute('data-descricao') || '';
+    
+    // Verificar se já existe um item desta categoria no carrinho promocional
+    if (itensPromocionais[categoria].length > 0) {
+        alert('Você já selecionou um item desta categoria na promoção. Máximo 1 item por categoria.');
+        return;
+    }
+    
+    // Verificar se já tem o máximo de itens promocionais
+    const totalItens = itensPromocionais.lanches.length + itensPromocionais.bebidas.length + 
+                      itensPromocionais.sobremesas.length + itensPromocionais.molhos.length;
+    
+    if (totalItens >= 7) { // 1 lanche + 2 bebidas + 1 sobremesa + 3 molhos = 7 itens
+        alert('Você já selecionou o máximo de itens para esta promoção!');
+        return;
+    }
+    
+    // Adicionar item à promoção
+    const itemPromocional = {
+        id: id,
+        nome: nome,
+        imagem: imagem,
+        precoOriginal: precoOriginal,
+        precoPromocional: precoPromocional,
+        categoria: categoria,
+        descricao: descricao
+    };
+    
+    itensPromocionais[categoria].push(itemPromocional);
+    
+    // Adicionar ao carrinho com preço promocional
+    const carrinhoItens = JSON.parse(localStorage.getItem('carrinhoItens')) || [];
+    const itemExistente = carrinhoItens.find(item => item.id === id);
+    
+    if (itemExistente) {
+        itemExistente.quantidade += 1;
+        itemExistente.preco = precoPromocional; // Usar preço promocional
+    } else {
+        carrinhoItens.push({
+            id: id,
+            nome: nome,
+            preco: precoPromocional, // Usar preço promocional
+            imagem: imagem,
+            quantidade: 1,
+            ingredientes: [],
+            promocional: true
+        });
+    }
+    
+    localStorage.setItem('carrinhoItens', JSON.stringify(carrinhoItens));
+    
+    // Atualizar carrinho
+    const event = new CustomEvent('atualizarCarrinho');
+    window.dispatchEvent(event);
+    
+    // Feedback visual
+    elemento.style.border = '3px solid #27ae60';
+    elemento.style.transform = 'scale(1.05)';
+    
+    setTimeout(() => {
+        elemento.style.transform = 'scale(1)';
+    }, 200);
+    
+    // Mostrar resumo da promoção
+    mostrarResumoPromocao();
+}
+
+function mostrarResumoPromocao() {
+    const totalItens = itensPromocionais.lanches.length + itensPromocionais.bebidas.length + 
+                      itensPromocionais.sobremesas.length + itensPromocionais.molhos.length;
+    
+    let resumo = '🎉 Itens da Promoção:\n';
+    resumo += `🍔 Lanches: ${itensPromocionais.lanches.length}/1\n`;
+    resumo += `🥤 Bebidas: ${itensPromocionais.bebidas.length}/2\n`;
+    resumo += `🍰 Sobremesas: ${itensPromocionais.sobremesas.length}/1\n`;
+    resumo += `🥫 Molhos: ${itensPromocionais.molhos.length}/3\n`;
+    resumo += `\nTotal: ${totalItens}/7 itens`;
+    
+    if (totalItens === 7) {
+        resumo += '\n\n✅ Promoção completa!';
+    }
+    
+    console.log(resumo);
+}
+
+// Filtro para categorias promocionais
+function filtrarProdutosPromocao(categoria, filtro) {
+    var grid = document.querySelector('.pedido-grid');
+    if (!grid) return;
+    var itens = grid.querySelectorAll('.pedido-item');
+    itens.forEach(function(item) {
+        var cat = (item.getAttribute('data-categoria') || '').toLowerCase();
+        if (filtro === 'todos') {
+            item.style.display = '';
+        } else if (cat === filtro) {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// Ativar filtros promocionais
+document.addEventListener('DOMContentLoaded', function() {
+    var nav = document.querySelector('.nav-categorias');
+    if (nav) {
+        nav.addEventListener('click', function(e) {
+            var link = e.target.closest('a[data-categoria]');
+            if (!link) return;
+            e.preventDefault();
+            nav.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+            link.classList.add('active');
+            filtrarProdutosPromocao('promocoes', link.getAttribute('data-categoria').toLowerCase());
+        });
+    }
+});
+</script>

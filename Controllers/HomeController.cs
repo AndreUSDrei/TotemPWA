@@ -37,6 +37,12 @@ public class HomeController : Controller
             .Include(p => p.ComboProducts)
             .ToList();
         var ingredientes = _context.Ingredients.ToList();
+        
+        // Debug: verificar se os dados estão sendo carregados
+        Console.WriteLine($"Categorias carregadas: {categorias.Count}");
+        Console.WriteLine($"Produtos carregados: {produtos.Count}");
+        Console.WriteLine($"Produtos com categoria: {produtos.Count(p => p.Category != null)}");
+        
         ViewBag.Categorias = categorias;
         ViewBag.Produtos = produtos;
         ViewBag.Ingredientes = ingredientes;

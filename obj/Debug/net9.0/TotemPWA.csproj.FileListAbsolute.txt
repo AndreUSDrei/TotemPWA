@@ -265,12 +265,8 @@ C:\Users\andre\totemPWA\obj\Debug\net9.0\compressed\5x7mdqe4nv-2ev5gv49qk.gz
 C:\Users\andre\totemPWA\obj\Debug\net9.0\compressed\189g2i45ej-jrge3sgs8r.gz
 C:\Users\andre\totemPWA\obj\Debug\net9.0\compressed\b42mwe2djt-ucnz4xlalc.gz
 C:\Users\andre\totemPWA\obj\Debug\net9.0\compressed\8voel94ewa-wwpyqbq7y5.gz
-C:\Users\andre\totemPWA\obj\Debug\net9.0\compressed\pebobbe2b7-lt3tx3rrh4.gz
 C:\Users\andre\totemPWA\obj\Debug\net9.0\compressed\ade2i2q1em-61n19gt1b8.gz
 C:\Users\andre\totemPWA\obj\Debug\net9.0\compressed\mo1ej7x5al-burnqrwq9q.gz
-C:\Users\andre\totemPWA\obj\Debug\net9.0\compressed\jouvgui3wh-0ztk6xaija.gz
-C:\Users\andre\totemPWA\obj\Debug\net9.0\compressed\41092q2snf-wyklawl172.gz
-C:\Users\andre\totemPWA\obj\Debug\net9.0\compressed\9y97fnyyhx-7eg9epkklw.gz
 C:\Users\andre\totemPWA\obj\Debug\net9.0\compressed\no2xol4q6l-t1cqhe9u97.gz
 C:\Users\andre\totemPWA\obj\Debug\net9.0\compressed\ocf304k2dd-c2jlpeoesf.gz
 C:\Users\andre\totemPWA\obj\Debug\net9.0\compressed\vr4nuibh5q-sejl45xvog.gz
@@ -349,3 +345,7 @@ C:\Users\andre\totemPWA\obj\Debug\net9.0\refint\TotemPWA.dll
 C:\Users\andre\totemPWA\obj\Debug\net9.0\TotemPWA.pdb
 C:\Users\andre\totemPWA\obj\Debug\net9.0\TotemPWA.genruntimeconfig.cache
 C:\Users\andre\totemPWA\obj\Debug\net9.0\ref\TotemPWA.dll
+C:\Users\andre\TotemPWA\obj\Debug\net9.0\compressed\41092q2snf-uhngek19no.gz
+C:\Users\andre\TotemPWA\obj\Debug\net9.0\compressed\pebobbe2b7-fveqrut4w1.gz
+C:\Users\andre\TotemPWA\obj\Debug\net9.0\compressed\jouvgui3wh-ajhb3wbhf6.gz
+C:\Users\andre\TotemPWA\obj\Debug\net9.0\compressed\9y97fnyyhx-ix9aye9lqd.gz
